@@ -1,0 +1,294 @@
+﻿@model  Moments.ViewModels.SuperAdminViewModel
+@{
+    ViewBag.Title = "User Registration";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    input, select, textarea {
+        max-width: none !important;
+    }
+</style>
+<div>
+    <div id="ManageCustomer">
+        @Html.Partial("_ManageCustomer", Model)
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">UserRegistration</h3>
+                    <span class="pull-right" style="color:red;"><b>Note:</b> The Fields With * Are Required.</span>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    @using (Ajax.BeginForm("SaveCustomers", "SuperAdmin", new AjaxOptions { HttpMethod = "POST", OnSuccess = "onSaveOrUpdateCustomersSucess(data)", OnFailure = "AjaxFailure(xhr,status,error)" }))
+                    {
+
+                        Model.UserRegistration = new Moments.Model.EF.UserRegistration();
+                        Model.UserRegistration.Type = "Customer";
+
+                        @Html.TextBoxFor(model => model.UserProfile.Id, new { @class = "", @Id = "UserProfileId", @style = "display:none" })
+                        @Html.TextBoxFor(model => model.UserRegistration.Id, new { @class = "", @Id = "UserRegistrationId", @style = "display:none" })
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="col-md-4">
+                                    @Html.LabelFor(model => model.UserRegistration.Email, new { @class = "input-height" })
+                                    @Html.TextBoxFor(model => model.UserRegistration.Email, new { @type = "email", @class = "form-control input-height", @placeholder = "Enter Email", @Id = "Email" })
+                                    @Html.ValidationMessageFor(model => model.UserRegistration.Email, String.Empty, new { @class = "Validation-color" })
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.LabelFor(model => model.UserRegistration.Password, new { @class = "input-height" })
+                                    @Html.TextBoxFor(model => model.UserRegistration.Password, new { @class = "form-control input-height", @placeholder = "Enter Password", @Id = "Password" })
+                                    @Html.ValidationMessageFor(model => model.UserRegistration.Password, String.Empty, new { @class = "Validation-color" })
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.LabelFor(model => model.UserRegistration.ConfirmPassword, new { @class = "input-height" })
+                                    @Html.TextBoxFor(model => model.UserRegistration.ConfirmPassword, new { @class = "form-control input-height", @placeholder = "Enter Confirm Password", @Id = "ConfirmPassword" })
+                                    @Html.ValidationMessageFor(model => model.UserRegistration.ConfirmPassword, String.Empty, new { @class = "Validation-color" })
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-4">
+                                    @Html.LabelFor(model => model.UserProfile.FirstName, new { @class = "input-height" })
+                                    @Html.TextBoxFor(model => model.UserProfile.FirstName, new { @class = "form-control input-height", @placeholder = "Enter First Name", @Id = "FirstName" })
+                                    @Html.ValidationMessageFor(model => model.UserProfile.FirstName, String.Empty, new { @class = "Validation-color" })
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.LabelFor(model => model.UserProfile.MiddleName, new { @class = "input-height" })
+                                    @Html.TextBoxFor(model => model.UserProfile.MiddleName, new { @class = "form-control input-height", @placeholder = "Enter Middle Name", @Id = "MiddleName" })
+                                    @Html.ValidationMessageFor(model => model.UserProfile.MiddleName, String.Empty, new { @class = "Validation-color" })
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.LabelFor(model => model.UserProfile.LastName, new { @class = "input-height" })
+                                    @Html.TextBoxFor(model => model.UserProfile.LastName, new { @class = "form-control input-height", @placeholder = "Enter Last Name", @Id = "LastName" })
+                                    @Html.ValidationMessageFor(model => model.UserProfile.LastName, String.Empty, new { @class = "Validation-color" })
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-4">
+                                    @Html.LabelFor(model => model.UserRegistration.Type, new { @class = "input-height" })
+                                    @Html.DropDownListFor(model => model.UserRegistration.Type, Model.UserType, "-- Select User Type --", new { @class = "form-control input-height", @Id = "UserType" })
+                                    @Html.ValidationMessageFor(model => model.UserRegistration.Type, String.Empty, new { @class = "Validation-color" })
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.LabelFor(model => model.UserRegistration.UserName, new { @class = "input-height" })
+                                    @Html.TextBoxFor(model => model.UserRegistration.UserName, new { @class = "form-control input-height", @placeholder = "Enter User Name", @Id = "UserName" })
+                                    @Html.ValidationMessageFor(model => model.UserRegistration.UserName, String.Empty, new { @class = "Validation-color" })
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.LabelFor(model => model.UserProfile.PhoneNo, new { @class = "input-height" })
+                                    @Html.TextBoxFor(model => model.UserProfile.PhoneNo, new { @class = "form-control input-height", @placeholder = "Enter Phone Number", @Id = "PhoneNo" })
+                                    @Html.ValidationMessageFor(model => model.UserProfile.PhoneNo, String.Empty, new { @class = "Validation-color" })
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-4">
+                                    @Html.LabelFor(model => model.UserProfile.MobileNo, new { @class = "input-height" })
+                                    @Html.TextBoxFor(model => model.UserProfile.MobileNo, new { @class = "form-control input-height", @placeholder = "Enter Mobile Number", @Id = "MobileNo" })
+                                    @Html.ValidationMessageFor(model => model.UserProfile.MobileNo, String.Empty, new { @class = "Validation-color" })
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.LabelFor(model => model.UserProfile.DOB, new { @class = "input-height" })
+                                    @Html.TextBoxFor(model => model.UserProfile.DOB, new { @class = "form-control input-height", @placeholder = "Enter DOB", @Id = "DOB" })
+                                    @Html.ValidationMessageFor(model => model.UserProfile.DOB, String.Empty, new { @class = "Validation-color" })
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.LabelFor(model => model.UserProfile.CNIC, new { @class = "input-height" })
+                                    @Html.TextBoxFor(model => model.UserProfile.CNIC, new { @class = "form-control input-height", @placeholder = "Enter CNIC", @Id = "CNIC" })
+                                    @Html.ValidationMessageFor(model => model.UserProfile.CNIC, String.Empty, new { @class = "Validation-color" })
+                                </div>
+                            </div>
+                        <div class="col-md-12">
+                            @*<div class="col-md-4">
+                                @Html.LabelFor(model => model.CustomerProfile.DepartmentId, new { @class = "input-height" })
+                                @Html.DropDownListFor(model => model.CustomerProfile.DepartmentId, Model.DepartmentList, "-- Select Department --", new { @class = "form-control input-height", @Id = "DepartmentId" })
+                                @Html.ValidationMessageFor(model => model.CustomerProfile.DepartmentId, String.Empty, new { @class = "Validation-color" })
+                            </div>*@
+                            <div class="col-md-8">
+                                @Html.LabelFor(model => model.UserProfile.PrimaryAddress, new { @class = "input-height" })
+                                @Html.TextAreaFor(model => model.UserProfile.PrimaryAddress, new { @class = "form-control input-height", @placeholder = "Enter Address", @Id = "PrimaryAddress" })
+                                @Html.ValidationMessageFor(model => model.UserProfile.PrimaryAddress, String.Empty, new { @class = "Validation-color" })
+                            </div>
+                        </div>
+
+                            <div class="col-md-12">
+                                <div class="col-md-3 pull-right">
+                                    <button type="button" id="CancelButton" class="btn btn-warning pull-right"> Cancel </button>
+                                    <button type="submit" id="SubmitButton" class="btn btn-primary pull-right" style="margin-right: 5px;"> Save </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    $(document).ready(function () {
+        $("form").removeData("validator");
+        $("form").removeData("unobtrusiveValidation");
+        $.validator.unobtrusive.parse("form");
+        var output;
+
+
+        $('#category').DataTable();
+        $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        });
+         
+        $('#CancelButton').click(function () {
+            $('#UserProfileId').val(0);
+            $('#UserRegistrationId').val(0);
+            $('#PrimaryAddress').val('');
+            $('#UserType').val('');
+            $('#DepartmentId').val('');
+            $('#CNIC').val('');
+            $('#DOB').val('');
+            $('#MobileNo').val('');
+            $('#PhoneNo').val('');
+            $('#Email').val('');
+            $('#LastName').val('');
+            $('#MiddleName').val('');
+            $('#FirstName').val('');
+            $('#UserName').val('');
+            $('#ConfirmPassword').val('');
+            $('#Password').val('');
+            $('#SubmitButton').text('Save');
+        });
+        $('#ManageCustomer').on('click', '.RemoveUser', function () {
+            var userprofileid = $(this).attr('userprofileid');
+            var UserRegistrationid = $(this).attr('UserRegistrationid');
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("DeleteUser", "SuperAdmin" )',
+                data: ({ 'UserProfileId': userprofileid, 'UserRegistrationId': UserRegistrationid }),
+                beforeSend: function () {
+                    $("#loadingScreen").css("display", "block");
+                },
+                success: function (data) {
+                    $("#loadingScreen").css("display", "none");
+                    if (data) {
+                        $('.DeleteAlert').css({ 'display': 'block' });
+                        $('#DeleteErrorMessageLayout').text('');
+                        $('#DeleteErrorMessageLayout').text('DeleteMessage');
+                        setTimeout(function () { $('.DeleteAlert').css({ 'display': 'none' }); $('#SuccessMessage').text(''); }, 2000)
+                    }
+                    $("#ManageCustomer").html("");
+                    $("#ManageCustomer").html(data);
+                },
+                error: function (res) {
+                    //AjaxFailure(res);
+                }
+            });
+        });
+        $('#ManageCustomer').on('click', '.EditUser', function () {
+            var userprofileid = $(this).attr('userprofileid');
+            var UserRegistrationid = $(this).attr('UserRegistrationid');
+            $('#SubmitButton').text('Update');
+            $('#UserProfileId').val(userprofileid);
+            $('#UserRegistrationId').val(UserRegistrationid);
+            $.ajax({
+                type: "Get",
+                url: '@Url.Action("GetCustomerAgainstCustomerIdForUpdate", "SuperAdmin" )',
+                data: ({ 'UserProfileId': userprofileid}),
+                beforeSend: function () {
+                    $("#loadingScreen").css("display", "block");
+                },
+                success: function (data) {
+                    debugger;
+                    if (data) {
+                        $('#PrimaryAddress').val(data.PrimaryAddress);
+                        $('#DepartmentId').val(data.DepartmentId);
+                        $('#CNIC').val(data.CNIC);
+                        $('#DOB').val(data.DOB);
+                        $('#MobileNo').val(data.MobileNo);
+                        $('#PhoneNo').val(data.PhoneNo);
+                        $('#Email').val(data.UREmail);
+                        $('#LastName').val(data.LastName);
+                        $('#MiddleName').val(data.MiddleName);
+                        $('#FirstName').val(data.FirstName);
+                        $('#UserName').val(data.UserName);
+                        $('#ConfirmPassword').val(data.ConfirmPassword);
+                        $('#Password').val(data.Password);
+                        $('#UserType').val(data.Type);
+                        $("#loadingScreen").css("display", "none");
+                    }
+                },
+                error: function (res) {
+                    debugger;
+                    AjaxFailure(res);
+                }
+            });
+        });
+        $('#TableName').change(function () {
+            var tablename = $(this).val();
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("GetColumnsByTableName", "SuperAdmin" )',
+                data: ({ 'TableName': tablename }),
+                beforeSend: function () {
+                    $("#loadingScreen").css("display", "block");
+                },
+                success: function (data) {
+
+                    if (data.length != 0) {
+                        $('#ColumnName').html('');
+                        $('#ColumnName').append('<option value=""> -- Select Column Name -- </option>');
+                        $('#FilterBy').html('');
+                        $('#FilterBy').append('<option value=""> -- Select Filter By -- </option>');
+                        $('#GroupBy').html('');
+                        $('#GroupBy').append('<option value=""> -- Select Filter By -- </option>');
+                        for (var i = 0; i < data.length; i++) {
+                            $('#ColumnName').append('<option value=' + data[i].column_name + '>' + data[i].column_name + '</option>');
+                            $('#FilterBy').append('<option value=' + data[i].column_name + '>' + data[i].column_name + '</option>');
+                            $('#GroupBy').append('<option value=' + data[i].column_name + '>' + data[i].column_name + '</option>');
+                        }
+                    } else if (data == "Change Portal Error.") {
+                        alert("Change Portal Error.");
+                    }
+                    $("#loadingScreen").css("display", "none");
+                },
+                error: function (res) {
+                    //AjaxFailure(res);
+                }
+            });
+        });
+    });
+    function onSaveOrUpdateCustomersSucess(data) {
+        $('#UserProfileId').val(0);
+        $('#UserRegistrationId').val(0);
+        $('#PrimaryAddress').val('');
+        $('#DepartmentId').val('');
+        $('#UserType').val('');
+        $('#CNIC').val('');
+        $('#DOB').val('');
+        $('#MobileNo').val('');
+        $('#PhoneNo').val('');
+        $('#Email').val('');
+        $('#LastName').val('');
+        $('#MiddleName').val('');
+        $('#FirstName').val('');
+        $('#UserName').val('');
+        $('#ConfirmPassword').val('');
+        $('#Password').val('');
+
+        $("#ManageCustomer").html("");
+        $("#ManageCustomer").html(data);
+
+        $("#loadingScreen").css("display", "none");
+        $('.alert-success').css({ 'display': 'block' });
+        $('#SuccessMessage').text('');
+        $('#SuccessMessage').text('Record Save Successfully');
+        setTimeout(function () { $('.alert-success').css({ 'display': 'none' }); $('#SuccessMessage').text(''); }, 3000)
+
+        $('#SubmitButton').text('Save');
+    }
+
+</script>
+

@@ -1,0 +1,1195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{47953860-9C11-4BD6-91A3-21E8FB0F6C12}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moments</RootNamespace>
+    <AssemblyName>Moments</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44312</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/adbd09e9-bd6e-4f0d-9020-8e4af2f5990d/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/Moments</ApplicationInsightsResourceId>
+    <TypeScriptToolsVersion>2.9</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Content\Texts\RError.Designer.cs" />
+    <Compile Include="Content\Texts\RError.es-es.Designer.cs" />
+    <Compile Include="Content\Texts\RError.fr-fr1.Designer.cs" />
+    <Compile Include="Content\Texts\RGlobal.Designer.cs" />
+    <Compile Include="Content\Texts\RGlobal.es-es.Designer.cs" />
+    <Compile Include="Content\Texts\RGlobal.fr-fr1.Designer.cs" />
+    <Compile Include="Content\Texts\RHome.Designer.cs" />
+    <Compile Include="Content\Texts\RHome.es-es.Designer.cs" />
+    <Compile Include="Content\Texts\RHome.fr-fr1.Designer.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MomentController.cs" />
+    <Compile Include="Controllers\SuperAdminController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Model.EF\Lookup.cs">
+      <DependentUpon>Moments.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.EF\Moments.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Moments.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.EF\Moments.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Moments.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.EF\Moments.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Moments.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model.EF\Node.cs">
+      <DependentUpon>Moments.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.EF\PromotionEmail.cs">
+      <DependentUpon>Moments.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.EF\sp_GetAllUsers_Result.cs">
+      <DependentUpon>Moments.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.EF\sp_GetLookupsByLookupsType_Result.cs">
+      <DependentUpon>Moments.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.EF\Sp_GetStories_Result.cs">
+      <DependentUpon>Moments.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.EF\sp_GetUserProfileAndUserRegistrationRecord_Result.cs">
+      <DependentUpon>Moments.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.EF\sp_UserLogin_Result.cs">
+      <DependentUpon>Moments.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.EF\StoriesNode.cs">
+      <DependentUpon>Moments.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.EF\Story.cs">
+      <DependentUpon>Moments.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.EF\UserProfile.cs">
+      <DependentUpon>Moments.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.EF\UserRegistration.cs">
+      <DependentUpon>Moments.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\GetNetworkRequestModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IndexPageModel.cs" />
+    <Compile Include="Models\LoginValidations.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\NodeModel.cs" />
+    <Compile Include="Models\Relation.cs" />
+    <Compile Include="Models\ReportingModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryDAL\LoginDAL.cs" />
+    <Compile Include="RepositoryDAL\MomentDAL.cs" />
+    <Compile Include="RepositoryDAL\SuperAdminDAL.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Utility\MVCUtility.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MomentViewModel.cs" />
+    <Compile Include="ViewModels\SuperAdminViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Images\default.jpg" />
+    <Content Include="Content\ajaxLoader.gif" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\dist\css\AdminLTE.css" />
+    <Content Include="Content\dist\css\AdminLTE.min.css" />
+    <Content Include="Content\dist\css\alt\AdminLTE-bootstrap-social.css" />
+    <Content Include="Content\dist\css\alt\AdminLTE-bootstrap-social.min.css" />
+    <Content Include="Content\dist\css\alt\AdminLTE-fullcalendar.css" />
+    <Content Include="Content\dist\css\alt\AdminLTE-fullcalendar.min.css" />
+    <Content Include="Content\dist\css\alt\AdminLTE-select2.css" />
+    <Content Include="Content\dist\css\alt\AdminLTE-select2.min.css" />
+    <Content Include="Content\dist\css\alt\AdminLTE-without-plugins.css" />
+    <Content Include="Content\dist\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="Content\dist\css\skins\skin-black-light.css" />
+    <Content Include="Content\dist\css\skins\skin-black-light.min.css" />
+    <Content Include="Content\dist\css\skins\skin-black.css" />
+    <Content Include="Content\dist\css\skins\skin-black.min.css" />
+    <Content Include="Content\dist\css\skins\skin-blue-light.css" />
+    <Content Include="Content\dist\css\skins\skin-blue-light.min.css" />
+    <Content Include="Content\dist\css\skins\skin-blue.css" />
+    <Content Include="Content\dist\css\skins\skin-blue.min.css" />
+    <Content Include="Content\dist\css\skins\skin-green-light.css" />
+    <Content Include="Content\dist\css\skins\skin-green-light.min.css" />
+    <Content Include="Content\dist\css\skins\skin-green.css" />
+    <Content Include="Content\dist\css\skins\skin-green.min.css" />
+    <Content Include="Content\dist\css\skins\skin-purple-light.css" />
+    <Content Include="Content\dist\css\skins\skin-purple-light.min.css" />
+    <Content Include="Content\dist\css\skins\skin-purple.css" />
+    <Content Include="Content\dist\css\skins\skin-purple.min.css" />
+    <Content Include="Content\dist\css\skins\skin-red-light.css" />
+    <Content Include="Content\dist\css\skins\skin-red-light.min.css" />
+    <Content Include="Content\dist\css\skins\skin-red.css" />
+    <Content Include="Content\dist\css\skins\skin-red.min.css" />
+    <Content Include="Content\dist\css\skins\skin-yellow-light.css" />
+    <Content Include="Content\dist\css\skins\skin-yellow-light.min.css" />
+    <Content Include="Content\dist\css\skins\skin-yellow.css" />
+    <Content Include="Content\dist\css\skins\skin-yellow.min.css" />
+    <Content Include="Content\dist\css\skins\_all-skins.css" />
+    <Content Include="Content\dist\css\skins\_all-skins.min.css" />
+    <Content Include="Content\dist\img\avatar.png" />
+    <Content Include="Content\dist\img\avatar04.png" />
+    <Content Include="Content\dist\img\avatar2.png" />
+    <Content Include="Content\dist\img\avatar3.png" />
+    <Content Include="Content\dist\img\avatar5.png" />
+    <Content Include="Content\dist\img\boxed-bg.jpg" />
+    <Content Include="Content\dist\img\boxed-bg.png" />
+    <Content Include="Content\dist\img\credit\american-express.png" />
+    <Content Include="Content\dist\img\credit\cirrus.png" />
+    <Content Include="Content\dist\img\credit\mastercard.png" />
+    <Content Include="Content\dist\img\credit\mestro.png" />
+    <Content Include="Content\dist\img\credit\paypal.png" />
+    <Content Include="Content\dist\img\credit\paypal2.png" />
+    <Content Include="Content\dist\img\credit\visa.png" />
+    <Content Include="Content\dist\img\default-50x50.gif" />
+    <Content Include="Content\dist\img\icons.png" />
+    <Content Include="Content\dist\img\photo1.png" />
+    <Content Include="Content\dist\img\photo2.png" />
+    <Content Include="Content\dist\img\photo3.jpg" />
+    <Content Include="Content\dist\img\photo4.jpg" />
+    <Content Include="Content\dist\img\user1-128x128.jpg" />
+    <Content Include="Content\dist\img\user2-160x160.jpg" />
+    <Content Include="Content\dist\img\user3-128x128.jpg" />
+    <Content Include="Content\dist\img\user4-128x128.jpg" />
+    <Content Include="Content\dist\img\user5-128x128.jpg" />
+    <Content Include="Content\dist\img\user6-128x128.jpg" />
+    <Content Include="Content\dist\img\user7-128x128.jpg" />
+    <Content Include="Content\dist\img\user8-128x128.jpg" />
+    <Content Include="Content\dist\js\adminlte.js" />
+    <Content Include="Content\dist\js\adminlte.min.js" />
+    <Content Include="Content\dist\js\demo.js" />
+    <Content Include="Content\dist\js\pages\dashboard.js" />
+    <Content Include="Content\dist\js\pages\dashboard2.js" />
+    <Content Include="Content\FrontEnd\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\FrontEnd\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\FrontEnd\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\FrontEnd\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\FrontEnd\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\FrontEnd\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\FrontEnd\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\FrontEnd\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\FrontEnd\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\FrontEnd\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\FrontEnd\css\style.css" />
+    <Content Include="Content\FrontEnd\froala\css\froala_editor.css" />
+    <Content Include="Content\FrontEnd\froala\css\froala_editor.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\froala_editor.pkgd.css" />
+    <Content Include="Content\FrontEnd\froala\css\froala_editor.pkgd.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\froala_style.css" />
+    <Content Include="Content\FrontEnd\froala\css\froala_style.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\char_counter.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\char_counter.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\code_view.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\code_view.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\colors.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\colors.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\draggable.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\draggable.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\emoticons.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\emoticons.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\file.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\file.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\fullscreen.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\fullscreen.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\help.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\help.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\image.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\image.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\image_manager.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\image_manager.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\line_breaker.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\line_breaker.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\quick_insert.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\quick_insert.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\special_characters.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\special_characters.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\table.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\table.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\video.css" />
+    <Content Include="Content\FrontEnd\froala\css\plugins\video.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\themes\dark.css" />
+    <Content Include="Content\FrontEnd\froala\css\themes\dark.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\themes\gray.css" />
+    <Content Include="Content\FrontEnd\froala\css\themes\gray.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\themes\red.css" />
+    <Content Include="Content\FrontEnd\froala\css\themes\red.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\themes\royal.css" />
+    <Content Include="Content\FrontEnd\froala\css\themes\royal.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\third_party\embedly.css" />
+    <Content Include="Content\FrontEnd\froala\css\third_party\embedly.min.css" />
+    <Content Include="Content\FrontEnd\froala\css\third_party\spell_checker.css" />
+    <Content Include="Content\FrontEnd\froala\css\third_party\spell_checker.min.css" />
+    <Content Include="Content\FrontEnd\froala\editor.jpg" />
+    <Content Include="Content\FrontEnd\froala\html\3rd-party\at.js.html" />
+    <Content Include="Content\FrontEnd\froala\html\3rd-party\aviary\index.html" />
+    <Content Include="Content\FrontEnd\froala\html\3rd-party\bootstrap\grid.html" />
+    <Content Include="Content\FrontEnd\froala\html\3rd-party\bootstrap\lists.html" />
+    <Content Include="Content\FrontEnd\froala\html\3rd-party\bootstrap\modal.html" />
+    <Content Include="Content\FrontEnd\froala\html\3rd-party\code-mirror.html" />
+    <Content Include="Content\FrontEnd\froala\html\3rd-party\font-awesome-5-css.html" />
+    <Content Include="Content\FrontEnd\froala\html\3rd-party\font-awesome-5-js.html" />
+    <Content Include="Content\FrontEnd\froala\html\3rd-party\jquery\mobile.html" />
+    <Content Include="Content\FrontEnd\froala\html\3rd-party\jquery\ui_modal.html" />
+    <Content Include="Content\FrontEnd\froala\html\3rd-party\require_js\index.html" />
+    <Content Include="Content\FrontEnd\froala\html\3rd-party\require_js\js\app.js" />
+    <Content Include="Content\FrontEnd\froala\html\3rd-party\require_js\js\lib\require.js" />
+    <Content Include="Content\FrontEnd\froala\html\3rd-party\spell-checker\spell-checker.html" />
+    <Content Include="Content\FrontEnd\froala\html\api\get_html.html" />
+    <Content Include="Content\FrontEnd\froala\html\api\init_destroy.html" />
+    <Content Include="Content\FrontEnd\froala\html\api\insert_html.html" />
+    <Content Include="Content\FrontEnd\froala\html\api\live_code_preview.html" />
+    <Content Include="Content\FrontEnd\froala\html\api\live_content_preview.html" />
+    <Content Include="Content\FrontEnd\froala\html\api\selection.html" />
+    <Content Include="Content\FrontEnd\froala\html\buttons\custom_buttons.html" />
+    <Content Include="Content\FrontEnd\froala\html\buttons\custom_dropdown.html" />
+    <Content Include="Content\FrontEnd\froala\html\buttons\external_button.html" />
+    <Content Include="Content\FrontEnd\froala\html\buttons\subscript_superscript.html" />
+    <Content Include="Content\FrontEnd\froala\html\events\blur_focus.html" />
+    <Content Include="Content\FrontEnd\froala\html\events\content_changed.html" />
+    <Content Include="Content\FrontEnd\froala\html\events\drop.html" />
+    <Content Include="Content\FrontEnd\froala\html\events\image_removed.html" />
+    <Content Include="Content\FrontEnd\froala\html\events\initialized_destroy.html" />
+    <Content Include="Content\FrontEnd\froala\html\image\custom_button.html" />
+    <Content Include="Content\FrontEnd\froala\html\image\default_width.html" />
+    <Content Include="Content\FrontEnd\froala\html\image\image_styles.html" />
+    <Content Include="Content\FrontEnd\froala\html\image\insert_base64.html" />
+    <Content Include="Content\FrontEnd\froala\html\initialization\edit_in_popup.html" />
+    <Content Include="Content\FrontEnd\froala\html\initialization\initialized_event.html" />
+    <Content Include="Content\FrontEnd\froala\html\initialization\init_on_button.html" />
+    <Content Include="Content\FrontEnd\froala\html\initialization\init_on_click.html" />
+    <Content Include="Content\FrontEnd\froala\html\initialization\init_on_h1.html" />
+    <Content Include="Content\FrontEnd\froala\html\initialization\init_on_image.html" />
+    <Content Include="Content\FrontEnd\froala\html\initialization\init_on_link.html" />
+    <Content Include="Content\FrontEnd\froala\html\init_inside_iframe\basic.html" />
+    <Content Include="Content\FrontEnd\froala\html\init_inside_iframe\content.html" />
+    <Content Include="Content\FrontEnd\froala\html\init_inside_iframe\inline.html" />
+    <Content Include="Content\FrontEnd\froala\html\init_on_click\basic.html" />
+    <Content Include="Content\FrontEnd\froala\html\init_on_click\inline.html" />
+    <Content Include="Content\FrontEnd\froala\html\init_on_click\two_editors.html" />
+    <Content Include="Content\FrontEnd\froala\html\international\direction_rtl.html" />
+    <Content Include="Content\FrontEnd\froala\html\international\language.html" />
+    <Content Include="Content\FrontEnd\froala\html\international\rtl_ltr_buttons.html" />
+    <Content Include="Content\FrontEnd\froala\html\link\custom_validation.html" />
+    <Content Include="Content\FrontEnd\froala\html\link\link_styles.html" />
+    <Content Include="Content\FrontEnd\froala\html\link\predefined_links.html" />
+    <Content Include="Content\FrontEnd\froala\html\misc\scrollable_container.html" />
+    <Content Include="Content\FrontEnd\froala\html\misc\scrollable_container_inline.html" />
+    <Content Include="Content\FrontEnd\froala\html\paragraph_modes\enter_br.html" />
+    <Content Include="Content\FrontEnd\froala\html\paragraph_modes\enter_div.html" />
+    <Content Include="Content\FrontEnd\froala\html\paragraph_modes\enter_p.html" />
+    <Content Include="Content\FrontEnd\froala\html\paste\attrs.html" />
+    <Content Include="Content\FrontEnd\froala\html\paste\plain.html" />
+    <Content Include="Content\FrontEnd\froala\html\paste\tags.html" />
+    <Content Include="Content\FrontEnd\froala\html\plugins\char_counter.html" />
+    <Content Include="Content\FrontEnd\froala\html\plugins\full_screen.html" />
+    <Content Include="Content\FrontEnd\froala\html\plugins\line_breaker.html" />
+    <Content Include="Content\FrontEnd\froala\html\plugins\quick_insert.html" />
+    <Content Include="Content\FrontEnd\froala\html\popular\disable_edit.html" />
+    <Content Include="Content\FrontEnd\froala\html\popular\disable_paragraphs.html" />
+    <Content Include="Content\FrontEnd\froala\html\popular\full.html" />
+    <Content Include="Content\FrontEnd\froala\html\popular\full_page.html" />
+    <Content Include="Content\FrontEnd\froala\html\popular\iframe.html" />
+    <Content Include="Content\FrontEnd\froala\html\popular\init_on_click.html" />
+    <Content Include="Content\FrontEnd\froala\html\popular\textarea.html" />
+    <Content Include="Content\FrontEnd\froala\html\popular\toolbar_buttons.html" />
+    <Content Include="Content\FrontEnd\froala\html\popular\toolbar_inline.html" />
+    <Content Include="Content\FrontEnd\froala\html\popular\two_instances.html" />
+    <Content Include="Content\FrontEnd\froala\html\popular\z_index.html" />
+    <Content Include="Content\FrontEnd\froala\html\popups\colors.html" />
+    <Content Include="Content\FrontEnd\froala\html\popups\custom.html" />
+    <Content Include="Content\FrontEnd\froala\html\popups\emoticons.html" />
+    <Content Include="Content\FrontEnd\froala\html\styling\adjustable_height.html" />
+    <Content Include="Content\FrontEnd\froala\html\styling\font_family.html" />
+    <Content Include="Content\FrontEnd\froala\html\styling\height.html" />
+    <Content Include="Content\FrontEnd\froala\html\styling\inline.html" />
+    <Content Include="Content\FrontEnd\froala\html\styling\paragraph.html" />
+    <Content Include="Content\FrontEnd\froala\html\styling\placeholder.html" />
+    <Content Include="Content\FrontEnd\froala\html\styling\width.html" />
+    <Content Include="Content\FrontEnd\froala\html\table\cell_style.html" />
+    <Content Include="Content\FrontEnd\froala\html\table\insert_helper.html" />
+    <Content Include="Content\FrontEnd\froala\html\table\nested.html" />
+    <Content Include="Content\FrontEnd\froala\html\table\resize.html" />
+    <Content Include="Content\FrontEnd\froala\html\table\style.html" />
+    <Content Include="Content\FrontEnd\froala\html\tests\bottom_offset_scrollable_container.html" />
+    <Content Include="Content\FrontEnd\froala\html\tests\bottom_scrollable_container.html" />
+    <Content Include="Content\FrontEnd\froala\html\tests\core.html" />
+    <Content Include="Content\FrontEnd\froala\html\tests\full_br.html" />
+    <Content Include="Content\FrontEnd\froala\html\tests\full_page_bottom.html" />
+    <Content Include="Content\FrontEnd\froala\html\tests\image_manager.html" />
+    <Content Include="Content\FrontEnd\froala\html\tests\init_on_click\full_page.html" />
+    <Content Include="Content\FrontEnd\froala\html\tests\max_height.html" />
+    <Content Include="Content\FrontEnd\froala\html\tests\toolbar_inline_two.html" />
+    <Content Include="Content\FrontEnd\froala\html\tests\top_offset_scrollable_container.html" />
+    <Content Include="Content\FrontEnd\froala\html\tests\top_scrollable_container.html" />
+    <Content Include="Content\FrontEnd\froala\html\themes\dark.html" />
+    <Content Include="Content\FrontEnd\froala\html\themes\gray.html" />
+    <Content Include="Content\FrontEnd\froala\html\themes\red.html" />
+    <Content Include="Content\FrontEnd\froala\html\themes\royal.html" />
+    <Content Include="Content\FrontEnd\froala\html\toolbar\bottom.html" />
+    <Content Include="Content\FrontEnd\froala\html\toolbar\bottom_offset.html" />
+    <Content Include="Content\FrontEnd\froala\html\toolbar\buttons.html" />
+    <Content Include="Content\FrontEnd\froala\html\toolbar\external.html" />
+    <Content Include="Content\FrontEnd\froala\html\toolbar\external_inline.html" />
+    <Content Include="Content\FrontEnd\froala\html\toolbar\inline.html" />
+    <Content Include="Content\FrontEnd\froala\html\toolbar\inline_selection.html" />
+    <Content Include="Content\FrontEnd\froala\html\toolbar\offset.html" />
+    <Content Include="Content\FrontEnd\froala\html\toolbar\show_selection.html" />
+    <Content Include="Content\FrontEnd\froala\html\toolbar\sticky.html" />
+    <Content Include="Content\FrontEnd\froala\html\typing\keep_format.html" />
+    <Content Include="Content\FrontEnd\froala\html\typing\shortcuts.html" />
+    <Content Include="Content\FrontEnd\froala\html\typing\tab.html" />
+    <Content Include="Content\FrontEnd\froala\img\photo1.jpg" />
+    <Content Include="Content\FrontEnd\froala\index.html" />
+    <Content Include="Content\FrontEnd\froala\js\froala_editor.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\froala_editor.pkgd.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\ar.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\bs.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\cs.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\da.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\de.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\el.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\en_ca.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\en_gb.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\es.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\et.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\fa.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\fi.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\fr.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\he.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\hr.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\hu.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\id.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\it.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\ja.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\ko.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\ku.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\me.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\nb.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\nl.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\pl.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\pt_br.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\pt_pt.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\ro.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\ru.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\sk.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\sr.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\sv.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\th.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\tr.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\uk.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\vi.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\zh_cn.js" />
+    <Content Include="Content\FrontEnd\froala\js\languages\zh_tw.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\align.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\char_counter.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\code_beautifier.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\code_view.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\colors.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\draggable.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\emoticons.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\entities.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\file.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\font_family.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\font_size.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\forms.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\fullscreen.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\help.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\image.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\image_manager.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\inline_style.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\line_breaker.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\link.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\lists.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\paragraph_format.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\paragraph_style.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\print.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\quick_insert.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\quote.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\save.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\special_characters.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\table.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\url.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\video.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\plugins\word_paste.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\third_party\embedly.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\third_party\image_aviary.min.js" />
+    <Content Include="Content\FrontEnd\froala\js\third_party\spell_checker.min.js" />
+    <Content Include="Content\FrontEnd\froala\License.txt" />
+    <Content Include="Content\FrontEnd\images\add_icon.png" />
+    <Content Include="Content\FrontEnd\images\anchor_tag.png" />
+    <Content Include="Content\FrontEnd\images\anthony.png" />
+    <Content Include="Content\FrontEnd\images\bell_icon.png" />
+    <Content Include="Content\FrontEnd\images\farzeen.png" />
+    <Content Include="Content\FrontEnd\images\happy_times.png" />
+    <Content Include="Content\FrontEnd\images\ian_mclan.png" />
+    <Content Include="Content\FrontEnd\images\info_icon.png" />
+    <Content Include="Content\FrontEnd\images\john_hum.png" />
+    <Content Include="Content\FrontEnd\images\john_snow.png" />
+    <Content Include="Content\FrontEnd\images\logo.png" />
+    <Content Include="Content\FrontEnd\images\m1.png" />
+    <Content Include="Content\FrontEnd\images\m2.png" />
+    <Content Include="Content\FrontEnd\images\m3.png" />
+    <Content Include="Content\FrontEnd\images\m3_n4.png" />
+    <Content Include="Content\FrontEnd\images\m4.png" />
+    <Content Include="Content\FrontEnd\images\n4.png" />
+    <Content Include="Content\FrontEnd\images\plus_icon.png" />
+    <Content Include="Content\FrontEnd\images\profile_pic.png" />
+    <Content Include="Content\FrontEnd\images\rachel_green.png" />
+    <Content Include="Content\FrontEnd\images\search_icon.png" />
+    <Content Include="Content\FrontEnd\images\small_logo.png" />
+    <Content Include="Content\FrontEnd\images\stop_icon.png" />
+    <Content Include="Content\FrontEnd\images\tom_hardy.png" />
+    <Content Include="Content\FrontEnd\images\zoom_icon.png" />
+    <Content Include="Content\FrontEnd\images\zoom_out_icon.png" />
+    <Content Include="Content\FrontEnd\index.html" />
+    <Content Include="Content\FrontEnd\js\custom.js" />
+    <Content Include="Content\FrontEnd\moment.html" />
+    <Content Include="Content\Images\en-us\AdsImages\5305201803f26985-9a8d-48a5-a50f-c680cd5466e9.png" />
+    <Content Include="Content\Images\en-us\AdsImages\69a39a8c-d6fc-4831-b184-5dc4b62e638c.png" />
+    <Content Include="Content\Images\en-us\AdsImages\DD01YYYY0ca586e0-405f-4809-a315-01e328803b0f.png" />
+    <Content Include="Content\Images\en-us\AdsImages\DD01YYYY0fbd3d04-9124-4613-a497-340408930094.png" />
+    <Content Include="Content\Images\en-us\AdsImages\DD01YYYY283e5114-0dff-4d46-b2c7-6e4358b9898c.png" />
+    <Content Include="Content\Images\en-us\AdsImages\DD01YYYY2c42f069-bcc2-4a37-8549-6fd87cf96d8c.png" />
+    <Content Include="Content\Images\en-us\AdsImages\DD01YYYYb665756f-86ef-41d9-bf3c-496b2175024f.png" />
+    <Content Include="Content\Images\en-us\AdsImages\DD01YYYYd0e53294-0e78-4382-8543-11ffda92b757.png" />
+    <Content Include="Content\Images\en-us\AdsImages\DD01YYYYe39f74a4-4f4a-4dea-ab62-e8eb04afa51f.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\0501201831e2e2dc-bf9e-40e0-b927-5364383d682a.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\0501201844bea866-5c88-40ba-9aad-aba9cc88fae2.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\0501201895bb725c-286f-4874-9ec6-d525282f28b1.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\050120189fcc6da3-6fba-4b9d-9c7d-af2a1d0df01b.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\05012018b24a2b63-b452-4eb0-8258-e11f55f4def2.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\05012018ec038549-81e8-45f6-999a-a2aaf758426b.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\05012018f9eeb0fa-7c38-419b-9a27-bae3fd8ec3df.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\1203201820b9f4f2-4893-4399-906a-2340c6cef8e9.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\12032018249b0f07-e3c5-4f99-a8a4-005dd9caf6f3.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\120320184d68b981-da59-4a3d-8ff7-c5d44d8939b0.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\12032018b6ebde66-301d-4031-9244-5bb739717246.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\12032018bee60e75-2820-4be9-97ea-015c330f7263.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\12032018e2f6e675-ece2-4500-b00e-5f4c6004bc1c.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\12032018f764a8c4-48de-4897-9e73-0d8f4f81b53b.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\14032018199b6ca9-00ed-4e2c-94e0-8800f1da2bcf.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\14032018376a4d47-3d5c-4a28-b6ba-acfd25a936a6.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\1403201849f06c25-f239-4f59-b092-22340c1035b0.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\14032018f9662e2c-fe00-4197-adf8-1a6ee23d71b2.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\160120180f8af3ce-3bc6-44f4-88da-416ce20b9e83.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\16012018854501d6-346f-4922-9232-514d2c131598.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\16012018ab9e0ec0-843d-4dc8-8bd7-5440246221c1.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\16012018b2d1230d-f6b7-4e39-8e11-48e086fa4468.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\16042018311db984-78c8-49c1-ae19-96dbd2f16bd2.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\1604201881dfafc5-7025-4356-8712-b060cce8e3cf.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\17012018376823f5-b341-440f-8b5f-51576a153312.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\170120183c0ad400-36dc-4674-8667-a0c9c2e9feb2.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\17012018510591c8-6cb8-4076-b066-c50d5c68a7fc.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\1701201882f34db0-1207-4753-9152-85aba429bf1d.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\170120189a402824-bb6f-421b-8fb8-e95478b7a622.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\17012018c58d4e04-7f52-4008-a770-0dbde59fee85.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\17012018c8cc32ab-d12a-489a-83ec-9f0bb6faf909.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\17012018ce592973-2e0f-4326-a8af-7999c5feb9cc.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\17012018d54e3f47-47eb-4e98-b150-cc7b2ed9762f.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\17012018d5607edd-6504-4c8e-a8ee-97625df4fa0f.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\17012018e74468c6-88ab-4e26-a17e-e5f10802117a.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\17012018f5446a06-cd6f-4f08-9da6-9769c8b6c308.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\190120185b830399-3a9c-440d-8975-963c62ff1511.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\230520181e70d5fc-e2e1-4517-851a-3a580d5ce0dd.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\230520182ffcf997-b58f-40d0-8f31-18e58aa04bb2.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\23052018376a7d3e-51f1-4cc7-8de2-a37812939357.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\23052018f4445981-57f3-4a3b-952e-c2a49b344dce.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\2405201897eb99aa-5864-43ff-822d-a1a982aeedad.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\240520189d8c5329-72ea-4785-ab01-cebb0b878be4.png" />
+    <Content Include="Content\Images\en-us\CategoryImages\DD01YYYYc75f5427-fa9a-4d00-8ee5-d744685da9eb.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\08012018029a2333-08f8-4c27-a1c7-1e07fe049508.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\08012018debd1e2c-2b92-4c9e-9ad7-c219bf0cf934.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\08012018f56a8015-785c-4347-afed-9d46c96d41cf.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\090120180e4a9e3e-5029-439b-afa1-2ca1320b05dc.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\090120183a2a52bf-7558-4250-bd02-172760d1c881.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\09012018544d55c5-ae12-4481-9396-5fd53e4af034.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\0901201859bd1a34-5763-47cc-bfdc-6e83f3de5e45.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\09012018bc886c2b-cb4d-49d7-ac10-4d74b09aa393.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\1101201821ee5cf8-0334-4d84-9dca-7cf130fad443.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\1101201842d2f9d6-d519-4dd9-8236-e5effc43c510.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\11012018c09aad70-b796-4c27-ac02-e8d77f4bd701.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\11012018d0d1e89a-eb73-4779-92d6-7937b738479f.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\120320183150945e-51d5-4df4-a1d2-3afcb49e95df.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\1203201844251cb9-63ac-47ab-ac6b-987f996903a8.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\120320184c435e37-ec1a-4bb5-b0bb-e02d0f86f458.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\120320185baff827-eaed-4b17-9d1f-666962d1fc03.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\1203201863f28fd8-e810-42ee-ad09-be014069f04e.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\120320186bc7df3c-3e87-479a-8ab0-26af4e95b47d.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\1203201891314f48-459b-4f99-9038-c2414b3c746f.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\12032018a2b2bf43-e6f9-4787-a17f-9011556c1c22.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\12032018baf37318-c83a-4c75-91a1-b1de654f7c5b.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\12032018c6a88a32-b771-4423-be69-d0266beda771.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\12032018cdcf92c4-80eb-489a-b823-e7c615757012.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\12032018d1df6c12-6229-4dab-af85-093b423cc708.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\12032018d90d5832-4b29-4662-a686-b13376dd66f1.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\12032018f25dd7f2-666e-4f9a-8d25-e7b9133fc0cb.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\1601201851446d15-6712-4235-abdd-6aa874be6141.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\16012018feee518a-2378-418c-9d80-602a61fc60ef.png" />
+    <Content Include="Content\Images\en-us\FiltersImages\17012018db118e2d-9837-4369-99fb-e0446186c5cd.png" />
+    <Content Include="Content\Images\en-us\ProductImages\1704201815f9ed75-1ba4-413a-80cd-c9ba42538bbc.png" />
+    <Content Include="Content\Images\en-us\ProductImages\170420189f746aae-85bc-498b-bf08-6990c45b711d.png" />
+    <Content Include="Content\Images\en-us\ProductImages\29052018d4ff1de9-8f71-43ad-9f24-3788557a0fb3.png" />
+    <Content Include="Content\Images\en-us\welcome.jpg" />
+    <Content Include="Content\Images\es-es\welcome.jpg" />
+    <Content Include="Content\Images\fr-fr\AdsImages\DD01YYYY52b7bf61-f7a5-4e50-9bac-cf370a0bd4b4.png" />
+    <Content Include="Content\Images\fr-fr\AdsImages\DD01YYYY5ee552a2-3b8b-475c-b0bd-0e62d552fb85.png" />
+    <Content Include="Content\Images\fr-fr\AdsImages\DD01YYYY7611e476-cb9e-4492-8cc6-6ff7beba091f.png" />
+    <Content Include="Content\Images\fr-fr\AdsImages\DD01YYYYbf07777a-2546-4fb8-acec-bf18ae1ea197.png" />
+    <Content Include="Content\Images\fr-fr\AdsImages\DD01YYYYfa6b1380-47bf-4d16-b362-17c82d9e1f97.png" />
+    <Content Include="Content\Images\fr-fr\CategoryImages\080120182eda54db-30ad-4c4b-835e-f324e0407888.png" />
+    <Content Include="Content\Images\fr-fr\eiffel.jpg" />
+    <Content Include="Content\Images\fr-fr\FiltersImages\120320186ba34803-fcfe-4ce6-85f5-4e0a82789a17.png" />
+    <Content Include="Content\Images\fr-fr\welcome.jpg" />
+    <Content Include="Content\Images\France.jpg" />
+    <Content Include="Content\Images\France.png" />
+    <Content Include="Content\Images\France1.png" />
+    <Content Include="Content\Images\placeholder.png" />
+    <Content Include="Content\Images\Spain.png" />
+    <Content Include="Content\Images\StoryImages\11072018d22976d7-c951-4527-8c5c-0509050721c3.png" />
+    <Content Include="Content\Images\StoryImages\14072018ad1c4848-6014-4cb0-a0f0-fa6d19cdd688.png" />
+    <Content Include="Content\Images\StoryImages\1507201850942c73-1ebc-4ce9-9db7-30a0b4512ede.png" />
+    <Content Include="Content\Images\StoryImages\1507201850b8e94c-ce0e-45e7-ac5c-437f6375e499.png" />
+    <Content Include="Content\Images\StoryImages\1507201863171498-ada7-4a83-92ed-fdeee79751e7.png" />
+    <Content Include="Content\Images\StoryImages\1507201890b7984c-e230-4e87-a172-715fe5573d72.png" />
+    <Content Include="Content\Images\StoryImages\15072018d551a85a-6173-4ed5-b4d5-fe54489c77b8.png" />
+    <Content Include="Content\Images\United-States-of-America.png" />
+    <Content Include="Content\MenuSubmenue\script.js" />
+    <Content Include="Content\MenuSubmenue\styles.css" />
+    <Content Include="Content\plugins\bootstrap-slider\bootstrap-slider.js" />
+    <Content Include="Content\plugins\bootstrap-slider\slider.css" />
+    <Content Include="Content\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.js" />
+    <Content Include="Content\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
+    <Content Include="Content\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" />
+    <Content Include="Content\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.min.css" />
+    <Content Include="Content\plugins\iCheck\all.css" />
+    <Content Include="Content\plugins\iCheck\flat\aero%402x.png" />
+    <Content Include="Content\plugins\iCheck\flat\aero.css" />
+    <Content Include="Content\plugins\iCheck\flat\aero.png" />
+    <Content Include="Content\plugins\iCheck\flat\blue%402x.png" />
+    <Content Include="Content\plugins\iCheck\flat\blue.css" />
+    <Content Include="Content\plugins\iCheck\flat\blue.png" />
+    <Content Include="Content\plugins\iCheck\flat\flat%402x.png" />
+    <Content Include="Content\plugins\iCheck\flat\flat.css" />
+    <Content Include="Content\plugins\iCheck\flat\flat.png" />
+    <Content Include="Content\plugins\iCheck\flat\green%402x.png" />
+    <Content Include="Content\plugins\iCheck\flat\green.css" />
+    <Content Include="Content\plugins\iCheck\flat\green.png" />
+    <Content Include="Content\plugins\iCheck\flat\grey%402x.png" />
+    <Content Include="Content\plugins\iCheck\flat\grey.css" />
+    <Content Include="Content\plugins\iCheck\flat\grey.png" />
+    <Content Include="Content\plugins\iCheck\flat\orange%402x.png" />
+    <Content Include="Content\plugins\iCheck\flat\orange.css" />
+    <Content Include="Content\plugins\iCheck\flat\orange.png" />
+    <Content Include="Content\plugins\iCheck\flat\pink%402x.png" />
+    <Content Include="Content\plugins\iCheck\flat\pink.css" />
+    <Content Include="Content\plugins\iCheck\flat\pink.png" />
+    <Content Include="Content\plugins\iCheck\flat\purple%402x.png" />
+    <Content Include="Content\plugins\iCheck\flat\purple.css" />
+    <Content Include="Content\plugins\iCheck\flat\purple.png" />
+    <Content Include="Content\plugins\iCheck\flat\red%402x.png" />
+    <Content Include="Content\plugins\iCheck\flat\red.css" />
+    <Content Include="Content\plugins\iCheck\flat\red.png" />
+    <Content Include="Content\plugins\iCheck\flat\yellow%402x.png" />
+    <Content Include="Content\plugins\iCheck\flat\yellow.css" />
+    <Content Include="Content\plugins\iCheck\flat\yellow.png" />
+    <Content Include="Content\plugins\iCheck\flat\_all.css" />
+    <Content Include="Content\plugins\iCheck\futurico\futurico%402x.png" />
+    <Content Include="Content\plugins\iCheck\futurico\futurico.css" />
+    <Content Include="Content\plugins\iCheck\futurico\futurico.png" />
+    <Content Include="Content\plugins\iCheck\icheck.js" />
+    <Content Include="Content\plugins\iCheck\icheck.min.js" />
+    <Content Include="Content\plugins\iCheck\line\aero.css" />
+    <Content Include="Content\plugins\iCheck\line\blue.css" />
+    <Content Include="Content\plugins\iCheck\line\green.css" />
+    <Content Include="Content\plugins\iCheck\line\grey.css" />
+    <Content Include="Content\plugins\iCheck\line\line%402x.png" />
+    <Content Include="Content\plugins\iCheck\line\line.css" />
+    <Content Include="Content\plugins\iCheck\line\line.png" />
+    <Content Include="Content\plugins\iCheck\line\orange.css" />
+    <Content Include="Content\plugins\iCheck\line\pink.css" />
+    <Content Include="Content\plugins\iCheck\line\purple.css" />
+    <Content Include="Content\plugins\iCheck\line\red.css" />
+    <Content Include="Content\plugins\iCheck\line\yellow.css" />
+    <Content Include="Content\plugins\iCheck\line\_all.css" />
+    <Content Include="Content\plugins\iCheck\minimal\aero%402x.png" />
+    <Content Include="Content\plugins\iCheck\minimal\aero.css" />
+    <Content Include="Content\plugins\iCheck\minimal\aero.png" />
+    <Content Include="Content\plugins\iCheck\minimal\blue%402x.png" />
+    <Content Include="Content\plugins\iCheck\minimal\blue.css" />
+    <Content Include="Content\plugins\iCheck\minimal\blue.png" />
+    <Content Include="Content\plugins\iCheck\minimal\green%402x.png" />
+    <Content Include="Content\plugins\iCheck\minimal\green.css" />
+    <Content Include="Content\plugins\iCheck\minimal\green.png" />
+    <Content Include="Content\plugins\iCheck\minimal\grey%402x.png" />
+    <Content Include="Content\plugins\iCheck\minimal\grey.css" />
+    <Content Include="Content\plugins\iCheck\minimal\grey.png" />
+    <Content Include="Content\plugins\iCheck\minimal\minimal%402x.png" />
+    <Content Include="Content\plugins\iCheck\minimal\minimal.css" />
+    <Content Include="Content\plugins\iCheck\minimal\minimal.png" />
+    <Content Include="Content\plugins\iCheck\minimal\orange%402x.png" />
+    <Content Include="Content\plugins\iCheck\minimal\orange.css" />
+    <Content Include="Content\plugins\iCheck\minimal\orange.png" />
+    <Content Include="Content\plugins\iCheck\minimal\pink%402x.png" />
+    <Content Include="Content\plugins\iCheck\minimal\pink.css" />
+    <Content Include="Content\plugins\iCheck\minimal\pink.png" />
+    <Content Include="Content\plugins\iCheck\minimal\purple%402x.png" />
+    <Content Include="Content\plugins\iCheck\minimal\purple.css" />
+    <Content Include="Content\plugins\iCheck\minimal\purple.png" />
+    <Content Include="Content\plugins\iCheck\minimal\red%402x.png" />
+    <Content Include="Content\plugins\iCheck\minimal\red.css" />
+    <Content Include="Content\plugins\iCheck\minimal\red.png" />
+    <Content Include="Content\plugins\iCheck\minimal\yellow%402x.png" />
+    <Content Include="Content\plugins\iCheck\minimal\yellow.css" />
+    <Content Include="Content\plugins\iCheck\minimal\yellow.png" />
+    <Content Include="Content\plugins\iCheck\minimal\_all.css" />
+    <Content Include="Content\plugins\iCheck\polaris\polaris%402x.png" />
+    <Content Include="Content\plugins\iCheck\polaris\polaris.css" />
+    <Content Include="Content\plugins\iCheck\polaris\polaris.png" />
+    <Content Include="Content\plugins\iCheck\square\aero%402x.png" />
+    <Content Include="Content\plugins\iCheck\square\aero.css" />
+    <Content Include="Content\plugins\iCheck\square\aero.png" />
+    <Content Include="Content\plugins\iCheck\square\blue%402x.png" />
+    <Content Include="Content\plugins\iCheck\square\blue.css" />
+    <Content Include="Content\plugins\iCheck\square\blue.png" />
+    <Content Include="Content\plugins\iCheck\square\green%402x.png" />
+    <Content Include="Content\plugins\iCheck\square\green.css" />
+    <Content Include="Content\plugins\iCheck\square\green.png" />
+    <Content Include="Content\plugins\iCheck\square\grey%402x.png" />
+    <Content Include="Content\plugins\iCheck\square\grey.css" />
+    <Content Include="Content\plugins\iCheck\square\grey.png" />
+    <Content Include="Content\plugins\iCheck\square\orange%402x.png" />
+    <Content Include="Content\plugins\iCheck\square\orange.css" />
+    <Content Include="Content\plugins\iCheck\square\orange.png" />
+    <Content Include="Content\plugins\iCheck\square\pink%402x.png" />
+    <Content Include="Content\plugins\iCheck\square\pink.css" />
+    <Content Include="Content\plugins\iCheck\square\pink.png" />
+    <Content Include="Content\plugins\iCheck\square\purple%402x.png" />
+    <Content Include="Content\plugins\iCheck\square\purple.css" />
+    <Content Include="Content\plugins\iCheck\square\purple.png" />
+    <Content Include="Content\plugins\iCheck\square\red%402x.png" />
+    <Content Include="Content\plugins\iCheck\square\red.css" />
+    <Content Include="Content\plugins\iCheck\square\red.png" />
+    <Content Include="Content\plugins\iCheck\square\square%402x.png" />
+    <Content Include="Content\plugins\iCheck\square\square.css" />
+    <Content Include="Content\plugins\iCheck\square\square.png" />
+    <Content Include="Content\plugins\iCheck\square\yellow%402x.png" />
+    <Content Include="Content\plugins\iCheck\square\yellow.css" />
+    <Content Include="Content\plugins\iCheck\square\yellow.png" />
+    <Content Include="Content\plugins\iCheck\square\_all.css" />
+    <Content Include="Content\plugins\input-mask\jquery.inputmask.date.extensions.js" />
+    <Content Include="Content\plugins\input-mask\jquery.inputmask.extensions.js" />
+    <Content Include="Content\plugins\input-mask\jquery.inputmask.js" />
+    <Content Include="Content\plugins\input-mask\jquery.inputmask.numeric.extensions.js" />
+    <Content Include="Content\plugins\input-mask\jquery.inputmask.phone.extensions.js" />
+    <Content Include="Content\plugins\input-mask\jquery.inputmask.regex.extensions.js" />
+    <Content Include="Content\plugins\input-mask\phone-codes\readme.txt" />
+    <Content Include="Content\plugins\jQueryUI\jquery-ui.js" />
+    <Content Include="Content\plugins\jQueryUI\jquery-ui.min.js" />
+    <Content Include="Content\plugins\jvectormap\jquery-jvectormap-1.2.2.css" />
+    <Content Include="Content\plugins\jvectormap\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Content\plugins\jvectormap\jquery-jvectormap-usa-en.js" />
+    <Content Include="Content\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Content\plugins\pace\pace.css" />
+    <Content Include="Content\plugins\pace\pace.js" />
+    <Content Include="Content\plugins\pace\pace.min.css" />
+    <Content Include="Content\plugins\pace\pace.min.js" />
+    <Content Include="Content\plugins\timepicker\bootstrap-timepicker.css" />
+    <Content Include="Content\plugins\timepicker\bootstrap-timepicker.js" />
+    <Content Include="Content\plugins\timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="Content\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Content\Scripts\bootstrap.js" />
+    <Content Include="Content\Scripts\bootstrap.min.js" />
+    <Content Include="Content\Scripts\es-es\jquery.validate.extension.js" />
+    <Content Include="Content\Scripts\fr-fr\jquery.validate.extension.js" />
+    <Content Include="Content\FrontEnd\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\FrontEnd\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\FrontEnd\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\FrontEnd\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\FrontEnd\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\FrontEnd\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\FrontEnd\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\FrontEnd\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\FrontEnd\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Content\FrontEnd\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Content\FrontEnd\froala\bower.json" />
+    <Content Include="Content\FrontEnd\froala\composer.json" />
+    <Content Include="Content\FrontEnd\froala\froala_editor_2.8.4.zip" />
+    <Content Include="Content\FrontEnd\froala\html\file_s3_upload.php" />
+    <Content Include="Content\FrontEnd\froala\html\image_s3_upload.php" />
+    <Content Include="Content\FrontEnd\froala\package.json" />
+    <None Include="Content\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Content\Scripts\jquery-1.10.2.js" />
+    <Content Include="Content\Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Content\Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Content\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Content\Scripts\jquery.validate.js" />
+    <Content Include="Content\Scripts\jquery.validate.min.js" />
+    <Content Include="Content\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\Scripts\modernizr-2.6.2.js" />
+    <Content Include="Content\Scripts\multiLanguajeDemo.js" />
+    <Content Include="Content\Scripts\respond.js" />
+    <Content Include="Content\Scripts\respond.min.js" />
+    <None Include="Content\Scripts\_references.js" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\Styles\bootstrap.css" />
+    <Content Include="Content\Styles\bootstrap.min.css" />
+    <Content Include="Content\Styles\Site.css" />
+    <Content Include="Content\tagit\css\jquery.tagit.css" />
+    <Content Include="Content\tagit\css\tagit.ui-zendesk.css" />
+    <Content Include="Content\tagit\js\tag-it.js" />
+    <Content Include="Content\tagit\js\tag-it.min.js" />
+    <Content Include="Content\tagit\_static\examples.css" />
+    <Content Include="Content\tagit\_static\master.css" />
+    <Content Include="Content\tagit\_static\reset.css" />
+    <Content Include="Content\tagit\_static\screenshot.png" />
+    <Content Include="Content\tagit\_static\subpage.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="Content\vis.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\add.png" />
+    <Content Include="Images\add_icon.png" />
+    <Content Include="Images\anchor_tag.png" />
+    <Content Include="Images\anthony.png" />
+    <Content Include="Images\bell_icon.png" />
+    <Content Include="Images\default-thumbnail.jpg" />
+    <Content Include="Images\export.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\farzeen.png" />
+    <Content Include="Images\googleplus.png" />
+    <Content Include="Images\happy_times.png" />
+    <Content Include="Images\ian_mclan.png" />
+    <Content Include="Images\info_icon.png" />
+    <Content Include="Images\john_hum.png" />
+    <Content Include="Images\john_snow.png" />
+    <Content Include="Images\linkedin.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\longarrow_icon.png" />
+    <Content Include="Images\m1.png" />
+    <Content Include="Images\m2.png" />
+    <Content Include="Images\m3.png" />
+    <Content Include="Images\m3_n4.png" />
+    <Content Include="Images\m4.png" />
+    <Content Include="Images\mini_map.png" />
+    <Content Include="Images\moment_img.png" />
+    <Content Include="Images\n4.png" />
+    <Content Include="Images\plus_icon.png" />
+    <Content Include="Images\plus_sign.png" />
+    <Content Include="Images\profile_pic.png" />
+    <Content Include="Images\rachel_green.png" />
+    <Content Include="Images\search_icon.png" />
+    <Content Include="Images\small_logo.png" />
+    <Content Include="Images\stop_icon.png" />
+    <Content Include="Images\tom_hardy.png" />
+    <Content Include="Images\tree_view.png" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\Types\add_audio.png" />
+    <Content Include="Images\Types\add_image.png" />
+    <Content Include="Images\Types\add_text.png" />
+    <Content Include="Images\Types\add_video.png" />
+    <Content Include="Images\view.png" />
+    <Content Include="Images\view_icon.png" />
+    <Content Include="Images\zoom_icon.png" />
+    <Content Include="Images\zoom_out_icon.png" />
+    <Content Include="Model.EF\Moments.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Moments.edmx</DependentUpon>
+      <LastGenOutput>Moments.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model.EF\Moments.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Moments.edmx</DependentUpon>
+      <LastGenOutput>Moments.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Model.EF\Moments.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Moments.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model.EF\Moments.edmx.diagram">
+      <DependentUpon>Moments.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\dist\css\adminlte.css.map" />
+    <Content Include="Content\dist\css\adminlte.min.css.map" />
+    <Content Include="Content\plugins\input-mask\phone-codes\phone-be.json" />
+    <Content Include="Content\plugins\input-mask\phone-codes\phone-codes.json" />
+    <Content Include="Content\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
+    <None Include="Properties\PublishProfiles\Moment.pubxml" />
+    <None Include="Properties\PublishProfiles\Moments.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\custom.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\network.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\vis.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\Registration.cshtml" />
+    <Content Include="Views\SuperAdmin\Customer.cshtml" />
+    <Content Include="Views\SuperAdmin\GetCustomersList.cshtml" />
+    <Content Include="Views\SuperAdmin\_ManageCustomer.cshtml" />
+    <Content Include="Views\SuperAdmin\_ManageGetCustomerList.cshtml" />
+    <Content Include="Views\SuperAdmin\Index.cshtml" />
+    <Content Include="Views\SuperAdmin\InvitedUsers.cshtml" />
+    <Content Include="Views\SuperAdmin\_ManageInvitedUsers.cshtml" />
+    <Content Include="Views\Login\RegisterUser.cshtml" />
+    <Content Include="Views\Moment\Index.cshtml" />
+    <Content Include="Views\Moment\CreateStory.cshtml" />
+    <Content Include="Views\Moment\CreateStory1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ApiController\" />
+    <Folder Include="App_Data\Stories\" />
+    <Folder Include="Content\FrontEnd\.well-known\pki-validation\" />
+    <Folder Include="Content\FrontEnd\cgi-bin\" />
+    <Folder Include="Content\FrontEnd\froala\css\style.css\" />
+    <Folder Include="Images\vis\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Texts\RError.es-es.resx" />
+    <EmbeddedResource Include="Content\Texts\RError.fr-fr.resx" />
+    <EmbeddedResource Include="Content\Texts\RError.resx" />
+    <EmbeddedResource Include="Content\Texts\RGlobal.es-es.resx" />
+    <EmbeddedResource Include="Content\Texts\RGlobal.fr-fr.resx" />
+    <EmbeddedResource Include="Content\Texts\RGlobal.resx" />
+    <EmbeddedResource Include="Content\Texts\RHome.es-es.resx" />
+    <EmbeddedResource Include="Content\Texts\RHome.fr-fr.resx" />
+    <EmbeddedResource Include="Content\Texts\RHome.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>38900</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:38900/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

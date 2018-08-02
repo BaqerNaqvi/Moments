@@ -1,0 +1,71 @@
+﻿@model  Moments.ViewModels.SuperAdminViewModel
+<div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">ManageCustomersList</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="Customers" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>SerialNo</th>
+                                <th>UserName</th>
+                                <th>Password</th>
+                                <th>CustomerName</th>
+                                <th>Status</th>
+                                <th>Block</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.GetAllUsers != null)
+                            {
+                                int count = 1;
+                                foreach (var loop in Model.GetAllUsers)
+                                {
+                                    var IsBlockedChecked = "";
+                                    if (loop.IsBlocked == true)
+                                    {
+                                        IsBlockedChecked = "checked";
+                                    }
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@loop.UserName</td>
+                                        <td>@loop.Password</td>
+                                        <td>@loop.FirstName @loop.MiddleName @loop.LastName</td>
+                                        <td class="IsActive">
+                                            @if (loop.IsActive == true)
+                                            {
+                                                <span>Activate</span>
+                                            }
+                                            else
+                                            {
+                                                <span>Deactivate</span>
+                                            }
+                                        </td>
+                                        <td><input type="checkbox" customerprofileid="@loop.Id" class="IsBlockedChecked" id="IsBlockedChecked" @IsBlockedChecked></td>
+                                    </tr>
+                                    count++;
+                                }
+                            }
+                        </tbody>
+                        @*<tfoot>
+                            <tr>
+                                <th colspan="10" class="SuccessMessage" style="color:green;"></th>
+                            </tr>
+                        </tfoot>*@
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#Customers').DataTable();
+    });
+   </script>

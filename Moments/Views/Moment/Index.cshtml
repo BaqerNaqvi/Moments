@@ -1,0 +1,619 @@
+﻿@model  Moments.ViewModels.MomentViewModel
+@{
+    ViewBag.Title = "Index";
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon">
+    @*<link rel="stylesheet" href="~/Content/bower_components/font-awesome/css/font-awesome.min.css">*@
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    @*<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>*@
+    @*<script src="~/Content/bower_components/jquery/dist/jquery.min.js"></script>*@
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <title>Moments - Home Page</title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/FrontEnd/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/FrontEnd/css/style.css" rel="stylesheet">
+    <link href="~/Content/toastr.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <style>
+        .file-upload {
+            display: block;
+            text-align: center;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 12px;
+        }
+
+            .file-upload .file-select {
+                display: block;
+                border: 2px solid #dce4ec;
+                color: #34495e;
+                cursor: pointer;
+                height: 34px;
+                line-height: 34px;
+                text-align: left;
+                background: #FFFFFF;
+                overflow: hidden;
+                position: relative;
+            }
+
+                .file-upload .file-select .file-select-button {
+                    background: #dce4ec;
+                    padding: 0 10px;
+                    display: inline-block;
+                    height: 34px;
+                    line-height: 34px;
+                }
+
+                .file-upload .file-select .file-select-name {
+                    line-height: 34px;
+                    display: inline-block;
+                    padding: 0 10px;
+                }
+
+                .file-upload .file-select:hover {
+                    border-color: #34495e;
+                    transition: all .2s ease-in-out;
+                    -moz-transition: all .2s ease-in-out;
+                    -webkit-transition: all .2s ease-in-out;
+                    -o-transition: all .2s ease-in-out;
+                }
+
+                    .file-upload .file-select:hover .file-select-button {
+                        background: #34495e;
+                        color: #FFFFFF;
+                        transition: all .2s ease-in-out;
+                        -moz-transition: all .2s ease-in-out;
+                        -webkit-transition: all .2s ease-in-out;
+                        -o-transition: all .2s ease-in-out;
+                    }
+
+            .file-upload.active .file-select {
+                border-color: #3fa46a;
+                transition: all .2s ease-in-out;
+                -moz-transition: all .2s ease-in-out;
+                -webkit-transition: all .2s ease-in-out;
+                -o-transition: all .2s ease-in-out;
+            }
+
+                .file-upload.active .file-select .file-select-button {
+                    background: #3fa46a;
+                    color: #FFFFFF;
+                    transition: all .2s ease-in-out;
+                    -moz-transition: all .2s ease-in-out;
+                    -webkit-transition: all .2s ease-in-out;
+                    -o-transition: all .2s ease-in-out;
+                }
+
+            .file-upload .file-select input[type=file] {
+                z-index: 100;
+                cursor: pointer;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                filter: alpha(opacity=0);
+            }
+
+            .file-upload .file-select.file-select-disabled {
+                opacity: 0.65;
+            }
+
+                .file-upload .file-select.file-select-disabled:hover {
+                    cursor: default;
+                    display: block;
+                    border: 2px solid #dce4ec;
+                    color: #34495e;
+                    cursor: pointer;
+                    height: 34px;
+                    line-height: 34px;
+                    margin-top: 5px;
+                    text-align: left;
+                    background: #FFFFFF;
+                    overflow: hidden;
+                    position: relative;
+                }
+
+                    .file-upload .file-select.file-select-disabled:hover .file-select-button {
+                        background: #dce4ec;
+                        color: #666666;
+                        padding: 0 10px;
+                        display: inline-block;
+                        height: 34px;
+                        line-height: 34px;
+                    }
+
+                    .file-upload .file-select.file-select-disabled:hover .file-select-name {
+                        line-height: 34px;
+                        display: inline-block;
+                        padding: 0 10px;
+                    }
+
+        input, textarea, select {
+            max-width: 100% !important;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-4 m_logo text-left">
+                        <a href="#" class="navbar-left"><img src="~/Content/FrontEnd/images/logo.png"></a>
+                    </div>
+                    <div class="col-md-8 m_header_toolbar text-right">
+                        <input style="border-radius: 2px;" type="text" id="searchBar"/>
+                        <a href="#" class="search_icon navbar-left" onclick="searchStory()"><img src="~/Content/FrontEnd/images/search_icon.png"></a>
+                        <a href="#" class="notif_icon navbar-left"><img src="~/Content/FrontEnd/images/bell_icon.png"></a>  @*<span></span>*@
+                        @if (Convert.ToString(Session["UserFullName"]) == "")
+                        {
+                            <a href="/Login/Login?RequestUrl=Stories" class="search_icon navbar-left"><img src="~/Content/FrontEnd/images/profile_pic.png">Login</a>
+                            <a href="#" class="invite_friends navbar-left" data-toggle="modal" data-target="#myModalNotAllowed">Invite Friends</a>
+                        }
+                        else
+                        {
+                            <a href="#" class="search_icon navbar-left" data-toggle="modal" data-target="#myModal3"><img src="~/Content/FrontEnd/images/profile_pic.png">@Convert.ToString(Session["UserFullName"])</a>
+                            <a href="#" class="invite_friends navbar-left" data-toggle="modal" data-target="#myModal1">Invite Friends</a>
+                        }
+
+                        @*<a href="#" class="search_icon navbar-left" data-toggle="modal" data-target="#myModal2"><img src="~/Content/FrontEnd/images/profile_pic.png">Login</a>*@
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                @if (Convert.ToString(Session["UserFullName"]) == "")
+                {
+                    <div class="create_new_story text-center" style="pointer-events: none;">
+                        <a href="/Moment/CreateStory">
+                            <img src="~/Content/FrontEnd/images/plus_icon.png">
+                            <h3>Create New Story</h3>
+                        </a>
+                    </div>
+                }
+                else
+                {
+                    <div class="create_new_story text-center">
+                        <a href="#" data-toggle="modal" data-target="#StoryDetails">
+                            <img src="~/Content/FrontEnd/images/plus_icon.png">
+                            <h3>Create New Story</h3>
+                        </a>
+                    </div>
+                }
+
+                <div class="all_stories">
+                    <h4>All Stories</h4>
+                    <div class="border_line"></div>
+                    <div id="storyMainDiv">
+                        @if (Model.GetAllStoriesList != null)
+                        {
+                            int count = 1;
+                            foreach (var loop in Model.GetAllStoriesList)
+                            {
+                                <div class="story col-md-4" storyid="@loop.Id">
+                                    <a href="/Moment/CreateStory?StoryId=@loop.Id"><img src="@loop.Path"></a>
+                                    <div class="story_info">
+                                        <p class="no_of_moments"><span>@loop.Name</span></p>
+                                        <p class="no_of_moments">Moments: <span>@loop.NodesCount</span></p>
+                                        <a href="#"><img class="info_icon" src="~/Content/FrontEnd/images/info_icon.png"></a>
+                                    </div>
+                                </div>
+                                count++;
+                            }
+                        }
+                    </div>                 
+                </div>
+
+
+
+
+            </div>
+            <div class="col-md-3 text-left featured_stories">
+                <h4>Featured Stories</h4>
+                <div class="border_line"></div>
+               
+                    @if (Model.GetAllStoriesList != null)
+                    {
+                        int count = 1;
+                        foreach (var loop in Model.GetAllStoriesList.Where(x => x.IsFeatured == true).ToList())
+                        {
+                            <div class="story col-md-12">
+                                <img src="@loop.Path">
+                                <div class="story_info">
+                                    @*<p class="author_name">@loop.FirstName @loop.LastName</p>*@
+                                    <p class="no_of_moments"><span>@loop.Name</span></p>
+                                    <p class="no_of_moments">Moments: <span>@loop.NodesCount</span></p>
+                                    <a href="#"><img class="info_icon" src="~/Content/FrontEnd/images/info_icon.png"></a>
+                                </div>
+                            </div>
+                            count++;
+                        }
+                    }
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade invite_modal" id="myModal1" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                    </div>
+                    <div class="modal-body modal-invite">
+                        <form>
+                            <div class="InviteUser" Id="InviteUser">
+                                @*<div class="input-group">
+                                        <input id="email" type="email" class="form-control" name="email" placeholder="Email">
+                                    </div>*@
+                                <div style="padding:15px;" class="input-group dynamicemails"><input style="float:left;" type="text" class="NewTag form-control" placeholder="Enter Email" /><i class="fa fa-plus addEmail" aria-hidden="true" style="float: left;padding-left: 18px;padding-top: 5px;cursor: pointer;font-size: 24px;color: #3c8dbc;"></i><i class="fa fa-trash-o removeTag" aria-hidden="true" style="float: left;padding-left: 18px;cursor: pointer;padding-top: 5px;font-size: 24px;color: red;"></i><br /></div>
+                                <span style="color:red;" id="ErrorMessageTag"></span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default SendEmails" id="SendEmails">Send Emails</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade invite_modal" id="StoryDetails" style="left: 0px !important;">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Create Story</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                    </div>
+                    <div class="modal-body modal-invite">
+                        <form action="/Moment/AddStory" method="POST" id="AddStoryInitial">
+                            <div class="col-md-12">
+                                <img style="width: 200px;height: 200px;" src="~/Images/default-thumbnail.jpg" id="defaultStoryImg" />
+                            </div>
+                            <div class="col-md-12">
+                                <input style="margin-bottom: 10px;margin-top: 10px;" type="text" id="StoryName" name="Name" class="form-control" placeholder="Enter Story Name" />
+                            </div>
+                            <div class="col-md-12">
+                                <input type="file" name="file" class="form-control" id="Image" />
+                                <textarea style="display:none;" class="hidden" cols="20" id="DocBase64Image" name="Path" rows="2"></textarea>
+                            </div>
+                           
+                            <div class="col-md-12" style="margin-bottom:10px"> <span id="ErrorMessageStoryAdd" style="color:red;"></span></div>
+                            <div class="col-md-12"><button type="button" id="SubmitAddStory" class="btn btn-success">Submit</button></div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="container">
+            <!-- Modal -->
+            <div class="modal fade invite_modal" id="myModal2" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                        </div>
+                        <div class="modal-body modal-invite">
+                            @using (Ajax.BeginForm("LoginUser", "Login", new AjaxOptions { HttpMethod = "POST", OnSuccess = "onLoginSuccess(data)", OnFailure = "AjaxFailure(xhr,status,error)" }, new { @Id = "LoginUser" }))
+                            {
+                                <div class="form-group has-feedback">
+                                    @Html.TextBoxFor(model => model.Login.Email, new { @type = "email", @class = "form-control input-height", @placeholder = "Enter Email", @Id = "UserName" })
+                                    @Html.ValidationMessageFor(model => model.Login.Email, String.Empty, new { @class = "Validation-color" })
+                                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    @Html.TextBoxFor(model => model.Login.Password, new { @type = "password", @class = "form-control input-height", @placeholder = "Enter Password", @Id = "Password" })
+                                    @Html.ValidationMessageFor(model => model.Login.Password, String.Empty, new { @class = "Validation-color" })
+                                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-xs-4">
+                                        <button type="button" id="SubmitButton" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-xs-12 col-md-12">
+                                        <span style="color:red;" id="errorLogin"></span>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="container">
+                <!-- Modal -->
+                <div class="modal fade invite_modal" id="myModal3" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                            </div>
+                            <div class="modal-body modal-invite">
+                                <form action="/Login/Logout?RequestUrl=Stories">
+                                    <input id="account" type="hidden" name="RequestUrl" value="Stories" />
+                                    <div class="input-group">
+                                        <input id="submit" type="submit" class="form-control" value="Logout">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <footer class="my-5 pt-5 text-muted text-center text-small">
+                    <hr />
+                    <p>Moments - Copy Rights 2018</p>
+                </footer>
+            </div>
+            <!-- Bootstrap core JavaScript
+            ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            @*<script src="../../../../assets/js/vendor/popper.min.js"></script>*@
+            <script src="~/Content/FrontEnd/bootstrap/js/bootstrap.min.js"></script>
+            <script src="~/Scripts/toastr.js"></script>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        $("#SubmitAddStory").click(function () {
+            $("#loadingScreen").css("display", "block");
+            if ($('#StoryName').val() != "" && $('#Image').val() != "") {
+                toastr.success("Creating Story...");
+                $('#AddStoryInitial').submit();
+            }
+            else {
+                toastr.error("Please add data");
+                $("#ErrorMessageStoryAdd").text("Please add data.");
+            }
+            setTimeout(function () { $('#loadingScreen').css({ 'display': 'none' }); }, 3000)
+        });
+        $("#SubmitButton").click(function () {
+            $("#loadingScreen").css("display", "block");
+            $('#LoginUser').submit();
+            setTimeout(function () { $('#loadingScreen').css({ 'display': 'none' }); }, 3000)
+        });
+        $("#IsFeatured").click(function () {
+            if ($('#IsFeatured').is(':checked')) {
+                $('#IsFeatured').val(true);
+            }
+            else {
+                $('#IsFeatured').val(false);
+            }
+            setTimeout(function () { $('#loadingScreen').css({ 'display': 'none' }); }, 3000)
+        });
+        function encodeImageFileAsURL1(imagePath, uploadImage) {
+
+            var filesSelected1 = document.getElementById(imagePath).files;
+
+            if (filesSelected1.length > 0) {
+                var fileToLoad = filesSelected1[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function (fileLoadedEvent1) {
+                    var srcData1 = fileLoadedEvent1.target.result; // <--- data: base64
+                    document.getElementById(uploadImage).value = srcData1;
+                }
+                fileReader.readAsDataURL(fileToLoad);
+            }
+        }
+        function readURL1(input) {
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var check = e.target.result;
+                    //$('.doc-image-path').attr('src', "");
+                    //$('.doc-image-path').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $('#Image').change(function () {
+            //1024 * 1024 * 1 for 1 MB
+            if (this.files[0].size < 1024 * 1024 * 1) {
+                readURL1(this);
+                encodeImageFileAsURL1("Image", "DocBase64Image");
+            } else {
+                $('#Image').val('');
+                $('.alert-danger').css({ 'display': 'block' });
+                $('#ErrorMessageLayout').text('');
+                $('#ErrorMessageLayout').text('File Size Must Less Than 1 MB.');
+                setTimeout(function () { $('.alert-danger').css({ 'display': 'none' }); $('#ErrorMessageLayout').text(''); }, 2000)
+            }
+        });
+
+        //$('#registeraccount').click(function () {
+        //    var lang = MultiLanguageDemo.Cookies.getCookie("LangForMultiLanguageDemo");
+        //    var ControllerTempName = "Login";
+        //    var MethodTempName = "Registration";
+        //    window.location.href = '/' + ControllerTempName + '/' + MethodTempName;
+        //});
+        $('.InviteUser').on('click', '.addEmail', function () {
+            if ($(this).parent().find('.NewTag').val() != "") {
+                $('.addEmail').remove();
+                $('.InviteUser').append('<div style="padding:15px;" class="input-group dynamicemails"><input style="float: left;" type="text" class="NewTag form-control" placeholder="Enter New Tag" /><i class="fa fa-plus addEmail" aria-hidden="true" style="float: left;padding-left: 18px;padding-top: 5px;cursor: pointer;font-size: 24px;color: #3c8dbc;"></i><i class="fa fa-trash-o removeTag" aria-hidden="true" style="float: left;padding-left: 18px;cursor: pointer;padding-top: 5px;font-size: 24px;color: red;"></i><br/></div>');
+            } else {
+                $('#ErrorMessageTag').text('Fill The Empty Email');
+                setTimeout(function () { $('#ErrorMessageTag').text(''); }, 2000);
+            }
+        });
+        $('.InviteUser').on('click', '.removeTag', function () {
+            if ($(this).parent().find('.addEmail').length < 1) {
+                $(this).parent().remove();
+            } else {
+                $('#ErrorMessageTag').text('You Cannot Delete This Email Field.');
+                setTimeout(function () { $('#ErrorMessageTag').text(''); }, 2000);
+            }
+        });
+        $("#SendEmails").click(function () {
+            var EmailArray = new Array();
+            $('.NewTag').each(function (index) {
+                if ($(this).val() != "") {
+                    EmailArray.push({ Email: $(this).val() });
+                }
+            });
+
+            if (EmailArray.length == 0)
+            {
+                toastr.error("Please add email address");
+                return false;
+            }
+
+            toastr.success("Sending email...");
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("SendEmailsToUsers", "SuperAdmin")',
+                data: { PromotionEmail: EmailArray },
+                success: function (data) {
+                    $('.InviteUser').html('');
+                    $('.InviteUser').append('<div style="padding:15px;" class="input-group dynamicemails"><input style="float: left;" type="text" class="NewTag form-control" placeholder="Enter New Tag" /><i class="fa fa-plus addEmail" aria-hidden="true" style="float: left;padding-left: 18px;padding-top: 5px;cursor: pointer;font-size: 24px;color: #3c8dbc;"></i><i class="fa fa-trash-o removeTag" aria-hidden="true" style="float: left;padding-left: 18px;cursor: pointer;padding-top: 5px;font-size: 24px;color: red;"></i><br/></div>');
+                    $('#myModal1').modal('hide');
+
+                    $('.alert-success').css({ 'display': 'block' });
+                    $('#SuccessMessage').text('');
+                    $('#SuccessMessage').text('Email Successfully Sent.');
+                    setTimeout(function () { $('.alert-success').css({ 'display': 'none' }); $('#SuccessMessage').text(''); }, 2000)
+                    toastr.success("Sending Sent!");
+
+                    //$("#ManageGetVendorList").html("");
+                    //$("#ManageGetVendorList").html(data);
+                },
+                error: function (res) {
+                    toastr.error("Sending email failed!");
+                    //AjaxFailure(res);
+                }
+            });
+        });
+    });
+
+    function onLoginSuccess(data) {
+        if (data == "SuccessfullLogin") {
+            @*$.ajax({
+                    type: "GET",
+                    url: '@Url.Action("GetSelectedPortalsList", "SuperAdmin", new { area = "SuperAdmin" })',
+                    success: function (data) {
+                        console.log(data);
+                        for (var i = 0; i < data.length; i++) {
+                            $('#portalselectlist').append('<li role="presentation"><a role="menuitem" tabindex="-1" class="changePortal" portalname="' + data[i].Name + '" portalid="' + data[i].Id + '">' + data[i].Name + '</a></li>');
+                            if (i != data.length - 1) {
+                                $('#portalselectlist').append('<li role="presentation" class="divider"></li>');
+                            }
+                        }
+                    },
+                    error: function (res) {
+                        //AjaxFailure(res);
+                    }
+                });*@
+            var ControllerTempName = "SuperAdmin";
+            var MethodTempName = "Index";
+            if ('@Session["RequestUrl"]' == "Stories") {
+                window.location.href = '/Moment/Index';
+            } else {
+                window.location.href = '/' + ControllerTempName + '/' + MethodTempName;
+            }
+
+        } else {
+            $('#errorLogin').text("Invalid Email or Password.");
+            setTimeout(function () { $('#errorLogin').text(""); }, 5000);
+        }
+    }
+</script>
+<script>
+
+    $("#Image").change(function () {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#defaultStoryImg').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+
+function searchStory() {
+        var val = $('#searchBar').val();
+
+     
+        toastr.success("Searching...");
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("SearchStory", "Moment")',
+            data: { searchStr: val },
+            success: function (data) {
+                var rawHtml = "";
+                if (data != false && data.length > 0) {
+                    for (var i = 0; i < data.length; i++) {
+                        var htmll = "<div class='story col-md-4' storyid='" + data[i].Id + "'>" +
+                                    "<a href='/Moment/CreateStory?StoryId=" + data[i].Id + "'><img src='" + data[i].Path + "'></a>" +
+                                "<div class='story_info'>"+
+                                    "<p class='no_of_moments'><span>" + data[i].Name + "</span></p>" +
+                                    "<p class='no_of_moments'>Moments: <span>" + data[i].NodesCount + "</span></p>" +
+                                     "<a href='#'><img class='info_icon' src='~/Content/FrontEnd/images/info_icon.png'></a>" +
+                                "</div>"+
+                            "</div>";
+                        rawHtml = rawHtml + htmll;
+                    }
+                }
+
+                $('#storyMainDiv').html(rawHtml);
+            },
+            error: function (res) {
+                toastr.error("Failed to run search!");
+            }
+        });
+
+    }
+</script>

@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon">
+    
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
+  <script type="text/javascript" src="js/custom.js" language="javascript">
+  </script>
+  
+  <!-- Include Editor style. -->
+<link href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.4/css/froala_editor.min.css' rel='stylesheet' type='text/css' />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.4/css/froala_style.min.css' rel='stylesheet' type='text/css' />
+
+<link href='froala/css/froala_editor.min.css' rel='stylesheet' type='text/css' />
+<link href='froala/css/froala_style.min.css' rel='stylesheet' type='text/css' />
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+ 
+<!-- Include JS file. -->
+<script type='text/javascript' src='froala/js/froala_editor.min.js'></script>
+<script type='text/javascript' src='froala/js/plugins/font_family.min.js'></script>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic&subset=latin,vietnamese,latin-ext,cyrillic,cyrillic-ext,greek-ext,greek' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
+
+<script>
+  $(function() {
+    $('textarea.froala-editor').froalaEditor({
+      fontFamily: {
+        "Roboto,sans-serif": 'Roboto',
+        "Oswald,sans-serif": 'Oswald',
+        "Montserrat,sans-serif": 'Montserrat',
+        "'Open Sans Condensed',sans-serif": 'Open Sans Condensed'
+      },
+      fontFamilySelection: true
+    })
+  });
+</script>
+
+
+
+<script type="text/javascript">
+        function readURL(input) {
+						$('.modal').fadeOut();
+			$('.modal-backdrop').fadeOut();
+			$('body').removeClass('modal-open');
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.moment_image1').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+			$('.moment_image1').show();
+			$('.m1_add_icon').hide();
+			$('.moment_1 .moment_text').show();
+			$('.moment_1').append('<button type="button" class="btn btn-info btn-lg add_icon m2_add_icon" data-toggle="modal" data-target="#myModal2"><img src="images/add_icon.png"></button><button type="button" class="btn btn-info btn-lg add_icon narration1_add_icon" data-toggle="modal" data-target="#myModal6"><img src="images/add_icon.png"></button>');
+			
+			                            
+        }
+    </script>
+
+
+
+<script type="text/javascript">
+	
+        function readURL2(input) {
+			$('.modal').fadeOut();
+			$('.modal-backdrop').fadeOut();
+			$('body').removeClass('modal-open');
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.moment_image2').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+			$('.moment_image2').show();
+			$('.m2_add_icon').hide();
+			$('.moment_2 .moment_text').show();
+			$('.moment_2').append('<button type="button" class="btn btn-info btn-lg add_icon m3_add_icon" data-toggle="modal" data-target="#myModal3"><img src="images/add_icon.png"></button>');
+			
+			                            
+        }
+
+    </script>
+
+<script type="text/javascript">
+	
+        function readURL3(input) {
+			$('.modal').fadeOut();
+			$('.modal-backdrop').fadeOut();
+			$('body').removeClass('modal-open');
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.moment_image3').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+			$('.moment_image3').show();
+			$('.m3_add_icon').hide();
+			$('.moment_3 .moment_text').show();
+			$('.moment_3').append('<button type="button" class="btn btn-info btn-lg add_icon m4_add_icon" data-toggle="modal" data-target="#myModal4"><img src="images/add_icon.png"></button>');
+			
+			                            
+        }
+
+    </script>
+<script type="text/javascript">
+	
+        function readURL4(input) {
+			$('.modal').fadeOut();
+			$('.modal-backdrop').fadeOut();
+			$('body').removeClass('modal-open');
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.moment_image4').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+			$('.moment_image4').show();
+			$('.m4_add_icon').hide();
+			$('.moment_4 .moment_text').show();
+			$('.moment_4').append('<button type="button" class="btn btn-info btn-lg add_icon m5_add_icon" data-toggle="modal" data-target="#myModal5"><img src="images/add_icon.png"></button>');
+			
+			                            
+        }
+
+    </script>
+<script type="text/javascript">
+	
+        function readURL5(input) {
+			$('.modal').fadeOut();
+			$('.modal-backdrop').fadeOut();
+			$('body').removeClass('modal-open');
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.moment_image5').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+			$('.moment_image5').show();
+			$('.m5_add_icon').hide();
+			$('.moment_5 .moment_text').show();
+			$('.moment_5').append('<button type="button" class="btn btn-info btn-lg add_icon m5_add_icon">END</button>');
+			
+			                            
+        }
+
+    </script>
+  
+  <script type="text/javascript">
+	
+        function readURL6(input) {
+			$('.modal').fadeOut();
+			$('.modal-backdrop').fadeOut();
+			$('body').removeClass('modal-open');
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.narration_image1').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+			$('.narration_image1').show();
+			$('.narration1_add_icon').hide();
+			$('.narration_1 .narration_text').show();
+			$('.narration_1').append('<button type="button" class="btn btn-info btn-lg add_icon m5_add_icon">END</button>');
+			
+			                            
+        }
+
+    </script>
+  
+
+    <title>Create a Moment</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+  </head>
+
+  <body class="bg_moment">
+      <header class="moment_header">
+
+    <div class="container">
+
+      <div class="row">
+      		<div class="col-md-12">
+            	<div class="col-md-1 m_logo text-left">
+            		<a href="index.html" class="navbar-left"><img src="images/small_logo.png"></a>
+                </div>
+            	<div class="col-md-4 header_top_items text-left">
+            		<a href="#" class="navbar-left">+New Story</a>
+                    <a href="#" class="navbar-left">Explore</a>
+                    <a href="#" class="navbar-left">Search</a>
+                </div>
+                
+              </div>
+      	   </div>
+      </div>
+      </header>
+      <header class="zoom_icons_header">
+
+    <div class="container">
+
+      <div class="row">
+      		<div class="col-md-12">
+            	<div class="col-md-4 zoom_icons text-left">
+            		<a href="#" class="navbar-left zoom_in"><img src="images/zoom_icon.png"></a>
+                    <a href="#" class="navbar-left zoom_out"><img src="images/zoom_out_icon.png"></a>
+                    <p class="percent_left"></p>
+                </div>
+            	<div class="col-md-4 moment_main_text text-center">
+            		<h3>Happy Moments</h3>
+                    <div class="moment_paraph_center">
+                        <p>Cords:<span>10</span></p>
+                        <p>Momemts: <span>4</span></p>
+                        <p>Owner:<span class="no_border">Ahmad</span></p>
+                    </div>
+                </div>
+                
+              </div>
+      	   </div>
+      </div>
+      </header>
+      
+      
+     <div class="container">
+      	<div class="row">
+            <div class="col-md-12 m_tool_container">
+    				<div class="narration col-md-2">
+                    	<p>N1</p>
+                        <div class="anchor_tag">
+                        	<img src="images/anchor_tag.png">
+                            <button type="button" class="btn btn-info btn-lg add_icon m1_add_icon" data-toggle="modal" data-target="#myModal">
+                            	<img src="images/add_icon.png">
+                            </button>
+                        </div>
+                        <div class="moment_1">
+                                <div class="moment_text">M1</div>
+                                <div class="moment_image">
+                                    <img src="#" class="moment_image1"/>
+                                </div>
+                                 <div class="moment1_text">
+                                    
+                                </div>
+                         </div>
+                         <div class="moment_2">
+                                <div class="moment_text">M2</div>
+                                <div class="moment_image">
+                                    <img src="#" class="moment_image2"/>
+                                </div>
+                                 <div class="moment2_text">
+                                    
+                                </div>
+                         </div>
+                         <div class="moment_3">
+                                <div class="moment_text">M3</div>
+                                <div class="moment_image">
+                                    <img src="#" class="moment_image3"/>
+                                </div>
+                                 <div class="moment3_text">
+                                    
+                                </div>
+                         </div>
+						<div class="moment_4">
+                                <div class="moment_text">M4</div>
+                                <div class="moment_image">
+                                    <img src="#" class="moment_image4"/>
+                                </div>
+                                 <div class="moment4_text">
+                                    
+                                </div>
+                         </div>
+                        <div class="moment_5">
+                                <div class="moment_text">M5</div>
+                                <div class="moment_image">
+                                    <img src="#" class="moment_image5"/>
+                                </div>
+                                 <div class="moment5_text">
+                                    
+                                </div>
+                         </div>
+                        
+                        
+                        
+                    </div>
+                    <div class="narration col-md-2">
+                    	<p>N2</p>
+                        <div class="narration_1">
+                                <div class="narration_text">N2</div>
+                                <div class="narration_image">
+                                    <img src="#" class="narration_image1"/>
+                                </div>
+                                 <div class="narration1_text">
+                                    
+                                </div>
+                         </div>
+                        
+                        
+                    </div>
+                    <div class="narration col-md-2">
+                    	<p>N3</p>
+                    </div>
+                    <div class="narration col-md-2">
+                    	<p>N4</p>
+                    </div>
+                    <div class="narration col-md-2">
+                    	<p>N5</p>
+                    </div>
+                    <div class="narration col-md-2">
+                    	<p>N6</p>
+                    </div>
+            </div>
+        
+      </div>
+      
+      <div class="col-md-6 createMoment">
+      		<h1>Create Moment</h1>
+      		<textarea class="froala-editor"></textarea>
+            <button class="submit_text">submit</button>
+      </div>
+      <div class="col-md-6 createNarration">
+      		<h1>Create Naration</h1>
+      		<textarea class="froala-editor"></textarea>
+            <button class="submit_text">submit</button>
+      </div>
+      <div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <a href="#" class="add_image">Add Image</a>
+          <a href="#" class="add_video">Add Video</a>
+          <a href="#" class="add_text">Add Text</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+      <div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <a href="#" class="add_image_2">Add Image</a>
+          <a href="#" class="add_video_2">Add Video</a>
+          <a href="#" class="add_text_2">Add Text</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+      <div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <a href="#" class="add_image_3">Add Image</a>
+          <a href="#" class="add_video_3">Add Video</a>
+          <a href="#" class="add_text_3">Add Text</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+	  <div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal4" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <a href="#" class="add_image_4">Add Image</a>
+          <a href="#" class="add_video_4">Add Video</a>
+          <a href="#" class="add_text_4">Add Text</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+      <div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal5" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <a href="#" class="add_image_5">Add Image</a>
+          <a href="#" class="add_video_5">Add Video</a>
+          <a href="#" class="add_text_5">Add Text</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+	  <div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal6" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <a href="#" class="add_image_6">Add Image</a>
+          <a href="#" class="add_video_6">Add Video</a>
+          <a href="#" class="add_text_6">Add Text</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+      
+      <div class="get_froala">
+      		
+      </div>
+      
+      
+      <input type="file" class="imgupload"  accept="image/gif, image/jpeg, image/png" onChange="readURL(this)" style="display:none"/> 
+      <input type="file" class="imgupload2"  accept="image/gif, image/jpeg, image/png" onChange="readURL2(this)" style="display:none"/> 
+      <input type="file" class="imgupload3"  accept="image/gif, image/jpeg, image/png" onChange="readURL3(this)" style="display:none"/> 
+	  <input type="file" class="imgupload4"  accept="image/gif, image/jpeg, image/png" onChange="readURL4(this)" style="display:none"/>
+      <input type="file" class="imgupload5"  accept="image/gif, image/jpeg, image/png" onChange="readURL5(this)" style="display:none"/>
+      <input type="file" class="imgupload6"  accept="image/gif, image/jpeg, image/png" onChange="readURL6(this)" style="display:none"/>
+      
+      
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+       
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

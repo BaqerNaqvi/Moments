@@ -1,0 +1,618 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AboutDetails" xml:space="preserve">
+    <value>Details about your company or personal information</value>
+  </data>
+  <data name="AboutMessage" xml:space="preserve">
+    <value>Your company or personal information</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Activate" xml:space="preserve">
+    <value>Activate</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="AddCategoryAttributes" xml:space="preserve">
+    <value>Add Category Attributes</value>
+  </data>
+  <data name="AddProductAttributes" xml:space="preserve">
+    <value>Add Product Attributes</value>
+  </data>
+  <data name="Ads" xml:space="preserve">
+    <value>Ads</value>
+  </data>
+  <data name="AdsFor" xml:space="preserve">
+    <value>Ads For *</value>
+  </data>
+  <data name="AdsType" xml:space="preserve">
+    <value>Ads Type *</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>Approve</value>
+  </data>
+  <data name="Attributes" xml:space="preserve">
+    <value>Attributes</value>
+  </data>
+  <data name="AttributeValues" xml:space="preserve">
+    <value>Attribute Values</value>
+  </data>
+  <data name="Block" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="BlockedCustomers" xml:space="preserve">
+    <value>Blocked Customers</value>
+  </data>
+  <data name="BlockedVendors" xml:space="preserve">
+    <value>Blocked Vendors</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="CategoryAttributesMappings" xml:space="preserve">
+    <value>Category Attributes Mappings</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="ContactEmail" xml:space="preserve">
+    <value>Contact Email</value>
+  </data>
+  <data name="ContactMessage" xml:space="preserve">
+    <value>Your contact information</value>
+  </data>
+  <data name="ContactMessageSendNok" xml:space="preserve">
+    <value>Your message has not been sent correctly. Please, try again.</value>
+  </data>
+  <data name="ContactMessageSendOk" xml:space="preserve">
+    <value>Your message has been sent correctly. Thanks.</value>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Contact Name</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that enables a clean separation of concerns and gives you full control over markup for enjoyable, agile development.</value>
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>Customer Name</value>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="DateRange" xml:space="preserve">
+    <value>Date Range</value>
+  </data>
+  <data name="Deactivate" xml:space="preserve">
+    <value>Deactivate</value>
+  </data>
+  <data name="Decline" xml:space="preserve">
+    <value>Decline</value>
+  </data>
+  <data name="DeleteEndTag" xml:space="preserve">
+    <value>You Cannot Delete The End Tag.</value>
+  </data>
+  <data name="Delivery" xml:space="preserve">
+    <value>Delivery</value>
+  </data>
+  <data name="DeliveryDate" xml:space="preserve">
+    <value>Delivery Date</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DestinationAddress" xml:space="preserve">
+    <value>Destination Address</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EditAttributeValues" xml:space="preserve">
+    <value>Edit Attribute Values</value>
+  </data>
+  <data name="EditFilterValues" xml:space="preserve">
+    <value>Edit Filter Values</value>
+  </data>
+  <data name="Elzamat" xml:space="preserve">
+    <value>Elzamat In English</value>
+  </data>
+  <data name="EnterAttributeValues" xml:space="preserve">
+    <value>Enter Attribute Values</value>
+  </data>
+  <data name="EnterCategoryPlaceholder" xml:space="preserve">
+    <value>Enter Category</value>
+  </data>
+  <data name="EnterDescriptionPlaceholder" xml:space="preserve">
+    <value>Enter Description</value>
+  </data>
+  <data name="EnterFilterValues" xml:space="preserve">
+    <value>Enter Filter Values</value>
+  </data>
+  <data name="EnterImagePlaceholder" xml:space="preserve">
+    <value>Enter Image</value>
+  </data>
+  <data name="EnterNamePlaceholder" xml:space="preserve">
+    <value>Enter Name</value>
+  </data>
+  <data name="EnterNewTag" xml:space="preserve">
+    <value>Enter New Tag</value>
+  </data>
+  <data name="EnterPricePlaceholder" xml:space="preserve">
+    <value>Enter Price</value>
+  </data>
+  <data name="EnterQuantityPlaceholder" xml:space="preserve">
+    <value>Enter Quantity</value>
+  </data>
+  <data name="ErrorFileSize" xml:space="preserve">
+    <value>File Size Cannot Exceed From 1 MB</value>
+  </data>
+  <data name="Featured" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="FeaturedProduct" xml:space="preserve">
+    <value>Featured Product</value>
+  </data>
+  <data name="FeaturedVendor" xml:space="preserve">
+    <value>Featured Vendor</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>Filters</value>
+  </data>
+  <data name="FirstFillTheEmptyTag" xml:space="preserve">
+    <value>First Fill The Empty Tag.</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="ImageRequired" xml:space="preserve">
+    <value>Image *</value>
+  </data>
+  <data name="InActive" xml:space="preserve">
+    <value>In Active</value>
+  </data>
+  <data name="InsertNewTags" xml:space="preserve">
+    <value>Insert New Tags</value>
+  </data>
+  <data name="IsActive" xml:space="preserve">
+    <value>Is Active</value>
+  </data>
+  <data name="IsRentalVendor" xml:space="preserve">
+    <value>Is Rental Vendor</value>
+  </data>
+  <data name="IsSellerVendor" xml:space="preserve">
+    <value>Is Seller</value>
+  </data>
+  <data name="IsServiceProvider" xml:space="preserve">
+    <value>Is Service Provider</value>
+  </data>
+  <data name="IsToolVendor" xml:space="preserve">
+    <value>Is Tool Vendor</value>
+  </data>
+  <data name="ManageAds" xml:space="preserve">
+    <value>Manage Ads</value>
+  </data>
+  <data name="ManageAttributes" xml:space="preserve">
+    <value>Manage Attributes</value>
+  </data>
+  <data name="ManageCategory" xml:space="preserve">
+    <value>Manage Category</value>
+  </data>
+  <data name="ManageCategoryAttributes" xml:space="preserve">
+    <value>Manage Category Attributes</value>
+  </data>
+  <data name="ManageCategoryAttributesMapping" xml:space="preserve">
+    <value>Manage Category Attributes Mapping</value>
+  </data>
+  <data name="ManageCustomers" xml:space="preserve">
+    <value>Manage Customers</value>
+  </data>
+  <data name="ManageCustomersList" xml:space="preserve">
+    <value>Manage Customers List</value>
+  </data>
+  <data name="ManageDelivery" xml:space="preserve">
+    <value>Manage Delivery</value>
+  </data>
+  <data name="ManageFilters" xml:space="preserve">
+    <value>Manage Filters</value>
+  </data>
+  <data name="ManageMessages" xml:space="preserve">
+    <value>Manage Messages</value>
+  </data>
+  <data name="ManagePortals" xml:space="preserve">
+    <value>Manage Portals</value>
+  </data>
+  <data name="ManageProductAttributes" xml:space="preserve">
+    <value>Manage Product Attributes</value>
+  </data>
+  <data name="ManageProducts" xml:space="preserve">
+    <value>Manage Products</value>
+  </data>
+  <data name="ManageVendors" xml:space="preserve">
+    <value>Manage Vendors</value>
+  </data>
+  <data name="ManageVendorsList" xml:space="preserve">
+    <value>Manage Vendors List</value>
+  </data>
+  <data name="Marketing" xml:space="preserve">
+    <value>Marketing</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Contact Message</value>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>Messages</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NameRequired" xml:space="preserve">
+    <value>Name*</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="ParentCategory" xml:space="preserve">
+    <value>Parent Category</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PortalHeading" xml:space="preserve">
+    <value>Manage Portals</value>
+  </data>
+  <data name="PortalManagement" xml:space="preserve">
+    <value>Portal Management</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="ProductCode" xml:space="preserve">
+    <value>Product Code</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Product Name*</value>
+  </data>
+  <data name="ProductNameNotRequired" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="Queries" xml:space="preserve">
+    <value>Queries</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="RentalVendor" xml:space="preserve">
+    <value>Rental Vendor</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SelectAdsPlacholder" xml:space="preserve">
+    <value>-- Select Ads For --</value>
+  </data>
+  <data name="SelectAdsTypePlacholder" xml:space="preserve">
+    <value>-- Select Ads Type --</value>
+  </data>
+  <data name="SelectAttributePlacholder" xml:space="preserve">
+    <value>-- Select Attribute --</value>
+  </data>
+  <data name="SelectAttributes" xml:space="preserve">
+    <value>Select Attributes*</value>
+  </data>
+  <data name="SelectCategory" xml:space="preserve">
+    <value>Select Category*</value>
+  </data>
+  <data name="SelectCategoryPlacholder" xml:space="preserve">
+    <value>-- Select Category -- </value>
+  </data>
+  <data name="SelectCustomer" xml:space="preserve">
+    <value>Select Customer</value>
+  </data>
+  <data name="SelectCustomerPlacholder" xml:space="preserve">
+    <value>-- Select Customer --</value>
+  </data>
+  <data name="SelectPortal" xml:space="preserve">
+    <value>Select Portal</value>
+  </data>
+  <data name="SelectStatus" xml:space="preserve">
+    <value>Select Status</value>
+  </data>
+  <data name="SelectStatusPlaceholder" xml:space="preserve">
+    <value>-- Select Status --</value>
+  </data>
+  <data name="SelectTags" xml:space="preserve">
+    <value>Select Tags</value>
+  </data>
+  <data name="SelectTagsPlaceholder" xml:space="preserve">
+    <value>-- Select Tags --</value>
+  </data>
+  <data name="SelectVendor" xml:space="preserve">
+    <value>Select Vendor</value>
+  </data>
+  <data name="SelectVendorPlacholder" xml:space="preserve">
+    <value>-- Select Vendor --</value>
+  </data>
+  <data name="SellerVendor" xml:space="preserve">
+    <value>Seller Vendor</value>
+  </data>
+  <data name="SerialNo" xml:space="preserve">
+    <value>Sr#</value>
+  </data>
+  <data name="ServiceProvider" xml:space="preserve">
+    <value>Service Provider</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="SubCategoryName" xml:space="preserve">
+    <value>Sub Category Name</value>
+  </data>
+  <data name="Subtitle" xml:space="preserve">
+    <value>ASP.NET is a free web framework for building great Multi-Language MVC Web sites and Web applications using HTML, CSS and JavaScript.</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Record Saved Successfully.</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>YOUR FIRST MULTI-LANGUAGE MVC APPLICATION</value>
+  </data>
+  <data name="ToolVendor" xml:space="preserve">
+    <value>Tool Vendor</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="VendorName" xml:space="preserve">
+    <value>Vendors Name</value>
+  </data>
+  <data name="Vendors" xml:space="preserve">
+    <value>Vendors</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="DeleteMessage" xml:space="preserve">
+    <value>Record Deleted Successfully.</value>
+  </data>
+  <data name="ProductAttributesMappings" xml:space="preserve">
+    <value>Product Attributes Mappings</value>
+  </data>
+  <data name="ManageProductAttributesMapping" xml:space="preserve">
+    <value>Manage Product Attributes Mapping</value>
+  </data>
+  <data name="ManageProductFilters" xml:space="preserve">
+    <value>Manage Product Filters</value>
+  </data>
+  <data name="ProductFiltersMappings" xml:space="preserve">
+    <value>Product Filters Mappings</value>
+  </data>
+  <data name="SelectProduct" xml:space="preserve">
+    <value>Select Product*</value>
+  </data>
+  <data name="SelectProductPlacholder" xml:space="preserve">
+    <value>-- Select Product --</value>
+  </data>
+  <data name="ManageCategoryFilters" xml:space="preserve">
+    <value>Manage Category Filters</value>
+  </data>
+  <data name="ManageProductFiltersMapping" xml:space="preserve">
+    <value>Manage Product Filters Mapping</value>
+  </data>
+  <data name="SelectFilterPlaceholder" xml:space="preserve">
+    <value>-- Select Filters --</value>
+  </data>
+  <data name="SelectFilters" xml:space="preserve">
+    <value>Select Filters*</value>
+  </data>
+  <data name="CategoryFilterMappings" xml:space="preserve">
+    <value>Category Filter Mappings</value>
+  </data>
+  <data name="ManageCategoryFilterMapping" xml:space="preserve">
+    <value>Manage Category Filter Mapping</value>
+  </data>
+  <data name="EnterEmailPlaceholder" xml:space="preserve">
+    <value>Enter Email</value>
+  </data>
+  <data name="EnterFirstName" xml:space="preserve">
+    <value>Enter First Name</value>
+  </data>
+  <data name="EnterLastName" xml:space="preserve">
+    <value>Enter Last Name</value>
+  </data>
+  <data name="EnterMiddleName" xml:space="preserve">
+    <value>Enter Middle Name</value>
+  </data>
+  <data name="EnterPasswordPlaceholder" xml:space="preserve">
+    <value>Enter Password</value>
+  </data>
+  <data name="EnterUserNamePlaceholder" xml:space="preserve">
+    <value>Enter User Name</value>
+  </data>
+  <data name="EnterConfirmPasswordPlaceholder" xml:space="preserve">
+    <value>Enter Confirm Password</value>
+  </data>
+  <data name="Portal" xml:space="preserve">
+    <value>Portal</value>
+  </data>
+  <data name="SelectPortalPlaceholder" xml:space="preserve">
+    <value>-- Select Portal --</value>
+  </data>
+  <data name="SelectPortalRequired" xml:space="preserve">
+    <value>SelectPortal*</value>
+  </data>
+  <data name="ProductsTree" xml:space="preserve">
+    <value> Products Tree</value>
+  </data>
+  <data name="CopyInventory" xml:space="preserve">
+    <value>Copy Inventory</value>
+  </data>
+  <data name="YourInventory" xml:space="preserve">
+    <value>Your Inventory</value>
+  </data>
+  <data name="ManageOrders" xml:space="preserve">
+    <value>Manage Orders</value>
+  </data>
+  <data name="OrderNo" xml:space="preserve">
+    <value>OrderNo</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="PortalName" xml:space="preserve">
+    <value>Portal Name</value>
+  </data>
+</root>

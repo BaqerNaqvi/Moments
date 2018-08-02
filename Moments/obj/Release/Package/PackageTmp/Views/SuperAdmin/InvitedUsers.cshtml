@@ -1,0 +1,104 @@
+﻿@model  Moments.ViewModels.SuperAdminViewModel
+@{
+    ViewBag.Title = "Filters";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "InvitedUsers";
+}
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Invite Users</h3>
+                    <span class="pull-right" style="color:red;"><b>Note:</b> The Fields With * Are Required.</span>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    @using (Ajax.BeginForm("SaveInvitedUsers", "SuperAdmin", new AjaxOptions { HttpMethod = "POST", OnSuccess = "onSaveOrUpdateInvitedUsersSuccess(data)", OnFailure = "AjaxFailure(xhr,status,error)" }))
+                    {
+                        @Html.TextBoxFor(model => model.PromotionEmail.Id, new { @class = "", @Id = "PromotionEmailId", @style = "display:none" })
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="col-md-4">
+                                    @Html.Label("User Full Name")
+                                    @Html.TextBoxFor(model => model.PromotionEmail.UserFullName, new {  @class = "form-control input-height", @placeholder = "Enter User Full Name", @Id = "UserFullName" })
+                                    @Html.ValidationMessageFor(model => model.PromotionEmail.UserFullName, String.Empty, new { @class = "Validation-color" })
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.LabelFor(model => model.PromotionEmail.Email, new { @class = "input-height" })
+                                    @Html.TextBoxFor(model => model.PromotionEmail.Email, new { @class = "form-control input-height", @placeholder = "Enter Email", @Id = "Email" })
+                                    @Html.ValidationMessageFor(model => model.PromotionEmail.Email, String.Empty, new { @class = "Validation-color" })
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.LabelFor(model => model.PromotionEmail.Message, new { @class = "input-height" })
+                                    @Html.TextAreaFor(model => model.PromotionEmail.Message, new { @class = "form-control input-height", @placeholder = "Enter Message", @Id = "Message" })
+                                    @Html.ValidationMessageFor(model => model.PromotionEmail.Message, String.Empty, new { @class = "Validation-color" })
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <span style="color:red;" id="ErrorMesage"></span>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-3 pull-right">
+                                    <button type="button" id="CancelButton" class="btn btn-warning pull-right"> Cancel </button>
+                                    <button type="submit" id="SubmitButton" class="btn btn-primary pull-right" style="margin-right: 5px;"> Save </button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ManageInvitedUsers">
+         @Html.Partial("_ManageInvitedUsers", Model)
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("form").removeData("validator");
+        $("form").removeData("unobtrusiveValidation");
+        $.validator.unobtrusive.parse("form");
+        var output;
+
+        $('#CancelButton').click(function () {
+            $('#PromotionEmailId').val(0);
+            $('#Message').val('');
+            $('#Email').val('');
+            $('#UserFullName').val('');
+            $('#SubmitButton').text('Save');
+        });
+    });
+    function onSaveOrUpdateInvitedUsersSuccess(data) {
+        debugger;
+        var pages = JSON.parse(data);
+        if (pages.LimitationMessage == "Record Save Successfully.") {
+            $('#ErrorMesage').text('');
+            $('#PromotionEmailId').val(0);
+            $('#Message').val('');
+            $('#Email').val('');
+            $('#UserFullName').val('');
+            $('#SubmitButton').text('Save');
+
+            $("#ManageInvitedUsers").html("");
+            $("#ManageInvitedUsers").html(pages.ManageInvitedUsers);
+
+            $("#loadingScreen").css("display", "none");
+            $('.alert-success').css({ 'display': 'block' });
+            $('#SuccessMessage').text('');
+            $('#SuccessMessage').text('Record Save Successfully');
+            setTimeout(function () { $('.alert-success').css({ 'display': 'none' }); $('#SuccessMessage').text(''); }, 3000)
+
+            $('#SubmitButton').text('Save');
+        }
+        else
+        {
+            $('#ErrorMesage').text('');
+            $('#ErrorMesage').text(pages.LimitationMessage);
+        }
+
+    }
+
+</script>

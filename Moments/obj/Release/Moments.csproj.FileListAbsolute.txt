@@ -1,0 +1,210 @@
+F:\Shoaib\Moments\Moments\Moments\bin\ApplicationInsights.config
+F:\Shoaib\Moments\Moments\Moments\bin\roslyn\csc.exe
+F:\Shoaib\Moments\Moments\Moments\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Shoaib\Moments\Moments\Moments\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Shoaib\Moments\Moments\Moments\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Shoaib\Moments\Moments\Moments\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Shoaib\Moments\Moments\Moments\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Shoaib\Moments\Moments\Moments\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Shoaib\Moments\Moments\Moments\bin\roslyn\System.Collections.Immutable.dll
+F:\Shoaib\Moments\Moments\Moments\bin\roslyn\System.Reflection.Metadata.dll
+F:\Shoaib\Moments\Moments\Moments\bin\roslyn\vbc.exe
+F:\Shoaib\Moments\Moments\Moments\bin\roslyn\VBCSCompiler.exe
+F:\Shoaib\Moments\Moments\Moments\bin\roslyn\VBCSCompiler.exe.config
+F:\Shoaib\Moments\Moments\Moments\bin\Moments.dll.config
+F:\Shoaib\Moments\Moments\Moments\bin\Moments.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Moments.pdb
+F:\Shoaib\Moments\Moments\Moments\bin\Antlr3.Runtime.dll
+F:\Shoaib\Moments\Moments\Moments\bin\EntityFramework.dll
+F:\Shoaib\Moments\Moments\Moments\bin\EntityFramework.SqlServer.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.AI.DependencyCollector.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.AI.Web.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.AI.WindowsServer.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.ApplicationInsights.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.Security.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.Security.Google.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Web.Infrastructure.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Newtonsoft.Json.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Owin.dll
+F:\Shoaib\Moments\Moments\Moments\bin\System.Net.Http.Formatting.dll
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.Helpers.dll
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.Http.dll
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.Http.WebHost.dll
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.Mvc.dll
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.Optimization.dll
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.Razor.dll
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.WebPages.Deployment.dll
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.WebPages.dll
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.WebPages.Razor.dll
+F:\Shoaib\Moments\Moments\Moments\bin\WebGrease.dll
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.AI.DependencyCollector.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.AI.Web.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.AI.WindowsServer.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.ApplicationInsights.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.Helpers.xml
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.Mvc.xml
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.Optimization.xml
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.Razor.xml
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.WebPages.xml
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.WebPages.Deployment.xml
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.WebPages.Razor.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Antlr3.Runtime.pdb
+F:\Shoaib\Moments\Moments\Moments\bin\Newtonsoft.Json.xml
+F:\Shoaib\Moments\Moments\Moments\bin\System.Net.Http.Formatting.xml
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.Http.xml
+F:\Shoaib\Moments\Moments\Moments\bin\System.Web.Http.WebHost.xml
+F:\Shoaib\Moments\Moments\Moments\bin\EntityFramework.xml
+F:\Shoaib\Moments\Moments\Moments\bin\EntityFramework.SqlServer.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.Security.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.Security.Google.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Shoaib\Moments\Moments\Moments\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Shoaib\Moments\Moments\Moments\obj\Release\Moments.csprojResolveAssemblyReference.cache
+F:\Shoaib\Moments\Moments\Moments\obj\Release\Moments.dll
+F:\Shoaib\Moments\Moments\Moments\obj\Release\Moments.pdb
+F:\Shoaib\Moments\Moments\Moments\bin\es-es\Moments.resources.dll
+F:\Shoaib\Moments\Moments\Moments\bin\fr-fr\Moments.resources.dll
+F:\Shoaib\Moments\Moments\Moments\obj\Release\Moments.Content.Texts.RError.resources
+F:\Shoaib\Moments\Moments\Moments\obj\Release\Moments.Content.Texts.RGlobal.resources
+F:\Shoaib\Moments\Moments\Moments\obj\Release\Moments.Content.Texts.RHome.resources
+F:\Shoaib\Moments\Moments\Moments\obj\Release\Moments.Content.Texts.RError.es-es.resources
+F:\Shoaib\Moments\Moments\Moments\obj\Release\Moments.Content.Texts.RError.fr-fr.resources
+F:\Shoaib\Moments\Moments\Moments\obj\Release\Moments.Content.Texts.RGlobal.es-es.resources
+F:\Shoaib\Moments\Moments\Moments\obj\Release\Moments.Content.Texts.RGlobal.fr-fr.resources
+F:\Shoaib\Moments\Moments\Moments\obj\Release\Moments.Content.Texts.RHome.es-es.resources
+F:\Shoaib\Moments\Moments\Moments\obj\Release\Moments.Content.Texts.RHome.fr-fr.resources
+F:\Shoaib\Moments\Moments\Moments\obj\Release\Moments.csproj.GenerateResource.Cache
+F:\Shoaib\Moments\Moments\Moments\obj\Release\es-es\Moments.resources.dll
+F:\Shoaib\Moments\Moments\Moments\obj\Release\fr-fr\Moments.resources.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\ApplicationInsights.config
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\roslyn\csc.exe
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\roslyn\vbc.exe
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\roslyn\VBCSCompiler.exe
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Moments.dll.config
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Moments.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Moments.pdb
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\es-es\Moments.resources.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\fr-fr\Moments.resources.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Antlr3.Runtime.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\EntityFramework.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\EntityFramework.SqlServer.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.AI.Web.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.ApplicationInsights.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.Security.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Newtonsoft.Json.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Owin.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Net.Http.Formatting.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.Helpers.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.Http.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.Http.WebHost.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.Mvc.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.Optimization.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.Razor.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.WebPages.Deployment.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.WebPages.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.WebPages.Razor.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\WebGrease.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.AI.Web.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.ApplicationInsights.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.Helpers.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.Mvc.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.Optimization.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.Razor.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.WebPages.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.WebPages.Deployment.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.WebPages.Razor.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Antlr3.Runtime.pdb
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Newtonsoft.Json.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Net.Http.Formatting.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.Http.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\System.Web.Http.WebHost.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\EntityFramework.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\EntityFramework.SqlServer.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.Security.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\obj\Release\Moments.csprojResolveAssemblyReference.cache
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\obj\Release\Moments.Content.Texts.RError.resources
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\obj\Release\Moments.Content.Texts.RGlobal.resources
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\obj\Release\Moments.Content.Texts.RHome.resources
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\obj\Release\Moments.Content.Texts.RError.es-es.resources
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\obj\Release\Moments.Content.Texts.RError.fr-fr.resources
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\obj\Release\Moments.Content.Texts.RGlobal.es-es.resources
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\obj\Release\Moments.Content.Texts.RGlobal.fr-fr.resources
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\obj\Release\Moments.Content.Texts.RHome.es-es.resources
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\obj\Release\Moments.Content.Texts.RHome.fr-fr.resources
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\obj\Release\Moments.csproj.GenerateResource.Cache
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\obj\Release\es-es\Moments.resources.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\obj\Release\fr-fr\Moments.resources.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\obj\Release\Moments.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\obj\Release\Moments.pdb
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\PdfSharp.Charting.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\PdfSharp.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\PdfSharp.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\PdfSharp.Charting.xml
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\de\PdfSharp.resources.dll
+C:\Users\baqer.naqvi.AFINITI\Downloads\Moments 12-07-2018 Bakar Handover\Moments\Moments\bin\de\PdfSharp.Charting.resources.dll

@@ -1,0 +1,142 @@
+﻿@model  Moments.ViewModels.LoginViewModel
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registration</title>
+    <style>
+        .Validation-color {
+            color: red;
+        }
+    </style>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="~/Content/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Content/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="~/Content/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/dist/css/AdminLTE.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="~/Content/plugins/iCheck/square/blue.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition register-page">
+    <div class="register-box box box-danger">
+        <div class="register-logo">
+            <a><b>Registration</b></a>
+        </div>
+        <div class="register-box-body">
+            <p class="login-box-msg">Register a new membership</p>
+            @using (Ajax.BeginForm("SaveRegistration", "Login", new { @Id = "SaveRegistration" }, new AjaxOptions { HttpMethod = "POST", OnSuccess = "onSaveRegistration(data)", OnFailure = "AjaxFailure(xhr,status,error)" }))
+            {
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(model => model.UserProfile.FirstName, new { @class = "form-control input-height", @placeholder = "Enter First Name", @Id = "FirstName" })
+                    @Html.ValidationMessageFor(model => model.UserProfile.FirstName, String.Empty, new { @class = "Validation-color" })
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(model => model.UserProfile.LastName, new { @class = "form-control input-height", @placeholder = "Enter Last Name", @Id = "LastName" })
+                    @Html.ValidationMessageFor(model => model.UserProfile.LastName, String.Empty, new { @class = "Validation-color" })
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                @*<div class="form-group has-feedback">
+                    <span class="tg-select">
+                        @Html.DropDownListFor(model => model.UserRegistration.Type, new List<SelectListItem>
+                        {
+                            new SelectListItem() { Text = "Customer", Value="Customer" }
+                        }, new { @id = "Type", @class = "form-control input-height" })
+                        @Html.ValidationMessageFor(model => model.UserRegistration.Type, String.Empty, new { @class = "Validation-color" })
+                    </span>
+                </div>*@
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(model => model.UserRegistration.Email, new { @type = "email", @class = "form-control input-height", @placeholder = "Enter Email", @Id = "Email" })
+                    @Html.ValidationMessageFor(model => model.UserRegistration.Email, String.Empty, new { @class = "Validation-color" })
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(model => model.UserRegistration.Password, new { @type = "password", @class = "form-control input-height", @placeholder = "Enter Password", @Id = "Password" })
+                    @Html.ValidationMessageFor(model => model.UserRegistration.Password, String.Empty, new { @class = "Validation-color" })
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    @Html.TextBoxFor(model => model.UserRegistration.ConfirmPassword, new { @type = "password", @class = "form-control input-height", @placeholder = "Enter Confirm Password", @Id = "ConfirmPassword" })
+                    @Html.ValidationMessageFor(model => model.UserRegistration.ConfirmPassword, String.Empty, new { @class = "Validation-color" })
+                    <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <span style="color:red;" id="errorRegistration"></span>
+                    </div>
+                    <div class="col-xs-8">
+                        @*<div class="checkbox icheck">
+                                <label>
+                                    <input type="checkbox"> I agree to the <a href="#">terms</a>
+                                </label>
+                            </div>*@
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+                        <button type="submit" id="SubmitButton" class="btn btn-primary btn-block btn-flat">Register</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            }
+            <a id="alreadyaccount" class="text-center" style="cursor:pointer;">I already have a membership</a>
+        </div>
+        <!-- /.form-box -->
+    </div>
+    <!-- /.register-box -->
+    <!-- jQuery 3 -->
+    <script src="~/Content/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="~/Content/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="~/Content/plugins/iCheck/icheck.min.js"></script>
+    <script src="~/Content/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Content/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Content/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Content/Scripts/multiLanguajeDemo.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("form").removeData("validator");
+            $("form").removeData("unobtrusiveValidation");
+            $.validator.unobtrusive.parse("form");
+
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' // optional
+            });
+            $('#alreadyaccount').click(function () {
+                var ControllerTempName = "Login";
+                var MethodTempName = "Login";
+                window.location.href = '/' + ControllerTempName + '/' + MethodTempName;
+            });
+
+        });
+        function onSaveRegistration(data) {
+            debugger;
+            if (data == "SuccessFull") {
+                var ControllerTempName = "SuperAdmin";
+                var MethodTempName = "Index";
+                window.location.href = '/' + ControllerTempName + '/' + MethodTempName;
+            } else if (data == "UserAlreadyExist") {
+                $('#errorRegistration').text("Email Already Exist.");
+                setTimeout(function () { $('#errorRegistration').text(""); }, 5000);
+            } else {
+                $('#errorRegistration').text("Registration Failed.");
+                setTimeout(function () { $('#errorRegistration').text(""); }, 5000);
+            }
+        }
+
+    </script>
+</body>

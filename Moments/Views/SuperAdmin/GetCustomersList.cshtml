@@ -1,0 +1,111 @@
+﻿@model  Moments.ViewModels.SuperAdminViewModel
+@{
+    ViewBag.Title = "Manage Customers";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">ManageCustomers</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="col-md-12">
+                        <div class="col-md-3"><label style="padding-right: 10px;">BlockedCustomers</label><input type="checkbox" class="flat-red" id="IsBlocked" /></div>
+                        <div class="col-md-7">
+                            <div class="col-md-3" style="padding-right: 0px;">
+                                <label>DateRange:</label>
+                            </div>
+                            <div class="col-md-9" style="padding-left: 0px;">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input type="text" placeholder="mm/dd/yyyy - mm/dd/yyyy" class="form-control" id="DateFromTo">
+                                    </div>
+                                    <!-- /.input group -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="CancelButton btn btn-sm btn-warning pull-right" type="button">Cancel</button>
+                            <button class="FilterButton btn btn-sm btn-primary pull-right" type="button" style="margin-right: 5px;">Filter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ManageGetCustomerList">
+        @Html.Partial("_ManageGetCustomerList")
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#Customers').DataTable();
+        $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        })
+        $('#DateFromTo').daterangepicker()
+        $('#ManageGetCustomerList').on('change', '.IsBlockedChecked', function () {
+        //$(".IsBlockedChecked").change(function () {
+            var CurrentActiveStatus = $(this).is(':checked');
+            //var StatusTextChange = $(this).parent().parent().find('.StatusText');
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("ChangeCustomerBlockStatus", "SuperAdmin")',
+                data: { Id: $(this).attr("customerprofileid"), ActiveStatus: CurrentActiveStatus },
+                beforeSend: function () {
+                    $("#loadingScreen").css("display", "block");
+                },
+                success: function (data) {
+                    $("#loadingScreen").css("display", "none");
+                    debugger;
+                    if (data == 1) {
+                        $('.alert-success').css({ 'display': 'block' });
+                        $('#SuccessMessage').text('');
+                        $('#SuccessMessage').text('Success');
+                        @*$('.SuccessMessage').text('Success');
+                      setTimeout(function () { $('.SuccessMessage').text(''); }, 3000)*@
+                        setTimeout(function () { $('.alert-success').css({ 'display': 'none' }); $('#SuccessMessage').text(''); }, 2000)
+                    }
+                },
+                error: function (res) {
+                    //AjaxFailure(res);
+                }
+            });
+        });
+        $(".FilterButton").click(function () {
+            var IsBlockedChecked = $('#IsBlocked').is(':checked');
+            var daterange = $('#DateFromTo').val();
+            //var StatusTextChange = $(this).parent().parent().find('.StatusText');
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("GetCustomersListFilter", "SuperAdmin")',
+                data: {IsBlocked: IsBlockedChecked, DateRange: daterange },
+                beforeSend: function () {
+                    $("#loadingScreen").css("display", "block");
+                },
+                success: function (data) {
+                    $("#loadingScreen").css("display", "none");
+                    debugger;
+                    $("#ManageGetCustomerList").html("");
+                    $("#ManageGetCustomerList").html(data);
+                },
+                error: function (res) {
+                    //AjaxFailure(res);
+                }
+            });
+        });
+        $(".CancelButton").click(function () {
+            $('#DropdownCustomerList').val('');
+            $('#DateFromTo').val(null);
+        });
+    })
+</script>
+

@@ -1,0 +1,85 @@
+﻿@model  Moments.ViewModels.SuperAdminViewModel
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">User List</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="user" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>PhoneNo</th>
+                                <th>MobileNo</th>
+                                <th>DOB</th>
+                                <th>CNIC</th>
+                                @*<th>Department</th>*@
+                                @*<th>UserType</th>*@
+                                <th>UserName</th>
+                                <th>Password</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.GetUserProfileAndUserRegistrationRecord != null)
+                            {
+                                int count = 1;
+                                foreach (var loop in Model.GetUserProfileAndUserRegistrationRecord)
+                                {
+
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@loop.FirstName @loop.MiddleName @loop.LastName</td>
+                                        <td>@loop.Email</td>
+                                        <td>@loop.PhoneNo</td>
+                                        <td>@loop.MobileNo</td>
+                                        <td>@loop.DOB</td>
+                                        <td>@loop.CNIC</td>
+                                        @*<td>@loop.DepartmentName</td>*@
+                                        @*<td>
+                                        @if (loop.Type=="Customer" )
+                                        {
+                                            <span>User</span>
+                                        }
+                                        else
+                                        {
+                                            <span>@loop.Type</span>
+                                        }
+                                        </td>*@
+                                        <td>@loop.UserName</td>
+                                        <td>@loop.Password</td>
+                                        <td>
+                                            <span>
+                                                <i userprofileid="@loop.Id" userregistrationid="@loop.UserRegistrationId" class="EditUser fa fa-edit" style="color: #337ab7;cursor: pointer;"></i>
+                                            </span>
+                                            <span style="margin-left: 10px;">
+                                                <i userprofileid="@loop.Id" userregistrationid="@loop.UserRegistrationId" class="RemoveUser fa fa-trash-o" style="color: red;cursor: pointer;"></i>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    count++;
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+     $(document).ready(function () {
+         $('#user').DataTable({
+             //"scrollX": true
+         });
+     });
+</script>
+
+
+

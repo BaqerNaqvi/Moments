@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon">
+        <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+    <title>Moments - Home Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+  </head>
+
+  <body class="bg-light">
+      <header>
+
+    <div class="container">
+
+      <div class="row">
+      		<div class="col-md-12">
+            	<div class="col-md-4 m_logo text-left">
+            		<a href="#" class="navbar-left"><img src="images/logo.png"></a>
+                </div>
+            	<div class="col-md-8 m_header_toolbar text-right">
+            		<a href="#" class="search_icon navbar-left"><img src="images/search_icon.png"></a>
+                    <a href="#" class="notif_icon navbar-left"><img src="images/bell_icon.png"><span>3</span></a>
+                    <a href="#" class="search_icon navbar-left"><img src="images/profile_pic.png">Farzeen</a>
+                    <a href="#" class="invite_friends navbar-left" data-toggle="modal" data-target="#myModal1">Invite Friends</a>
+                </div>
+                
+              </div>
+      	   </div>
+      </div>
+      </header>
+      
+      
+     <div class="container">
+      	<div class="row">
+            <div class="col-md-9">
+            	<div class="create_new_story text-center">
+            		<a href="moment.html">
+                    	<img src="images/plus_icon.png">
+                    	<h3>Create New Story</h3>
+                    </a>
+                </div>
+                <div class="all_stories">
+                	<h4>All Stories</h4>
+                    <div class="border_line"></div>
+                    <div class="story col-md-4">
+                    	<img src="images/anthony.png">
+                        <div class="story_info">
+                        	<p class="author_name">Anthony Hopkins</p>
+                            <p class="no_of_moments">Moments: <span>23</span></p>
+                            <a href="#"><img class="info_icon" src="images/info_icon.png"></a>
+                        </div>
+                    </div>
+                    <div class="story col-md-4">
+                    	<img src="images/farzeen.png">
+                        <div class="story_info">
+                        	<p class="author_name">Mohsin Saeed</p>
+                            <p class="no_of_moments">Moments: <span>37</span></p>
+                            <a href="#"><img class="info_icon" src="images/info_icon.png"></a>
+                        </div>
+                    </div>
+                    <div class="story col-md-4">
+                    	<img src="images/tom_hardy.png">
+                        <div class="story_info">
+                        	<p class="author_name">Tom Hardy</p>
+                            <p class="no_of_moments">Moments: <span>5</span></p>
+                            <a href="#"><img class="info_icon" src="images/info_icon.png"></a>
+                        </div>
+                    </div>
+                    <div class="story col-md-4">
+                    	<img src="images/happy_times.png">
+                        <div class="story_info">
+                        	<p class="author_name">Happy Times</p>
+                            <p class="no_of_moments">Moments: <span>17</span></p>
+                            <a href="#"><img class="info_icon" src="images/info_icon.png"></a>
+                        </div>
+                    </div>
+                    <div class="story col-md-4">
+                    	<img src="images/john_hum.png">
+                        <div class="story_info">
+                        	<p class="author_name">John Hamm</p>
+                            <p class="no_of_moments">Moments: <span>3</span></p>
+                            <a href="#"><img class="info_icon" src="images/info_icon.png"></a>
+                        </div>
+                    </div>
+                    <div class="story col-md-4">
+                    	<img src="images/rachel_green.png">
+                        <div class="story_info">
+                        	<p class="author_name">Rachel Green</p>
+                            <p class="no_of_moments">Moments: <span>82</span></p>
+                            <a href="#"><img class="info_icon" src="images/info_icon.png"></a>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                
+                
+            </div>
+            <div class="col-md-3 text-left featured_stories">
+            	<h4>Features Stories</h4>
+                <div class="border_line"></div>
+                        <div class="featured_story col-md-12">
+                            <img src="images/john_snow.png">
+                            <div class="story_info">
+                                <p class="author_name">John Snow</p>
+                                <p class="no_of_moments">Moments: <span>50</span></p>
+                                <a href="#"><img class="info_icon" src="images/info_icon.png"></a>
+                            </div>
+                    	</div>
+                        
+                        <div class="featured_story col-md-12">
+                            <img src="images/ian_mclan.png">
+                            <div class="story_info">
+                                <p class="author_name">Ian Mckellen</p>
+                                <p class="no_of_moments">Moments: <span>12</span></p>
+                                <a href="#"><img class="info_icon" src="images/info_icon.png"></a>
+                            </div>
+                    </div>
+            </div>
+    
+            </div>
+        
+      </div>
+      
+      
+      
+      <div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade invite_modal" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body modal-invite">
+            <form>
+               <div class="input-group">
+                    <input id="email1" type="email" class="form-control" name="email" placeholder="Email">
+               </div>
+               <div class="input-group">
+                    <input id="email2" type="email" class="form-control" name="email" placeholder="Email">
+               </div>
+               <div class="input-group">
+                    <input id="email3" type="email" class="form-control" name="email" placeholder="Email">
+               </div>
+               <div class="input-group">
+                    <input id="email4" type="email" class="form-control" name="email" placeholder="Email">
+               </div>
+               <div class="input-group">
+                    <input id="email5" type="email" class="form-control" name="email" placeholder="Email">
+               </div>
+               <div class="input-group">
+                    <input id="email6" type="email" class="form-control" name="email" placeholder="Email">
+               </div>
+               <div class="input-group">
+                    <input id="email7" type="email" class="form-control" name="email" placeholder="Email">
+               </div>
+               <div class="input-group">
+                    <input id="email8" type="email" class="form-control" name="email" placeholder="Email">
+               </div>
+               <div class="input-group">
+                    <input id="email9" type="email" class="form-control" name="email" placeholder="Email">
+               </div>
+               <div class="input-group">
+                    <input id="email10" type="email" class="form-control" name="email" placeholder="Email">
+               </div>
+               <div class="input-group1">
+                    <input id="submit" type="submit" class="form-control" value="Send Invites">
+               </div>              
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+       
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,260 @@
+﻿@model  Moments.ViewModels.MomentViewModel
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon">
+
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/plugins/jQueryUI/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script type="text/javascript" src="~/Scripts/custom.js" language="javascript">
+    </script>
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="~/Content/vis.css" rel="stylesheet" />
+    <link href="~/Content/toastr.css" rel="stylesheet" />
+
+
+    <title>Create a Moment - Moments</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <script>
+        var updatecount =@Model.StoriesNodeList.Count;
+    </script>
+    <style>
+        .typesItem{
+            margin-left: 14px;
+            cursor: pointer;
+        }
+    </style>
+    <!-- Custom styles for this template -->
+</head>
+
+<body class="bg_moment">
+    <header class="moment_header">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-1 m_logo text-left">
+                        <a href="~/Moment/Index" class="navbar-left"><img src="~/Images/small_logo.png"></a>
+                    </div>
+                    <div class="col-md-4 header_top_items text-left">
+                        <a href="~/Moment/Index" class="navbar-left">+New Story</a>
+                        @*<a href="#" class="navbar-left">Explore</a>
+                            <a href="#" class="navbar-left">Search</a>*@
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <header class="zoom_icons_header">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-4 moment_main_text text-left">
+                        <h3 class="storyName">Loading...</h3>
+                        <div class="moment_paraph_center">
+                            <p>Cords:<span>@Model.Branches</span></p>
+                            <p>Momemts: <span id="momentsCount">...</span></p>
+                            <p>Owner:<span class="no_border storyOwner">Loading...</span></p>
+                        </div>
+                    </div>
+                    <div class="selected_moment col-md-4 text-right">
+                        <p>
+                            Selected Moment: <span id="selectedNode">Loading...</span>
+                            @*<img src="~/Images/view_icon.png" />*@
+                        </p>
+                        <a href="#" onclick="exportStoryBtn()"><img src="~/Images/longarrow_icon.png" /></a>
+                        <a href="#" data-toggle="modal" data-target="#myModal"><img src="~/Images/plus_sign.png" /></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 m_tool_container">
+                <div class="section_1 col-lg-3">
+                    <img id="storyImg" style="margin-top: 25px;margin-bottom: 18px;" src="">
+                    <div class="moment_name">
+                        <h2 class="storyName">Loading...</h2>
+                    </div>
+                    <div class="moment_owner">
+                        <p>Owner: <span class="storyOwner"></span></p>
+                    </div>
+                    <div class="new_moment_button">
+                        <button class="btn" data-toggle="modal" data-target="#myModal">New Moment <span>+</span></button>
+                    </div>
+                </div>
+                <div class="section_2 col-lg-5 new_moment_view" style="margin-top: 25px;">
+                    <p class="moment_txt">Moment</p>
+                    <div id="buttonDiv" class="col-lg-12 moment_add_buttons">
+                        <div class="add_button"><button onclick="showImgBox()">Add Image</button></div>
+                        <div class="add_button"><button onclick="showTextBox()">Add Text</button></div>
+                        <div class="add_button"><button onclick="showAudioBox()">Add Audio</button></div>
+                        <div class="add_button"><button onclick="showVideoBox()">Add Video</button></div>
+                    </div>
+                    <div style="display:none ;overflow-y:auto; border-style: dotted dashed solid double;padding: 5px;max-height: 600px;height: 600px;border-style: dotted dashed solid double;padding: 5px;" id="textDiv">
+                        <p></p>
+                    </div>
+                    <div id="imgDiv">
+                        <img style="width: 90%;height: 90%;" />
+                    </div>
+                    <div id="videoDiv">
+                        <iframe src="" width="450" height="315" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                </div>
+
+                <div class="section_2 col-lg-5 tree_view">
+                    <p class="moment_txt">Moment</p>
+                    <div class="col-lg-12">
+                        <img src="~/Images/tree_view.png">
+                    </div>
+                </div>
+
+
+                <div class="section_3 col-lg-4" style="margin-top: 25px;">
+                    @*<p class="moment_txt">Mini Map</p>*@
+                    <div id="orgReportingStructure" style="width:400px; height:600px; background-color:#38383826 !important; border-style: dotted dashed solid double;"></div>
+                </div>
+                @*<div class="full_view">
+                        <a href="#">Full View</a>
+                    </div>*@
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <p>Select Type</p>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                        </div>
+                        <div class="modal-body" style="height: 110px;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div class="typesItem" onclick="showTextBox()">
+                                            <img src="~/Images/Types/add_text.png" />
+                                            <br />
+                                            <span style="margin-left: 28px;">Text</span>
+                                        </div>
+                                    </td>
+                                    <td>                                        
+                                        <div class="typesItem" onclick="showImgBox()">
+                                            <img src="~/Images/Types/add_image.png" />
+                                            <br />
+                                            <span style="margin-left: 28px;">Image</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="typesItem" onclick="showAudioBox()">
+                                            <img src="~/Images/Types/add_audio.png" />
+                                            <br />
+                                            <span style="margin-left: 28px;">Audio</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="typesItem" onclick="showVideoBox()">
+                                            <img src="~/Images/Types/add_video.png" />
+                                            <br />
+                                            <span style="margin-left: 28px;">Video</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+
+                            @*<a href="#" class="add_image_6" onclick="showImgBox()">Add Image</a>
+                            <a href="#" class="add_text_6" onclick="showTextBox()">Add Text</a>
+                            <a href="#" class="add_video_6" onclick="showAudioBox()">Add Audio</a>
+                            <a href="#" class="add_video_6" onclick="showVideoBox()">Add Video</a>*@
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+
+            <!-- Modal -->
+            <div class="modal fade" id="textModel" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            Please Add Contents Bellow
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                        </div>
+                        <div class="modal-body">
+                            <textarea cols="55" rows="6" placeholder="Start typing here..." id="textArea"></textarea>
+                            <img style="display:none; width: 470px;" id="showImg" />
+                            <div id="videoDivWrapper" style="display:none;">
+                                <textarea style="height: 30px;" placeholder="Paste URL Here..." id="urlArea"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer" id="textModel-footer">
+                            <button type="button" onclick="saveText()" class="btn btn-primary">Save</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <input type="file" class="imgupload" id="imageUploadForm" accept="image/gif, image/jpeg, image/png" style="display:none" />
+    </div>
+    <footer class="col-lg-12 text-center text-small">
+        <p>CopyRight &#169; 2018,  Moments. All Righrs Reserved</p>
+        <a href="#" class="fa fa-linkedin"></a>
+        <a href="#" class="fa fa-google-plus"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-facebook"></a>
+    </footer>
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/vis.js"></script>
+    <script src="~/Scripts/network.js"></script>
+    <script src="~/Scripts/toastr.js"></script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+</body>
+</html>

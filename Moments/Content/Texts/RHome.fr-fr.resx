@@ -1,0 +1,618 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Nous</value>
+  </data>
+  <data name="AboutDetails" xml:space="preserve">
+    <value>Détails sur votre information personnelle ou information sur votre société</value>
+  </data>
+  <data name="AboutMessage" xml:space="preserve">
+    <value>Votre information personnelle ou l'information de votre compagnie</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>عمل</value>
+  </data>
+  <data name="Activate" xml:space="preserve">
+    <value>فعالسازی</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>فعال</value>
+  </data>
+  <data name="AddCategoryAttributes" xml:space="preserve">
+    <value>ویژگیهای رده را اضافه کنید</value>
+  </data>
+  <data name="AddProductAttributes" xml:space="preserve">
+    <value>اضافه کردن ویژگی های محصول</value>
+  </data>
+  <data name="Ads" xml:space="preserve">
+    <value>تبلیغات</value>
+  </data>
+  <data name="AdsFor" xml:space="preserve">
+    <value>* تبلیغات برای</value>
+  </data>
+  <data name="AdsType" xml:space="preserve">
+    <value> * نوع تبلیغات</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>تایید</value>
+  </data>
+  <data name="Attributes" xml:space="preserve">
+    <value>ویژگی های</value>
+  </data>
+  <data name="AttributeValues" xml:space="preserve">
+    <value>ارزش های مشخص</value>
+  </data>
+  <data name="Block" xml:space="preserve">
+    <value>مسدود کردن</value>
+  </data>
+  <data name="BlockedCustomers" xml:space="preserve">
+    <value>مشتریان مسدود شده</value>
+  </data>
+  <data name="BlockedVendors" xml:space="preserve">
+    <value>فروشندگان مسدود شده</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغو</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>دسته بندی</value>
+  </data>
+  <data name="CategoryAttributesMappings" xml:space="preserve">
+    <value>دسته بندی مشخصه ها</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>نزدیک</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="ContactEmail" xml:space="preserve">
+    <value>Email contact</value>
+  </data>
+  <data name="ContactMessage" xml:space="preserve">
+    <value>Votre information de contact</value>
+  </data>
+  <data name="ContactMessageSendNok" xml:space="preserve">
+    <value>Le message n'a pas été envoyé avec succès. Essayez à nouveau.</value>
+  </data>
+  <data name="ContactMessageSendOk" xml:space="preserve">
+    <value>Le message a été envoyé avec succès. Merci beaucoup.</value>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Nom de contact</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>ASP.NET MVC offre une potente façon basée sur des sites web pour créer des sites web qui permettent une séparation claire des préoccupations et un contrôle total sur le site pour un développement rapide et agréable.</value>
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>نام مشتری</value>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>مشتریان</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>داشبورد</value>
+  </data>
+  <data name="DateRange" xml:space="preserve">
+    <value>محدوده زمانی</value>
+  </data>
+  <data name="Deactivate" xml:space="preserve">
+    <value>از کار انداختن</value>
+  </data>
+  <data name="Decline" xml:space="preserve">
+    <value>کاهش می یابد</value>
+  </data>
+  <data name="DeleteEndTag" xml:space="preserve">
+    <value>شما نمیتوانید پایان تگ را حذف کنید.</value>
+  </data>
+  <data name="Delivery" xml:space="preserve">
+    <value>تحویل</value>
+  </data>
+  <data name="DeliveryDate" xml:space="preserve">
+    <value>تاریخ تحویل</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>شرح</value>
+  </data>
+  <data name="DestinationAddress" xml:space="preserve">
+    <value>آدرس مقصد</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="EditAttributeValues" xml:space="preserve">
+    <value>ویرایش مقادیر مشخصه</value>
+  </data>
+  <data name="EditFilterValues" xml:space="preserve">
+    <value>ویرایش مقادیر فیلتر</value>
+  </data>
+  <data name="Elzamat" xml:space="preserve">
+    <value>Soporte  Commercialisation</value>
+  </data>
+  <data name="EnterAttributeValues" xml:space="preserve">
+    <value>مقادیر عناصر را وارد کنید</value>
+  </data>
+  <data name="EnterCategoryPlaceholder" xml:space="preserve">
+    <value>دسته را وارد کنید</value>
+  </data>
+  <data name="EnterDescriptionPlaceholder" xml:space="preserve">
+    <value>توصیف را وارد کنید</value>
+  </data>
+  <data name="EnterFilterValues" xml:space="preserve">
+    <value>مقادیر فیلتر را وارد کنید</value>
+  </data>
+  <data name="EnterImagePlaceholder" xml:space="preserve">
+    <value>تصویر را وارد کنید</value>
+  </data>
+  <data name="EnterNamePlaceholder" xml:space="preserve">
+    <value>نام را وارد کنید</value>
+  </data>
+  <data name="EnterNewTag" xml:space="preserve">
+    <value>برچسب جدید را وارد کنید</value>
+  </data>
+  <data name="EnterPricePlaceholder" xml:space="preserve">
+    <value>قیمت را وارد کنید</value>
+  </data>
+  <data name="EnterQuantityPlaceholder" xml:space="preserve">
+    <value>مقدار را وارد کنید</value>
+  </data>
+  <data name="ErrorFileSize" xml:space="preserve">
+    <value>اندازه فایل نمی تواند بیش از 1 مگابایت باشد</value>
+  </data>
+  <data name="Featured" xml:space="preserve">
+    <value>ویژه</value>
+  </data>
+  <data name="FeaturedProduct" xml:space="preserve">
+    <value>محصولات ویژه</value>
+  </data>
+  <data name="FeaturedVendor" xml:space="preserve">
+    <value>فروشندگان ویژه</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>فیلتر کردن</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>فیلترها</value>
+  </data>
+  <data name="FirstFillTheEmptyTag" xml:space="preserve">
+    <value>ابتدا تگ خالی را پر کنید</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>تصویر</value>
+  </data>
+  <data name="ImageRequired" xml:space="preserve">
+    <value>* تصویر</value>
+  </data>
+  <data name="InActive" xml:space="preserve">
+    <value>غیر فعال</value>
+  </data>
+  <data name="InsertNewTags" xml:space="preserve">
+    <value>برچسب های جدید را وارد کنید</value>
+  </data>
+  <data name="IsActive" xml:space="preserve">
+    <value>فعال است</value>
+  </data>
+  <data name="IsRentalVendor" xml:space="preserve">
+    <value>فروشنده اجاره است</value>
+  </data>
+  <data name="IsSellerVendor" xml:space="preserve">
+    <value>فروشنده است</value>
+  </data>
+  <data name="IsServiceProvider" xml:space="preserve">
+    <value>ارائه کننده خدمات</value>
+  </data>
+  <data name="IsToolVendor" xml:space="preserve">
+    <value>فروشنده ابزار است</value>
+  </data>
+  <data name="ManageAds" xml:space="preserve">
+    <value>مدیریت تبلیغات</value>
+  </data>
+  <data name="ManageAttributes" xml:space="preserve">
+    <value>مدیریت عناصر</value>
+  </data>
+  <data name="ManageCategory" xml:space="preserve">
+    <value>مدیریت دسته</value>
+  </data>
+  <data name="ManageCategoryAttributes" xml:space="preserve">
+    <value>مدیریت ویژگیهای مجموعه</value>
+  </data>
+  <data name="ManageCategoryAttributesMapping" xml:space="preserve">
+    <value>مدیریت ویژگی های رده بندی</value>
+  </data>
+  <data name="ManageCustomers" xml:space="preserve">
+    <value>مدیریت مشتریان</value>
+  </data>
+  <data name="ManageCustomersList" xml:space="preserve">
+    <value>مدیریت لیست مشتریان</value>
+  </data>
+  <data name="ManageDelivery" xml:space="preserve">
+    <value>مدیریت تحویل</value>
+  </data>
+  <data name="ManageFilters" xml:space="preserve">
+    <value>مدیریت فیلترها</value>
+  </data>
+  <data name="ManageMessages" xml:space="preserve">
+    <value>مدیریت پیام ها</value>
+  </data>
+  <data name="ManagePortals" xml:space="preserve">
+    <value>مدیریت پورتال ها</value>
+  </data>
+  <data name="ManageProductAttributes" xml:space="preserve">
+    <value>مدیریت ویژگی های محصول</value>
+  </data>
+  <data name="ManageProducts" xml:space="preserve">
+    <value>مدیریت محصولات</value>
+  </data>
+  <data name="ManageVendors" xml:space="preserve">
+    <value>مدیریت فروشندگان</value>
+  </data>
+  <data name="ManageVendorsList" xml:space="preserve">
+    <value>مدیریت فهرست فروشندگان</value>
+  </data>
+  <data name="Marketing" xml:space="preserve">
+    <value>Commercialisation</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>پیام ها</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="NameRequired" xml:space="preserve">
+    <value>نام*</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>نه</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>دیگر</value>
+  </data>
+  <data name="ParentCategory" xml:space="preserve">
+    <value>رده والدین</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>کلمه عبور</value>
+  </data>
+  <data name="PortalHeading" xml:space="preserve">
+    <value>مدیریت پورتال ها</value>
+  </data>
+  <data name="PortalManagement" xml:space="preserve">
+    <value>مدیریت پورتال</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>قیمت</value>
+  </data>
+  <data name="ProductCode" xml:space="preserve">
+    <value>کد محصول</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>نام محصول*</value>
+  </data>
+  <data name="ProductNameNotRequired" xml:space="preserve">
+    <value>نام محصول</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>محصولات</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>مقدار</value>
+  </data>
+  <data name="Queries" xml:space="preserve">
+    <value>پرس و جوها</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>ملاحظات</value>
+  </data>
+  <data name="RentalVendor" xml:space="preserve">
+    <value>فروشنده اجاره</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>گزارش ها</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>صرفه جویی</value>
+  </data>
+  <data name="SelectAdsPlacholder" xml:space="preserve">
+    <value>-- انتخاب آگهی --</value>
+  </data>
+  <data name="SelectAdsTypePlacholder" xml:space="preserve">
+    <value>-- انتخاب نوع تبلیغات --</value>
+  </data>
+  <data name="SelectAttributePlacholder" xml:space="preserve">
+    <value>-- انتخاب ویژگی --</value>
+  </data>
+  <data name="SelectAttributes" xml:space="preserve">
+    <value>*ویژگی ها را انتخاب کنید</value>
+  </data>
+  <data name="SelectCategory" xml:space="preserve">
+    <value>دسته را انتخاب کنید*</value>
+  </data>
+  <data name="SelectCategoryPlacholder" xml:space="preserve">
+    <value>-- دسته را انتخاب کنید --</value>
+  </data>
+  <data name="SelectCustomer" xml:space="preserve">
+    <value>مشتری را انتخاب کنید</value>
+  </data>
+  <data name="SelectCustomerPlacholder" xml:space="preserve">
+    <value>-- انتخاب مشتری --</value>
+  </data>
+  <data name="SelectPortal" xml:space="preserve">
+    <value>انتخاب پورتال</value>
+  </data>
+  <data name="SelectStatus" xml:space="preserve">
+    <value>وضعیت را انتخاب کنید</value>
+  </data>
+  <data name="SelectStatusPlaceholder" xml:space="preserve">
+    <value>-- انتخاب وضعیت --</value>
+  </data>
+  <data name="SelectTags" xml:space="preserve">
+    <value>برچسب ها را انتخاب کنید</value>
+  </data>
+  <data name="SelectTagsPlaceholder" xml:space="preserve">
+    <value>-- برچسب ها را انتخاب کنید --</value>
+  </data>
+  <data name="SelectVendor" xml:space="preserve">
+    <value>فروشنده را انتخاب کنید</value>
+  </data>
+  <data name="SelectVendorPlacholder" xml:space="preserve">
+    <value>-- فروشنده اجاره --</value>
+  </data>
+  <data name="SellerVendor" xml:space="preserve">
+    <value>فروشندگان فروشنده</value>
+  </data>
+  <data name="SerialNo" xml:space="preserve">
+    <value>شماره سریال</value>
+  </data>
+  <data name="ServiceProvider" xml:space="preserve">
+    <value>ارائه کننده خدمات</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>وضعیت</value>
+  </data>
+  <data name="SubCategoryName" xml:space="preserve">
+    <value>نام زیر شاخه</value>
+  </data>
+  <data name="Subtitle" xml:space="preserve">
+    <value>ASP.NET est un cadre web gratuit pour la création de grands sites web multilingues MVC et applications Web en utilisant HTML, CSS y JavaScript.</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>ضبط ذخیره شده به صورت موفقیت آمیز</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Soporte</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>برچسب ها</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>VOTRE PREMIÈRE APPLICATION MULTI-LANGUE MVC</value>
+  </data>
+  <data name="ToolVendor" xml:space="preserve">
+    <value>سازنده ابزار</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>به روز رسانی</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>نام کاربری</value>
+  </data>
+  <data name="VendorName" xml:space="preserve">
+    <value>نام فروشنده</value>
+  </data>
+  <data name="Vendors" xml:space="preserve">
+    <value>فروشندگان</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>بله</value>
+  </data>
+  <data name="DeleteMessage" xml:space="preserve">
+    <value>ضبط حذف شده به صورت موفقیت آمیز</value>
+  </data>
+  <data name="ProductAttributesMappings" xml:space="preserve">
+    <value>ارزیابی ویژگی های محصول</value>
+  </data>
+  <data name="ManageProductAttributesMapping" xml:space="preserve">
+    <value>مدیریت ویژگی های محصول نقشه برداری</value>
+  </data>
+  <data name="ManageProductFilters" xml:space="preserve">
+    <value>مدیریت فیلتر محصولات</value>
+  </data>
+  <data name="ProductFiltersMappings" xml:space="preserve">
+    <value>فیلترهای محصولات فیلتر</value>
+  </data>
+  <data name="SelectProduct" xml:space="preserve">
+    <value>*انتخاب محصول</value>
+  </data>
+  <data name="SelectProductPlacholder" xml:space="preserve">
+    <value>-- انتخاب محصول --</value>
+  </data>
+  <data name="ManageCategoryFilters" xml:space="preserve">
+    <value>مدیریت فیلترهای گروه</value>
+  </data>
+  <data name="ManageProductFiltersMapping" xml:space="preserve">
+    <value>مدیریت نقشه های فیلتر محصولات</value>
+  </data>
+  <data name="SelectFilterPlaceholder" xml:space="preserve">
+    <value>-- فیلترها را انتخاب کنید -- </value>
+  </data>
+  <data name="SelectFilters" xml:space="preserve">
+    <value>*فیلترها را انتخاب کنید</value>
+  </data>
+  <data name="CategoryFilterMappings" xml:space="preserve">
+    <value>دسته بندی فیلترهای دسته</value>
+  </data>
+  <data name="ManageCategoryFilterMapping" xml:space="preserve">
+    <value>مدیریت طبقه بندی فیلترها</value>
+  </data>
+  <data name="EnterEmailPlaceholder" xml:space="preserve">
+    <value>ایمیل را وارد کنید</value>
+  </data>
+  <data name="EnterFirstName" xml:space="preserve">
+    <value>نام خانوادگی را وارد کنید</value>
+  </data>
+  <data name="EnterLastName" xml:space="preserve">
+    <value>نام خانوادگی را وارد کنید</value>
+  </data>
+  <data name="EnterMiddleName" xml:space="preserve">
+    <value>نام میانه را وارد کنید</value>
+  </data>
+  <data name="EnterPasswordPlaceholder" xml:space="preserve">
+    <value>رمز عبور را وارد کنید</value>
+  </data>
+  <data name="EnterUserNamePlaceholder" xml:space="preserve">
+    <value>نام کاربری را وارد کنید</value>
+  </data>
+  <data name="EnterConfirmPasswordPlaceholder" xml:space="preserve">
+    <value>تأیید رمز عبور را وارد کنید</value>
+  </data>
+  <data name="Portal" xml:space="preserve">
+    <value>پورتال</value>
+  </data>
+  <data name="SelectPortalPlaceholder" xml:space="preserve">
+    <value>-- انتخاب پورتال --</value>
+  </data>
+  <data name="SelectPortalRequired" xml:space="preserve">
+    <value>*انتخاب پورتال</value>
+  </data>
+  <data name="ProductsTree" xml:space="preserve">
+    <value>نمایش محصول درخت</value>
+  </data>
+  <data name="CopyInventory" xml:space="preserve">
+    <value>موجودی کپی</value>
+  </data>
+  <data name="YourInventory" xml:space="preserve">
+    <value>موجودی شما</value>
+  </data>
+  <data name="ManageOrders" xml:space="preserve">
+    <value>سفارشات را مدیریت کنید</value>
+  </data>
+  <data name="OrderNo" xml:space="preserve">
+    <value>شماره سفارش</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>سفارشات</value>
+  </data>
+  <data name="PortalName" xml:space="preserve">
+    <value>نام پورتال</value>
+  </data>
+</root>

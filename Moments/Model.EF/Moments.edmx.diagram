@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a6d428ecdb8f48cf87cf516a3c7680d3" Name="Diagram1" ZoomLevel="86" >
+        <EntityTypeShape EntityType="MomentsModel.Lookup" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MomentsModel.PromotionEmail" Width="1.5" PointX="5.25" PointY="2" />
+        <EntityTypeShape EntityType="MomentsModel.Story" Width="1.5" PointX="1.375" PointY="7" />
+        <EntityTypeShape EntityType="MomentsModel.StoriesNode" Width="1.5" PointX="8" PointY="7" />
+        <EntityTypeShape EntityType="MomentsModel.UserProfile" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="MomentsModel.UserRegistration" Width="1.5" PointX="0.75" PointY="2.375" />
+        <AssociationConnector Association="MomentsModel.FK_PromotionEmails" />
+        <AssociationConnector Association="MomentsModel.FK_StoryId" />
+        <AssociationConnector Association="MomentsModel.FK_UserProfile" />
+        <EntityTypeShape EntityType="MomentsModel.Node" Width="1.5" PointX="3.625" PointY="7.375" />
+        <AssociationConnector Association="MomentsModel.FK_Node_Stories" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
