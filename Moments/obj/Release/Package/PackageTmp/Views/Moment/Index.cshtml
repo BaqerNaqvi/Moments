@@ -19,6 +19,7 @@
     <!-- Bootstrap core CSS -->
     <link href="~/Content/FrontEnd/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/Content/FrontEnd/css/style.css" rel="stylesheet">
+    <link href="~/Content/toastr.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
     <style>
         .file-upload {
@@ -149,8 +150,9 @@
                         <a href="#" class="navbar-left"><img src="~/Content/FrontEnd/images/logo.png"></a>
                     </div>
                     <div class="col-md-8 m_header_toolbar text-right">
-                        <a href="#" class="search_icon navbar-left"><img src="~/Content/FrontEnd/images/search_icon.png"></a>
-                        <a href="#" class="notif_icon navbar-left"><img src="~/Content/FrontEnd/images/bell_icon.png"><span>3</span></a>
+                        <input style="border-radius: 2px;" type="text" id="searchBar"/>
+                        <a href="#" class="search_icon navbar-left" onclick="searchStory()"><img src="~/Content/FrontEnd/images/search_icon.png"></a>
+                        <a href="#" class="notif_icon navbar-left"><img src="~/Content/FrontEnd/images/bell_icon.png"></a>  @*<span></span>*@
                         @if (Convert.ToString(Session["UserFullName"]) == "")
                         {
                             <a href="/Login/Login?RequestUrl=Stories" class="search_icon navbar-left"><img src="~/Content/FrontEnd/images/profile_pic.png">Login</a>
@@ -198,14 +200,43 @@
                 <div class="all_stories">
                     <h4>All Stories</h4>
                     <div class="border_line"></div>
+                    <div id="storyMainDiv">
+                        @if (Model.GetAllStoriesList != null)
+                        {
+                            int count = 1;
+                            foreach (var loop in Model.GetAllStoriesList)
+                            {
+                                <div class="story col-md-4" storyid="@loop.Id">
+                                    <a href="/Moment/CreateStory?StoryId=@loop.Id"><img src="@loop.Path"></a>
+                                    <div class="story_info">
+                                        <p class="no_of_moments"><span>@loop.Name</span></p>
+                                        <p class="no_of_moments">Moments: <span>@loop.NodesCount</span></p>
+                                        <a href="#"><img class="info_icon" src="~/Content/FrontEnd/images/info_icon.png"></a>
+                                    </div>
+                                </div>
+                                count++;
+                            }
+                        }
+                    </div>                 
+                </div>
+
+
+
+
+            </div>
+            <div class="col-md-3 text-left featured_stories">
+                <h4>Featured Stories</h4>
+                <div class="border_line"></div>
+               
                     @if (Model.GetAllStoriesList != null)
                     {
                         int count = 1;
-                        foreach (var loop in Model.GetAllStoriesList)
+                        foreach (var loop in Model.GetAllStoriesList.Where(x => x.IsFeatured == true).ToList())
                         {
-                            <div class="story col-md-4" storyid="@loop.Id">
-                                <a href="/Moment/CreateStory?StoryId=@loop.Id"><img src="@loop.Path"></a>
+                            <div class="story col-md-12">
+                                <img src="@loop.Path">
                                 <div class="story_info">
+                                    @*<p class="author_name">@loop.FirstName @loop.LastName</p>*@
                                     <p class="no_of_moments"><span>@loop.Name</span></p>
                                     <p class="no_of_moments">Moments: <span>@loop.NodesCount</span></p>
                                     <a href="#"><img class="info_icon" src="~/Content/FrontEnd/images/info_icon.png"></a>
@@ -214,74 +245,6 @@
                             count++;
                         }
                     }
-
-                    @*<div class="story col-md-4">
-                            <img src="~/Content/FrontEnd/images/farzeen.png">
-                            <div class="story_info">
-                                <p class="author_name">Mohsin Saeed</p>
-                                <p class="no_of_moments">Moments: <span>37</span></p>
-                                <a href="#"><img class="info_icon" src="~/Content/FrontEnd/images/info_icon.png"></a>
-                            </div>
-                        </div>
-                        <div class="story col-md-4">
-                            <img src="~/Content/FrontEnd/images/tom_hardy.png">
-                            <div class="story_info">
-                                <p class="author_name">Tom Hardy</p>
-                                <p class="no_of_moments">Moments: <span>5</span></p>
-                                <a href="#"><img class="info_icon" src="~/Content/FrontEnd/images/info_icon.png"></a>
-                            </div>
-                        </div>
-                        <div class="story col-md-4">
-                            <img src="~/Content/FrontEnd/images/happy_times.png">
-                            <div class="story_info">
-                                <p class="author_name">Happy Times</p>
-                                <p class="no_of_moments">Moments: <span>17</span></p>
-                                <a href="#"><img class="info_icon" src="~/Content/FrontEnd/images/info_icon.png"></a>
-                            </div>
-                        </div>
-                        <div class="story col-md-4">
-                            <img src="~/Content/FrontEnd/images/john_hum.png">
-                            <div class="story_info">
-                                <p class="author_name">John Hamm</p>
-                                <p class="no_of_moments">Moments: <span>3</span></p>
-                                <a href="#"><img class="info_icon" src="~/Content/FrontEnd/images/info_icon.png"></a>
-                            </div>
-                        </div>
-                        <div class="story col-md-4">
-                            <img src="~/Content/FrontEnd/images/rachel_green.png">
-                            <div class="story_info">
-                                <p class="author_name">Rachel Green</p>
-                                <p class="no_of_moments">Moments: <span>82</span></p>
-                                <a href="#"><img class="info_icon" src="~/Content/FrontEnd/images/info_icon.png"></a>
-                            </div>
-                        </div>*@
-
-                </div>
-
-
-
-
-            </div>
-            <div class="col-md-3 text-left featured_stories">
-                <h4>Features Stories</h4>
-                <div class="border_line"></div>
-                @if (Model.GetAllStoriesList != null)
-                {
-                    int count = 1;
-                    foreach (var loop in Model.GetAllStoriesList.Where(x => x.IsFeatured == true).ToList())
-                    {
-                        <div class="story col-md-12">
-                            <img src="@loop.Path">
-                            <div class="story_info">
-                                @*<p class="author_name">@loop.FirstName @loop.LastName</p>*@
-                                <p class="no_of_moments"><span>@loop.Name</span></p>
-                                <p class="no_of_moments">Moments: <span>@loop.NodesCount</span></p>
-                                <a href="#"><img class="info_icon" src="~/Content/FrontEnd/images/info_icon.png"></a>
-                            </div>
-                        </div>
-                        count++;
-                    }
-                }
             </div>
 
         </div>
@@ -331,10 +294,10 @@
 
                     </div>
                     <div class="modal-body modal-invite">
-                        @*<span style="color: red;" class="pull-right">*Please fill all the fileds.</span>*@
                         <form action="/Moment/AddStory" method="POST" id="AddStoryInitial">
-                            @*@using (Ajax.BeginForm("AddStory", "Moment" , null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "onSaveOrUpdateFiltersSucess(data)", OnFailure = "AjaxFailure(xhr,status,error)" }, new { @id = "AddStoryInitial" }))
-                                {*@
+                            <div class="col-md-12">
+                                <img style="width: 200px;height: 200px;" src="~/Images/default-thumbnail.jpg" id="defaultStoryImg" />
+                            </div>
                             <div class="col-md-12">
                                 <input style="margin-bottom: 10px;margin-top: 10px;" type="text" id="StoryName" name="Name" class="form-control" placeholder="Enter Story Name" />
                             </div>
@@ -342,13 +305,9 @@
                                 <input type="file" name="file" class="form-control" id="Image" />
                                 <textarea style="display:none;" class="hidden" cols="20" id="DocBase64Image" name="Path" rows="2"></textarea>
                             </div>
-                            @*<div class="col-md-12">
-                                    <label>Is Featured</label>
-                                    <input type="checkbox" name="IsFeatured" id="IsFeatured" />
-                                </div>*@
+                           
                             <div class="col-md-12" style="margin-bottom:10px"> <span id="ErrorMessageStoryAdd" style="color:red;"></span></div>
                             <div class="col-md-12"><button type="button" id="SubmitAddStory" class="btn btn-success">Submit</button></div>
-                            @* } *@
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -435,24 +394,29 @@
                     </div>
                 </div>
 
-                <footer class="my-5 pt-5 text-muted text-center text-small"></footer>
+                <footer class="my-5 pt-5 text-muted text-center text-small">
+                    <hr />
+                    <p>Moments - Copy Rights 2018</p>
+                </footer>
             </div>
             <!-- Bootstrap core JavaScript
             ================================================== -->
             <!-- Placed at the end of the document so the pages load faster -->
             @*<script src="../../../../assets/js/vendor/popper.min.js"></script>*@
             <script src="~/Content/FrontEnd/bootstrap/js/bootstrap.min.js"></script>
+            <script src="~/Scripts/toastr.js"></script>
 </body>
 </html>
 <script>
     $(document).ready(function () {
         $("#SubmitAddStory").click(function () {
-            debugger;
             $("#loadingScreen").css("display", "block");
             if ($('#StoryName').val() != "" && $('#Image').val() != "") {
+                toastr.success("Creating Story...");
                 $('#AddStoryInitial').submit();
             }
             else {
+                toastr.error("Please add data");
                 $("#ErrorMessageStoryAdd").text("Please add data.");
             }
             setTimeout(function () { $('#loadingScreen').css({ 'display': 'none' }); }, 3000)
@@ -541,12 +505,19 @@
                     EmailArray.push({ Email: $(this).val() });
                 }
             });
+
+            if (EmailArray.length == 0)
+            {
+                toastr.error("Please add email address");
+                return false;
+            }
+
+            toastr.success("Sending email...");
             $.ajax({
                 type: "POST",
                 url: '@Url.Action("SendEmailsToUsers", "SuperAdmin")',
                 data: { PromotionEmail: EmailArray },
                 success: function (data) {
-                    debugger;
                     $('.InviteUser').html('');
                     $('.InviteUser').append('<div style="padding:15px;" class="input-group dynamicemails"><input style="float: left;" type="text" class="NewTag form-control" placeholder="Enter New Tag" /><i class="fa fa-plus addEmail" aria-hidden="true" style="float: left;padding-left: 18px;padding-top: 5px;cursor: pointer;font-size: 24px;color: #3c8dbc;"></i><i class="fa fa-trash-o removeTag" aria-hidden="true" style="float: left;padding-left: 18px;cursor: pointer;padding-top: 5px;font-size: 24px;color: red;"></i><br/></div>');
                     $('#myModal1').modal('hide');
@@ -555,11 +526,13 @@
                     $('#SuccessMessage').text('');
                     $('#SuccessMessage').text('Email Successfully Sent.');
                     setTimeout(function () { $('.alert-success').css({ 'display': 'none' }); $('#SuccessMessage').text(''); }, 2000)
+                    toastr.success("Sending Sent!");
 
                     //$("#ManageGetVendorList").html("");
                     //$("#ManageGetVendorList").html(data);
                 },
                 error: function (res) {
+                    toastr.error("Sending email failed!");
                     //AjaxFailure(res);
                 }
             });
@@ -567,7 +540,6 @@
     });
 
     function onLoginSuccess(data) {
-        debugger;
         if (data == "SuccessfullLogin") {
             @*$.ajax({
                     type: "GET",
@@ -597,5 +569,51 @@
             $('#errorLogin').text("Invalid Email or Password.");
             setTimeout(function () { $('#errorLogin').text(""); }, 5000);
         }
+    }
+</script>
+<script>
+
+    $("#Image").change(function () {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#defaultStoryImg').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+
+function searchStory() {
+        var val = $('#searchBar').val();
+
+     
+        toastr.success("Searching...");
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("SearchStory", "Moment")',
+            data: { searchStr: val },
+            success: function (data) {
+                var rawHtml = "";
+                if (data != false && data.length > 0) {
+                    for (var i = 0; i < data.length; i++) {
+                        var htmll = "<div class='story col-md-4' storyid='" + data[i].Id + "'>" +
+                                    "<a href='/Moment/CreateStory?StoryId=" + data[i].Id + "'><img src='" + data[i].Path + "'></a>" +
+                                "<div class='story_info'>"+
+                                    "<p class='no_of_moments'><span>" + data[i].Name + "</span></p>" +
+                                    "<p class='no_of_moments'>Moments: <span>" + data[i].NodesCount + "</span></p>" +
+                                     "<a href='#'><img class='info_icon' src='~/Content/FrontEnd/images/info_icon.png'></a>" +
+                                "</div>"+
+                            "</div>";
+                        rawHtml = rawHtml + htmll;
+                    }
+                }
+
+                $('#storyMainDiv').html(rawHtml);
+            },
+            error: function (res) {
+                toastr.error("Failed to run search!");
+            }
+        });
+
     }
 </script>

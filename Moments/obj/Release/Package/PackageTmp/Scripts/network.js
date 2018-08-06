@@ -195,6 +195,7 @@ $(document).ready(function () {
     });
 });
 function setContentDiv(root) {
+    $('#videoDiv iframe').attr('src', '')
     $('#imgDiv').hide();
     $('#textDiv').hide();
     $('#videoDiv').hide();
@@ -339,7 +340,7 @@ function saveText() {
     var contents = "";
     if (contentType == "Text") {
          contents = $('#textArea').val();
-    } else if (contentType == "Video") {
+    } else if (contentType == "Video" || contentType == "Audio") {
         contents = $('#urlArea').val();
     }
 

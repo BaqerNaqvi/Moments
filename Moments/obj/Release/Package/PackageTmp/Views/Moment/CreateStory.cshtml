@@ -26,7 +26,7 @@
     <link href="~/Content/toastr.css" rel="stylesheet" />
 
 
-    <title>Create a Moment</title>
+    <title>Create a Moment - Moments</title>
 
     <!-- Bootstrap core CSS -->
 
@@ -35,6 +35,12 @@
     <script>
         var updatecount =@Model.StoriesNodeList.Count;
     </script>
+    <style>
+        .typesItem{
+            margin-left: 14px;
+            cursor: pointer;
+        }
+    </style>
     <!-- Custom styles for this template -->
 </head>
 
@@ -46,7 +52,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-1 m_logo text-left">
-                        <a href="index.html" class="navbar-left"><img src="~/Images/small_logo.png"></a>
+                        <a href="~/Moment/Index" class="navbar-left"><img src="~/Images/small_logo.png"></a>
                     </div>
                     <div class="col-md-4 header_top_items text-left">
                         <a href="~/Moment/Index" class="navbar-left">+New Story</a>
@@ -110,7 +116,7 @@
                         <div class="add_button"><button onclick="showAudioBox()">Add Audio</button></div>
                         <div class="add_button"><button onclick="showVideoBox()">Add Video</button></div>
                     </div>
-                    <div style="overflow-y:auto; border-style: dotted dashed solid double;padding: 5px;max-height: 600px;height: 600px;border-style: dotted dashed solid double;padding: 5px;" id="textDiv">
+                    <div style="display:none ;overflow-y:auto; border-style: dotted dashed solid double;padding: 5px;max-height: 600px;height: 600px;border-style: dotted dashed solid double;padding: 5px;" id="textDiv">
                         <p></p>
                     </div>
                     <div id="imgDiv">
@@ -155,10 +161,44 @@
 
                         </div>
                         <div class="modal-body" style="height: 110px;">
-                            <a href="#" class="add_image_6" onclick="showImgBox()">Add Image</a>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div class="typesItem" onclick="showTextBox()">
+                                            <img src="~/Images/Types/add_text.png" />
+                                            <br />
+                                            <span style="margin-left: 28px;">Text</span>
+                                        </div>
+                                    </td>
+                                    <td>                                        
+                                        <div class="typesItem" onclick="showImgBox()">
+                                            <img src="~/Images/Types/add_image.png" />
+                                            <br />
+                                            <span style="margin-left: 28px;">Image</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="typesItem" onclick="showAudioBox()">
+                                            <img src="~/Images/Types/add_audio.png" />
+                                            <br />
+                                            <span style="margin-left: 28px;">Audio</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="typesItem" onclick="showVideoBox()">
+                                            <img src="~/Images/Types/add_video.png" />
+                                            <br />
+                                            <span style="margin-left: 28px;">Video</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+
+                            @*<a href="#" class="add_image_6" onclick="showImgBox()">Add Image</a>
                             <a href="#" class="add_text_6" onclick="showTextBox()">Add Text</a>
                             <a href="#" class="add_video_6" onclick="showAudioBox()">Add Audio</a>
-                            <a href="#" class="add_video_6" onclick="showVideoBox()">Add Video</a>
+                            <a href="#" class="add_video_6" onclick="showVideoBox()">Add Video</a>*@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

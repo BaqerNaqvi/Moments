@@ -49,6 +49,7 @@ namespace Moments.Controllers
             LoginDAL dal = new LoginDAL();
             try
             {
+                Login.Email = Login.Email.ToLower();
                 if (Login.Email.ToLower().Contains("superadmin"))
                 {
                     Login.Type = "SuperAdmin";

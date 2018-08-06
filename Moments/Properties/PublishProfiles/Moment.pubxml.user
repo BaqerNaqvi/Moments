@@ -34,10 +34,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/es-es/Moments.resources.dll">
-      <publishTime>07/26/2018 03:51:22</publishTime>
+      <publishTime>08/03/2018 15:32:47</publishTime>
     </File>
     <File Include="bin/fr-fr/Moments.resources.dll">
-      <publishTime>07/26/2018 03:51:22</publishTime>
+      <publishTime>08/03/2018 15:32:47</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>12/07/2015 19:04:38</publishTime>
@@ -103,7 +103,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/23/2012 15:23:58</publishTime>
     </File>
     <File Include="bin/Moments.dll">
-      <publishTime>07/26/2018 03:51:21</publishTime>
+      <publishTime>08/03/2018 15:32:46</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>08/03/2014 20:33:56</publishTime>
@@ -22782,6 +22782,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/bell_icon.png">
       <publishTime>07/24/2018 02:55:19</publishTime>
     </File>
+    <File Include="Images/default-thumbnail.jpg">
+      <publishTime>08/03/2018 02:44:22</publishTime>
+    </File>
     <File Include="Images/export.png">
       <publishTime>07/17/2018 16:29:25</publishTime>
     </File>
@@ -22875,6 +22878,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Images/twitter.png">
       <publishTime>07/24/2018 02:55:19</publishTime>
     </File>
+    <File Include="Images/Types/add_audio.png">
+      <publishTime>08/03/2018 03:51:11</publishTime>
+    </File>
+    <File Include="Images/Types/add_image.png">
+      <publishTime>08/03/2018 03:51:11</publishTime>
+    </File>
+    <File Include="Images/Types/add_text.png">
+      <publishTime>08/03/2018 03:51:11</publishTime>
+    </File>
+    <File Include="Images/Types/add_video.png">
+      <publishTime>08/03/2018 03:51:11</publishTime>
+    </File>
     <File Include="Images/view.png">
       <publishTime>07/17/2018 16:29:25</publishTime>
     </File>
@@ -22933,7 +22948,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2018 11:16:22</publishTime>
     </File>
     <File Include="Scripts/network.js">
-      <publishTime>07/26/2018 04:08:59</publishTime>
+      <publishTime>08/03/2018 03:47:34</publishTime>
     </File>
     <File Include="Scripts/respond.js">
       <publishTime>06/04/2018 11:16:24</publishTime>
@@ -23029,13 +23044,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2018 11:16:29</publishTime>
     </File>
     <File Include="Views/Moment/CreateStory.cshtml">
-      <publishTime>07/26/2018 04:09:31</publishTime>
+      <publishTime>08/03/2018 04:07:16</publishTime>
     </File>
     <File Include="Views/Moment/CreateStory1.cshtml">
-      <publishTime>07/26/2018 02:58:55</publishTime>
+      <publishTime>07/26/2018 04:16:07</publishTime>
     </File>
     <File Include="Views/Moment/Index.cshtml">
-      <publishTime>07/24/2018 02:27:37</publishTime>
+      <publishTime>08/03/2018 03:42:47</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>06/04/2018 11:16:28</publishTime>
@@ -23077,7 +23092,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2018 17:17:53</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/26/2018 03:51:23</publishTime>
+      <publishTime>08/03/2018 15:29:22</publishTime>
     </File>
   </ItemGroup>
 </Project>

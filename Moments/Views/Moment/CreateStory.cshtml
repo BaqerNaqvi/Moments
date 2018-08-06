@@ -71,7 +71,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-4 moment_main_text text-left">
-                        <h3 class="storyName">Loading...</h3>
+                        <h3 class="storyName">...</h3>
                         <div class="moment_paraph_center">
                             <p>Cords:<span>@Model.Branches</span></p>
                             <p>Momemts: <span id="momentsCount">...</span></p>
@@ -80,7 +80,7 @@
                     </div>
                     <div class="selected_moment col-md-4 text-right">
                         <p>
-                            Selected Moment: <span id="selectedNode">Loading...</span>
+                            Selected Moment: <span id="selectedNode">...</span>
                             @*<img src="~/Images/view_icon.png" />*@
                         </p>
                         <a href="#" onclick="exportStoryBtn()"><img src="~/Images/longarrow_icon.png" /></a>
@@ -110,11 +110,45 @@
                 </div>
                 <div class="section_2 col-lg-5 new_moment_view" style="margin-top: 25px;">
                     <p class="moment_txt">Moment</p>
-                    <div id="buttonDiv" class="col-lg-12 moment_add_buttons">
-                        <div class="add_button"><button onclick="showImgBox()">Add Image</button></div>
-                        <div class="add_button"><button onclick="showTextBox()">Add Text</button></div>
-                        <div class="add_button"><button onclick="showAudioBox()">Add Audio</button></div>
-                        <div class="add_button"><button onclick="showVideoBox()">Add Video</button></div>
+                    <div id="buttonDiv" class="col-lg-12 moment_add_buttons" style="margin-left: 35%;margin-top: 15%;">
+                        <table>
+                               <tr>
+                                   <td>
+                                       <div class="typesItem" onclick="showTextBox()">
+                                           <img src="~/Images/Types/add_text.png" />
+                                           <br />
+                                           <span style="margin-left: 28px;">Text</span>
+                                       </div>
+                                   </td>
+                               </tr>
+                                <tr>
+                                    <td>
+                                        <div class="typesItem" onclick="showImgBox()">
+                                            <img src="~/Images/Types/add_image.png" />
+                                            <br />
+                                            <span style="margin-left: 28px;">Image</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="typesItem" onclick="showAudioBox()">
+                                            <img src="~/Images/Types/add_audio.png" />
+                                            <br />
+                                            <span style="margin-left: 28px;">Audio</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="typesItem" onclick="showVideoBox()">
+                                            <img src="~/Images/Types/add_video.png" />
+                                            <br />
+                                            <span style="margin-left: 28px;">Video</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                        </table>
                     </div>
                     <div style="display:none ;overflow-y:auto; border-style: dotted dashed solid double;padding: 5px;max-height: 600px;height: 600px;border-style: dotted dashed solid double;padding: 5px;" id="textDiv">
                         <p></p>

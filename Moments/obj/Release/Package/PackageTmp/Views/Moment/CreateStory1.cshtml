@@ -51,7 +51,7 @@
                     <div class="col-md-4 header_top_items text-left">
                         <a href="~/Moment/Index" class="navbar-left">+New Story</a>
                         @*<a href="#" class="navbar-left">Explore</a>
-                        <a href="#" class="navbar-left">Search</a>*@
+                            <a href="#" class="navbar-left">Search</a>*@
                     </div>
 
                 </div>
@@ -73,10 +73,12 @@
                         </div>
                     </div>
                     <div class="selected_moment col-md-4 text-right">
-                        <p>Selected Moment: <span id="selectedNode">Loading...</span>
-                        @*<img src="~/Images/view_icon.png" />*@</p>
+                        <p>
+                            Selected Moment: <span id="selectedNode">Loading...</span>
+                            @*<img src="~/Images/view_icon.png" />*@
+                        </p>
                         <a href="#" onclick="exportStoryBtn()"><img src="~/Images/longarrow_icon.png" /></a>
-                        <a href="#" data-toggle="modal" data-target="#myModal" ><img src="~/Images/plus_sign.png" /></a>
+                        <a href="#" data-toggle="modal" data-target="#myModal"><img src="~/Images/plus_sign.png" /></a>
                     </div>
 
                 </div>
@@ -89,7 +91,7 @@
         <div class="row">
             <div class="col-md-12 m_tool_container">
                 <div class="section_1 col-lg-3">
-                    <img id="storyImg" style="margin-top: 25px;margin-bottom: 18px;"src="">
+                    <img id="storyImg" style="margin-top: 25px;margin-bottom: 18px;" src="">
                     <div class="moment_name">
                         <h2 class="storyName">Loading...</h2>
                     </div>
@@ -108,7 +110,7 @@
                         <div class="add_button"><button onclick="showAudioBox()">Add Audio</button></div>
                         <div class="add_button"><button onclick="showVideoBox()">Add Video</button></div>
                     </div>
-                    <div style="overflow-y:auto; border-style: dotted dashed solid double;padding: 5px;max-height: 600px;height: 600px;border-style: dotted dashed solid double;padding: 5px;" id="textDiv">
+                    <div style="display:none ;overflow-y:auto; border-style: dotted dashed solid double;padding: 5px;max-height: 600px;height: 600px;border-style: dotted dashed solid double;padding: 5px;" id="textDiv">
                         <p></p>
                     </div>
                     <div id="imgDiv">
@@ -117,9 +119,9 @@
                     <div id="videoDiv">
                         <iframe src="" width="450" height="315" frameborder="0" allowfullscreen></iframe>
                     </div>
-                    
+
                 </div>
-        
+
                 <div class="section_2 col-lg-5 tree_view">
                     <p class="moment_txt">Moment</p>
                     <div class="col-lg-12">
@@ -133,8 +135,8 @@
                     <div id="orgReportingStructure" style="width:400px; height:600px; background-color:#38383826 !important; border-style: dotted dashed solid double;"></div>
                 </div>
                 @*<div class="full_view">
-                    <a href="#">Full View</a>
-                </div>*@
+                        <a href="#">Full View</a>
+                    </div>*@
             </div>
 
         </div>
@@ -183,7 +185,7 @@
                             <textarea cols="55" rows="6" placeholder="Start typing here..." id="textArea"></textarea>
                             <img style="display:none; width: 470px;" id="showImg" />
                             <div id="videoDivWrapper" style="display:none;">
-                                <textarea style="height: 30px;" placeholder="Paste URL Here..." id="urlArea"></textarea>                                
+                                <textarea style="height: 30px;" placeholder="Paste URL Here..." id="urlArea"></textarea>
                             </div>
                         </div>
                         <div class="modal-footer" id="textModel-footer">
@@ -213,6 +215,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-   
+
 </body>
 </html>

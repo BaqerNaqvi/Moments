@@ -110,7 +110,7 @@ namespace Moments.RepositoryDAL
                 _db.Stories.Add(Story);
                 _db.SaveChanges();
                 status = 1;
-                return status;
+                return Story.Id;
             }
             catch (Exception ex)
             {
@@ -217,7 +217,7 @@ namespace Moments.RepositoryDAL
                 {
                     contents = source.Contents.Substring(0, 20) + "...";
                 }
-                shape = "trianle";
+                shape = "box";
                 borderGroup = "unknownFriendliness";
             }
             else if (source.Type == "Audio")
@@ -226,7 +226,7 @@ namespace Moments.RepositoryDAL
                 {
                     contents = source.Contents.Substring(0, 20) + "...";
                 }
-                shape = "trianle";
+                shape = "box";
                 borderGroup = "notAssignedFriendliness";
             }
 

@@ -13,6 +13,7 @@ using Moments.Models;
 using PdfSharp.Drawing;
 using System.Diagnostics;
 using PdfSharp.Pdf;
+using System.Text.RegularExpressions;
 
 namespace Moments.Controllers
 {
@@ -26,7 +27,7 @@ namespace Moments.Controllers
             ViewModel.GetAllStoriesList = DAL.GetStories(null,null,null,null);
             if (ViewModel.GetAllStoriesList!=null && ViewModel.GetAllStoriesList.Any())
             {
-               // ViewModel.GetAllStoriesList = ViewModel.GetAllStoriesList.Where(st => st.Id > 43).ToList();
+               // ViewModel.GetAllStoriesList = ViewModel.GetAllStoriesList.Where(st => st.Id > 55).ToList();
             }
             return View(ViewModel);
         }
@@ -128,8 +129,8 @@ namespace Moments.Controllers
             Story.IsFeatured = false;
             Story.Status = 1;
 
-            int status = DAL.AddStory(Story);
-            return RedirectToAction("Index");
+            int id = DAL.AddStory(Story);
+            return (RedirectToAction("CreateStory", new { StoryId = id }));
         }
 
 
@@ -316,7 +317,11 @@ namespace Moments.Controllers
             {
                 contents = contents.Replace("watch?v=", "embed/");
             }
-
+            if (contentType == "Audio")
+            {
+                contents = Server.UrlDecode(contents);
+                contents = Regex.Match(contents, "<iframe.+?src=[\"'](.+?)[\"'].*?>", RegexOptions.IgnoreCase).Groups[1].Value;
+            }
             var service = new MomentDAL();
             var id = service.AddNewNode(new Node
             {
