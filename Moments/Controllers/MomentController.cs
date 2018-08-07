@@ -27,7 +27,7 @@ namespace Moments.Controllers
             ViewModel.GetAllStoriesList = DAL.GetStories(null,null,null,null);
             if (ViewModel.GetAllStoriesList!=null && ViewModel.GetAllStoriesList.Any())
             {
-                ViewModel.GetAllStoriesList = ViewModel.GetAllStoriesList.Where(st => st.Id > 55).ToList();
+                //ViewModel.GetAllStoriesList = ViewModel.GetAllStoriesList.Where(st => st.Id > 55).ToList();
             }
             return View(ViewModel);
         }
@@ -474,6 +474,32 @@ namespace Moments.Controllers
                 return Json(dataList, JsonRequestBehavior.AllowGet);
             }
             return Json(allMoments, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult ViewStories()
+        {
+            MomentViewModel ViewModel = new MomentViewModel();
+            MomentDAL DAL = new MomentDAL();
+            ViewModel.GetAllStoriesList = DAL.GetStories(null, null, null, null);
+            if (ViewModel.GetAllStoriesList != null && ViewModel.GetAllStoriesList.Any())
+            {
+               // ViewModel.GetAllStoriesList = ViewModel.GetAllStoriesList.Where(st => st.Id > 35).ToList();
+            }
+            return View(ViewModel);
+        }
+
+        public ActionResult ChangeStoryStatus(string storyId)
+        {
+            MomentDAL DAL = new MomentDAL();
+            DAL.ChnageStoryStatus(storyId);
+            return Json(true, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult DeleteStory(string storyId)
+        {
+            MomentDAL DAL = new MomentDAL();
+            DAL.DeleteStory(storyId);
+            return Json(true, JsonRequestBehavior.AllowGet);
         }
     }
 }

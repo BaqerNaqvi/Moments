@@ -319,6 +319,51 @@
     <Content Include="Content\ajaxLoader.gif" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CustomContetnts\bootstrap-datepicker.css" />
+    <Content Include="Content\CustomContetnts\bootstrap-datepicker.js" />
+    <Content Include="Content\CustomContetnts\bootstrap-datepicker.min.css" />
+    <Content Include="Content\CustomContetnts\bootstrap-datepicker.min.js" />
+    <Content Include="Content\CustomContetnts\bootstrap-datepicker3.css" />
+    <Content Include="Content\CustomContetnts\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\CustomContetnts\bootstrap.js" />
+    <Content Include="Content\CustomContetnts\bootstrap.min.js" />
+    <Content Include="Content\CustomContetnts\dataTables.bootstrap.css" />
+    <Content Include="Content\CustomContetnts\dataTables.bootstrap.js" />
+    <Content Include="Content\CustomContetnts\dataTables.bootstrap.min.css" />
+    <Content Include="Content\CustomContetnts\dataTables.bootstrap.min.js" />
+    <Content Include="Content\CustomContetnts\daterangepicker.css" />
+    <Content Include="Content\CustomContetnts\daterangepicker.js" />
+    <Content Include="Content\CustomContetnts\fastclick.js" />
+    <Content Include="Content\CustomContetnts\font-awesome.css" />
+    <Content Include="Content\CustomContetnts\font-awesome.min.css" />
+    <Content Include="Content\CustomContetnts\Gruntfile.js" />
+    <Content Include="Content\CustomContetnts\ionicons.css" />
+    <Content Include="Content\CustomContetnts\ionicons.min.css" />
+    <Content Include="Content\CustomContetnts\jquery-jvectormap.css" />
+    <Content Include="Content\CustomContetnts\jquery-jvectormap.js" />
+    <Content Include="Content\CustomContetnts\jquery-ui.js" />
+    <Content Include="Content\CustomContetnts\jquery-ui.min.js" />
+    <Content Include="Content\CustomContetnts\jquery.dataTables.js" />
+    <Content Include="Content\CustomContetnts\jquery.dataTables.min.js" />
+    <Content Include="Content\CustomContetnts\jquery.knob.min.js" />
+    <Content Include="Content\CustomContetnts\jquery.slimscroll.js" />
+    <Content Include="Content\CustomContetnts\jquery.slimscroll.min.js" />
+    <Content Include="Content\CustomContetnts\jquery.sparkline.js" />
+    <Content Include="Content\CustomContetnts\jquery.sparkline.min.js" />
+    <Content Include="Content\CustomContetnts\locales.js" />
+    <Content Include="Content\CustomContetnts\locales.min.js" />
+    <Content Include="Content\CustomContetnts\moment-with-locales.js" />
+    <Content Include="Content\CustomContetnts\moment-with-locales.min.js" />
+    <Content Include="Content\CustomContetnts\moment.min.js" />
+    <Content Include="Content\CustomContetnts\morris.css" />
+    <Content Include="Content\CustomContetnts\morris.js" />
+    <Content Include="Content\CustomContetnts\morris.min.js" />
+    <Content Include="Content\CustomContetnts\npm.js" />
+    <Content Include="Content\CustomContetnts\select2.full.js" />
+    <Content Include="Content\CustomContetnts\select2.full.min.js" />
+    <Content Include="Content\CustomContetnts\select2.js" />
+    <Content Include="Content\CustomContetnts\select2.min.js" />
+    <Content Include="Content\CustomContetnts\tests.js" />
     <Content Include="Content\custom\custom.js" />
     <Content Include="Content\custom\main.css" />
     <Content Include="Content\custom\main.js" />
@@ -950,6 +995,7 @@
     <Content Include="Content\FrontEnd\froala\html\file_s3_upload.php" />
     <Content Include="Content\FrontEnd\froala\html\image_s3_upload.php" />
     <Content Include="Content\FrontEnd\froala\package.json" />
+    <Content Include="Content\CustomContetnts\font-awesome.css.map" />
     <None Include="Content\Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\Scripts\jquery-1.10.2.js" />
     <Content Include="Content\Scripts\jquery-1.10.2.min.js" />
@@ -1038,6 +1084,8 @@
       <DependentUpon>Moments.edmx</DependentUpon>
       <LastGenOutput>Moments.cs</LastGenOutput>
     </Content>
+    <Content Include="raphael.js" />
+    <Content Include="raphael.min.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1128,6 +1176,7 @@
     <Content Include="Views\Moment\Index.cshtml" />
     <Content Include="Views\Moment\CreateStory.cshtml" />
     <Content Include="Views\Moment\CreateStory1.cshtml" />
+    <Content Include="Views\Moment\ViewStories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ApiController\" />

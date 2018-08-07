@@ -127,6 +127,7 @@
 </div>
 
 <script>
+    var clickedId;
 
 
     $(document).ready(function () {
@@ -214,14 +215,14 @@
                         $('#MiddleName').val(data.MiddleName);
                         $('#FirstName').val(data.FirstName);
                         $('#UserName').val(data.UserName);
-                        $('#ConfirmPassword').val(data.ConfirmPassword);
                         $('#Password').val(data.Password);
+                        $('#ConfirmPassword').val(data.Password);
                         $('#UserType').val(data.Type);
                         $("#loadingScreen").css("display", "none");
+                        clickedId = data.Id;
                     }
                 },
                 error: function (res) {
-                    debugger;
                     AjaxFailure(res);
                 }
             });

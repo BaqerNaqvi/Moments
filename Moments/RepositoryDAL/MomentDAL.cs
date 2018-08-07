@@ -54,6 +54,32 @@ namespace Moments.RepositoryDAL
         }
 
 
+        public void ChnageStoryStatus(string storyId)
+        {
+            using (var dbContext = new MomentsEntities())
+            {
+                var story = dbContext.Stories.FirstOrDefault(obj => obj.Id.ToString() == storyId);
+                story.IsFeatured = !story.IsFeatured;
+                dbContext.SaveChanges();
+            }
+
+        }
+
+
+        public void DeleteStory(string storyId)
+        {
+            using (var dbContext = new MomentsEntities())
+            {
+                var allnodes = dbContext.Nodes.Where(n => n.StoryId.ToString() == storyId).ToList();
+                dbContext.Nodes.RemoveRange(allnodes);
+                dbContext.SaveChanges();
+
+                var story = dbContext.Stories.FirstOrDefault(obj => obj.Id.ToString() == storyId);
+                dbContext.Stories.Remove(story);
+                dbContext.SaveChanges();
+            }
+        }
+
         public List<StoriesNode> GetStoryNodes(int? StoryIdDynamic)
         {
             try

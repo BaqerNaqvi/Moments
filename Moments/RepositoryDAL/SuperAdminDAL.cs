@@ -174,18 +174,17 @@ namespace Moments.RepositoryDAL
         {
             try
             {
-                int status = 0;
-                UserRegistration UserRegistration = new UserRegistration();
-                UserRegistration = _db.UserRegistrations.Where(x => x.Id == CustomerProfileAndRegistration.UserRegistration.Id).FirstOrDefault();
-                _db.UserRegistrations.Remove(UserRegistration);
-                _db.SaveChanges();
-
+                
                 UserProfile UserProfile = new UserProfile();
                 UserProfile = _db.UserProfiles.Where(x => x.Id == CustomerProfileAndRegistration.UserProfile.Id).FirstOrDefault();
                 _db.UserProfiles.Remove(UserProfile);
                 _db.SaveChanges();
-                status = 1;
-                return status;
+
+                UserRegistration UserRegistration = new UserRegistration();
+                UserRegistration = _db.UserRegistrations.Where(x => x.Id == CustomerProfileAndRegistration.UserRegistration.Id).FirstOrDefault();
+                _db.UserRegistrations.Remove(UserRegistration);
+                _db.SaveChanges();
+                return 1;
             }
             catch (Exception ex)
             {

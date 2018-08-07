@@ -1,0 +1,108 @@
+﻿@model  Moments.ViewModels.MomentViewModel
+@{
+    ViewBag.Title = "View Stories";
+    Layout = Request.IsAjaxRequest() ? null : "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/toastr.css" rel="stylesheet" />
+<style>
+    input, select, textarea {
+        max-width: none !important;
+    }
+</style>
+<div>
+    <div id="ManageCustomer">
+        <div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box">
+                        <div class="box-header">
+                            <h3 class="box-title">Story List</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table id="user" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Story Name</th>
+                                        <th>Created By</th>  
+                                        <th>Moments</th>
+                                        <th>Is Featured</th>                                       
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.GetAllStoriesList != null)
+                                    {
+                                        int count = 1;
+                                        foreach (var loop in Model.GetAllStoriesList)
+                                        {
+                                            <tr id="tr_@loop.Id">
+                                                <td>@count</td>
+                                                <td><span><img style="width:20px; height:20px" src="@loop.Path"/></span> <span>@loop.Name</span></td>
+                                                <td>@loop.FirstName @loop.LastName</td>
+                                                <td>@loop.NodesCount</td>
+                                                <td><input name="featuredCb" id="cb_@loop.Id" type="checkbox" checked="@loop.IsFeatured"/></td>
+                                                <td>                                                   
+                                                    <span style="margin-left: 10px;">
+                                                        <i id="xcd_@loop.Id" onclick="deleteStory(this)" userprofileid="4" userregistrationid="3" class="RemoveUser fa fa-trash-o" style="color: red;cursor: pointer;"></i>
+                                                    </span>
+                                                </td>
+                                            </tr>                                            
+                                            count++;
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+<script src="~/Scripts/toastr.js"></script>
+<script>
+
+    $('input[name="featuredCb"]').change(function () {
+        changeFeature($(this).attr('id'));
+    });
+
+    function changeFeature(id) {
+        id = id.split('_')[1];
+        $.ajax({
+            url: location.protocol + "//" + location.host + '/Moment/ChangeStoryStatus',
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify({ storyId: id }),
+            success: function (data) {
+                toastr.success("Story updated");
+            },
+            error: function (data, dfsd, sdfsd) {
+
+            }
+        });
+    }
+
+
+    function deleteStory(ref) {
+        var id = $(ref).attr('id').split('_')[1];
+        $.ajax({
+            url: location.protocol + "//" + location.host + '/Moment/DeleteStory',
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify({ storyId: id }),
+            success: function (data) {
+                toastr.success("Story deleted");
+                $('#tr_' + id).remove();
+            },
+            error: function (data, dfsd, sdfsd) {
+
+            }
+        });
+    }
+</script>
