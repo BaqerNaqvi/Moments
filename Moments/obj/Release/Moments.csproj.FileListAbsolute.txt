@@ -316,3 +316,7 @@ D:\Work\Projects\Moments\Moments\Moments\obj\Release\es-es\Moments.resources.dll
 D:\Work\Projects\Moments\Moments\Moments\obj\Release\fr-fr\Moments.resources.dll
 D:\Work\Projects\Moments\Moments\Moments\obj\Release\Moments.dll
 D:\Work\Projects\Moments\Moments\Moments\obj\Release\Moments.pdb
+D:\Work\Projects\Moments\Moments\Moments\bin\WebDriver.dll
+D:\Work\Projects\Moments\Moments\Moments\bin\WebDriver.Support.dll
+D:\Work\Projects\Moments\Moments\Moments\bin\WebDriver.xml
+D:\Work\Projects\Moments\Moments\Moments\bin\WebDriver.Support.xml

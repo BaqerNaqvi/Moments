@@ -128,7 +128,8 @@
         });
         function onLoginSuccess(data) {
             if (data == "SuccessfullLogin") {               
-                window.location.href = '/Moment/Index';
+                window.location.href = '/SuperAdmin/Index';
+                // window.location.href = '/Moment/Index';
             } else {
                 $('#errorLogin').text("Invalid Email or Password.");
                 setTimeout(function () { $('#errorLogin').text(""); }, 5000);

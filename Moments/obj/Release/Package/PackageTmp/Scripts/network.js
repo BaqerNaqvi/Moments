@@ -342,6 +342,10 @@ function saveText() {
          contents = $('#textArea').val();
     } else if (contentType == "Video" || contentType == "Audio") {
         contents = $('#urlArea').val();
+        if (contents != undefined && contents.length > 0) {
+            debugger;
+            contents = encodeURI(contents);
+        }
     }
 
     if (contents == null || contents == "" || contents.length<15) {

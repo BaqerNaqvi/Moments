@@ -27,7 +27,7 @@ namespace Moments.Controllers
             ViewModel.GetAllStoriesList = DAL.GetStories(null,null,null,null);
             if (ViewModel.GetAllStoriesList!=null && ViewModel.GetAllStoriesList.Any())
             {
-               // ViewModel.GetAllStoriesList = ViewModel.GetAllStoriesList.Where(st => st.Id > 55).ToList();
+                ViewModel.GetAllStoriesList = ViewModel.GetAllStoriesList.Where(st => st.Id > 55).ToList();
             }
             return View(ViewModel);
         }
@@ -460,11 +460,18 @@ namespace Moments.Controllers
         public ActionResult SearchStory(string searchStr)
         {
             MomentDAL DAL = new MomentDAL();
+            var dataList = new List<Sp_GetStories_Result>();
             var allMoments= DAL.GetStories(null, null, null, null);
             if (allMoments.Any() && !string.IsNullOrEmpty(searchStr))
             {
-                var searchedMoments = allMoments.Where(obj => obj.Name.ToLower().Contains(searchStr)  ).ToList();
-                return Json(searchedMoments, JsonRequestBehavior.AllowGet);
+                foreach(var item in allMoments)
+                {
+                    if (!string.IsNullOrEmpty(item.Name) && item.Name.ToLower().Contains(searchStr.ToLower()))
+                    {
+                        dataList.Add(item);
+                    }
+                }
+                return Json(dataList, JsonRequestBehavior.AllowGet);
             }
             return Json(allMoments, JsonRequestBehavior.AllowGet);
         }

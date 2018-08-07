@@ -20,6 +20,14 @@
     <link href="~/Content/FrontEnd/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/Content/FrontEnd/css/style.css" rel="stylesheet">
     <link href="~/Content/toastr.css" rel="stylesheet" />
+
+    @*<script src="~/Content/custom/custom.js"></script>
+    <link href="~/Content/custom/main.css" rel="stylesheet" />
+    <script src="~/Content/custom/skel.min.js"></script>
+
+    <script src="~/Content/custom/main.js"></script>
+    <script src="~/Content/custom/util.js"></script>*@
+
     <!-- Custom styles for this template -->
     <style>
         .file-upload {
@@ -150,6 +158,7 @@
                         <a href="#" class="navbar-left"><img src="~/Content/FrontEnd/images/logo.png"></a>
                     </div>
                     <div class="col-md-8 m_header_toolbar text-right">
+                        <span id="loadingDiv" style="display:none">searching ...</span>
                         <input style="border-radius: 2px;" type="text" id="searchBar"/>
                         <a href="#" class="search_icon navbar-left" onclick="searchStory()"><img src="~/Content/FrontEnd/images/search_icon.png"></a>
                         <a href="#" class="notif_icon navbar-left"><img src="~/Content/FrontEnd/images/bell_icon.png"></a>  @*<span></span>*@
@@ -270,7 +279,7 @@
                                 @*<div class="input-group">
                                         <input id="email" type="email" class="form-control" name="email" placeholder="Email">
                                     </div>*@
-                                <div style="padding:15px;" class="input-group dynamicemails"><input style="float:left;" type="text" class="NewTag form-control" placeholder="Enter Email" /><i class="fa fa-plus addEmail" aria-hidden="true" style="float: left;padding-left: 18px;padding-top: 5px;cursor: pointer;font-size: 24px;color: #3c8dbc;"></i><i class="fa fa-trash-o removeTag" aria-hidden="true" style="float: left;padding-left: 18px;cursor: pointer;padding-top: 5px;font-size: 24px;color: red;"></i><br /></div>
+                                <div style="padding:15px;" class="input-group dynamicemails"><input style="float:left;" type="text" class="NewTag form-control" placeholder="Enter Email Address" /><i class="fa fa-plus addEmail" aria-hidden="true" style="float: left;padding-left: 18px;padding-top: 5px;cursor: pointer;font-size: 24px;color: #3c8dbc;"></i><i class="fa fa-trash-o removeTag" aria-hidden="true" style="float: left;padding-left: 18px;cursor: pointer;padding-top: 5px;font-size: 24px;color: red;"></i><br /></div>
                                 <span style="color:red;" id="ErrorMessageTag"></span>
                             </div>
                         </form>
@@ -484,7 +493,7 @@
         $('.InviteUser').on('click', '.addEmail', function () {
             if ($(this).parent().find('.NewTag').val() != "") {
                 $('.addEmail').remove();
-                $('.InviteUser').append('<div style="padding:15px;" class="input-group dynamicemails"><input style="float: left;" type="text" class="NewTag form-control" placeholder="Enter New Tag" /><i class="fa fa-plus addEmail" aria-hidden="true" style="float: left;padding-left: 18px;padding-top: 5px;cursor: pointer;font-size: 24px;color: #3c8dbc;"></i><i class="fa fa-trash-o removeTag" aria-hidden="true" style="float: left;padding-left: 18px;cursor: pointer;padding-top: 5px;font-size: 24px;color: red;"></i><br/></div>');
+                $('.InviteUser').append('<div style="padding:15px;" class="input-group dynamicemails"><input style="float: left;" type="text" class="NewTag form-control" placeholder="Enter Email Address" /><i class="fa fa-plus addEmail" aria-hidden="true" style="float: left;padding-left: 18px;padding-top: 5px;cursor: pointer;font-size: 24px;color: #3c8dbc;"></i><i class="fa fa-trash-o removeTag" aria-hidden="true" style="float: left;padding-left: 18px;cursor: pointer;padding-top: 5px;font-size: 24px;color: red;"></i><br/></div>');
             } else {
                 $('#ErrorMessageTag').text('Fill The Empty Email');
                 setTimeout(function () { $('#ErrorMessageTag').text(''); }, 2000);
@@ -519,7 +528,7 @@
                 data: { PromotionEmail: EmailArray },
                 success: function (data) {
                     $('.InviteUser').html('');
-                    $('.InviteUser').append('<div style="padding:15px;" class="input-group dynamicemails"><input style="float: left;" type="text" class="NewTag form-control" placeholder="Enter New Tag" /><i class="fa fa-plus addEmail" aria-hidden="true" style="float: left;padding-left: 18px;padding-top: 5px;cursor: pointer;font-size: 24px;color: #3c8dbc;"></i><i class="fa fa-trash-o removeTag" aria-hidden="true" style="float: left;padding-left: 18px;cursor: pointer;padding-top: 5px;font-size: 24px;color: red;"></i><br/></div>');
+                    $('.InviteUser').append('<div style="padding:15px;" class="input-group dynamicemails"><input style="float: left;" type="text" class="NewTag form-control" placeholder="Enter Email Address" /><i class="fa fa-plus addEmail" aria-hidden="true" style="float: left;padding-left: 18px;padding-top: 5px;cursor: pointer;font-size: 24px;color: #3c8dbc;"></i><i class="fa fa-trash-o removeTag" aria-hidden="true" style="float: left;padding-left: 18px;cursor: pointer;padding-top: 5px;font-size: 24px;color: red;"></i><br/></div>');
                     $('#myModal1').modal('hide');
 
                     $('.alert-success').css({ 'display': 'block' });
@@ -583,16 +592,15 @@
         }
     });
 
-function searchStory() {
+     function searchStory() {
         var val = $('#searchBar').val();
-
-     
-        toastr.success("Searching...");
-        $.ajax({
+        $('#loadingDiv').show();
+           $.ajax({
             type: "POST",
             url: '@Url.Action("SearchStory", "Moment")',
             data: { searchStr: val },
             success: function (data) {
+                $('#loadingDiv').hide();
                 var rawHtml = "";
                 if (data != false && data.length > 0) {
                     for (var i = 0; i < data.length; i++) {
@@ -615,5 +623,9 @@ function searchStory() {
             }
         });
 
-    }
+     }
+
+    $('#searchBar').keyup(function (e) {
+        searchStory();
+    });
 </script>

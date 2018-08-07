@@ -314,8 +314,8 @@ D:\Work\Projects\Moments\Moments\Moments\obj\Debug\es-es\Moments.resources.dll
 D:\Work\Projects\Moments\Moments\Moments\obj\Debug\fr-fr\Moments.resources.dll
 D:\Work\Projects\Moments\Moments\Moments\obj\Debug\Moments.dll
 D:\Work\Projects\Moments\Moments\Moments\obj\Debug\Moments.pdb
-D:\Work\Projects\Moments\Moments\Moments\obj\Debug\Moments.csprojResolveAssemblyReference.cache
 D:\Work\Projects\Moments\Moments\Moments\bin\WebDriver.dll
 D:\Work\Projects\Moments\Moments\Moments\bin\WebDriver.Support.dll
 D:\Work\Projects\Moments\Moments\Moments\bin\WebDriver.xml
 D:\Work\Projects\Moments\Moments\Moments\bin\WebDriver.Support.xml
+D:\Work\Projects\Moments\Moments\Moments\obj\Debug\Moments.csprojResolveAssemblyReference.cache
