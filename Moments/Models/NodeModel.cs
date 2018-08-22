@@ -20,6 +20,8 @@ namespace Moments.Models
         public string shape { get; set; }
         public string type { get; set; }
 
+        public string NodeAuthor { get; set; }
+
         public string group { get; set; }
         public string FriendlinessWeightColor { get; set; }
 

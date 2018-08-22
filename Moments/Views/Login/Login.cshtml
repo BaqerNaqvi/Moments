@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login</title>
+    <title>Moments - Login</title>
    <style>
         #loadingScreen {
             position: fixed;
@@ -129,8 +129,8 @@
         });
         function onLoginSuccess(data) {
             if (data == "SuccessfullLogin") {               
-                window.location.href = '/SuperAdmin/Index';
-                // window.location.href = '/Moment/Index';
+                window.location.href = '/SuperAdmin/Index';    // for admin 
+               //  window.location.href = '/Moment/Index';          // for regular users
             } else {
                 $('#errorLogin').text("Invalid Email or Password.");
                 setTimeout(function () { $('#errorLogin').text(""); }, 5000);

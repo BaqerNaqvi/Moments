@@ -86,6 +86,17 @@ namespace Moments.RepositoryDAL
             {
                 List<StoriesNode> StoriesNodeList = new List<StoriesNode>();
                 StoriesNodeList = _db.StoriesNodes.Where(x => x.StoryId == StoryIdDynamic).ToList();
+                if(StoriesNodeList!=null && StoriesNodeList.Any())
+                {
+                    foreach(var item in StoriesNodeList)
+                    {
+                        //var user = GetUserByProfileId(item.CreatedBy.ToString());
+                        //if (user != null)
+                        //{
+                        //    item.HtmlId = user.FirstName + " " + user.LastName;
+                        //}
+                    }
+                }
                 return StoriesNodeList;
             }
             catch (Exception ex)
@@ -172,7 +183,15 @@ namespace Moments.RepositoryDAL
                 {
                     foreach (var item in allNodes)
                     {
-                        nodes.Add(NodeMapper(item));
+                        var n_ = NodeMapper(item);
+                        var author = GetUserByProfileId(item.CreatedBy.ToString());
+                        if (author != null)
+                        {
+                            n_.NodeAuthor = author.FirstName + " " + author.LastName;
+                            n_.label = n_.label + "\nby: " + n_.NodeAuthor;
+                        }
+                        nodes.Add(n_);
+
                         if (item.ParentId != 0)
                         {
                             rels.Add(new Relation

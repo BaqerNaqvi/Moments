@@ -1034,6 +1034,7 @@
     <Content Include="Images\add_icon.png" />
     <Content Include="Images\anchor_tag.png" />
     <Content Include="Images\anthony.png" />
+    <Content Include="Images\background.png" />
     <Content Include="Images\bell_icon.png" />
     <Content Include="Images\default-thumbnail.jpg" />
     <Content Include="Images\export.png" />
