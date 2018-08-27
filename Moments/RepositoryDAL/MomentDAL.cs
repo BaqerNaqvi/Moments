@@ -188,7 +188,7 @@ namespace Moments.RepositoryDAL
                         if (author != null)
                         {
                             n_.NodeAuthor = author.FirstName + " " + author.LastName;
-                            n_.label = n_.label + "\nby: " + n_.NodeAuthor;
+                            n_.label = n_.label;
                         }
                         nodes.Add(n_);
 

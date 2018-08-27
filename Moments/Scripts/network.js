@@ -111,6 +111,7 @@ function createGraph(funcNodes, funcRelations) {
             var fullNode = searchNode(params.nodes[0]);
             selectedNode = fullNode;
             $("#selectedNode").text(fullNode.label);
+            $("#momentAuthor").text(fullNode.NodeAuthor==null? "(NA)":fullNode.NodeAuthor);
             setContentDiv(fullNode);
         }       
     });
@@ -120,6 +121,7 @@ function createGraph(funcNodes, funcRelations) {
             var fullNode = searchNode(params.nodes[0]);
             selectedNode = fullNode;
             $("#selectedNode").text(fullNode.label);
+            $("#momentAuthor").text(fullNode.NodeAuthor == null ? "(NA)" : fullNode.NodeAuthor);
             // viewDetails();
             setContentDiv(fullNode);
         } else {
@@ -185,6 +187,7 @@ $(document).ready(function () {
             }
             else {
                 $("#selectedNode").text(data.Nodes[0].label);
+                $("#momentAuthor").text(data.Nodes[0].NodeAuthor == null ? "(NA)" : data.Nodes[0].NodeAuthor);
                 setContentDiv(data.Nodes[0]);
             }
         },
